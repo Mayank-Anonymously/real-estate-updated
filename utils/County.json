@@ -1,0 +1,298 @@
+[
+  {
+    "id": "unit_805019",
+    "title": "Clifton Main Mews",
+    "address": "Clifton, NJ 07011",
+    "description": "1 Bed • 1 Bath",
+    "contact": "973‑773‑0700",
+    "price": 216,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_805022",
+    "title": "Clifton Main Mews",
+    "address": "Clifton, NJ 07011",
+    "description": "1 Bed • 1 Bath",
+    "contact": "518‑233‑0300",
+    "price": 869,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_1196061",
+    "title": "Clifton Main Mews",
+    "address": "Clifton, NJ 07011",
+    "description": "1 Bed • 1 Bath",
+    "contact": "914‑693‑6613",
+    "price": 877,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_119423",
+    "title": "Horizons at Scales Plaza",
+    "address": "Clifton, NJ 07013",
+    "description": "1 Bed • 1 Bath",
+    "contact": "973‑777‑1527",
+    "price": 1066,
+    "image": "https://api.mylavya.com/resources/horizon.jpeg" 
+
+  },
+  {
+    "id": "unit_1155661",
+    "title": "SENIOR HORIZON AT CLIFTON",
+    "address": "Clifton, NJ 07013",
+    "description": "1 Bed • 1 Bath",
+    "contact": "973‑594‑0058",
+    "price": 1000,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_805021",
+    "title": "Clifton Main Mews",
+    "address": "Clifton, NJ 07011",
+    "description": "2 Bed • 1 Bath",
+    "contact": "973‑773‑0700",
+    "price": 1029,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_1196060",
+    "title": "Clifton Main Mews",
+    "address": "Clifton, NJ 07011",
+    "description": "2 Bed • 1 Bath",
+    "contact": "914‑693‑6613",
+    "price": 1040,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_176846",
+    "title": "Horizons at Scales Plaza",
+    "address": "Clifton, NJ 07013",
+    "description": "2 Bed • 1 Bath",
+    "contact": "973‑777‑1527",
+    "price": 948,
+    "image": "https://api.mylavya.com/resources/horizon.jpeg"
+  },
+  {
+    "id": "unit_1077989",
+    "title": "Mill on Main",
+    "address": "Clifton, NJ 07011",
+    "description": "1 Bed • 1 Bath",
+    "contact": "973‑447‑3700",
+    "price": 1137,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_1077984",
+    "title": "Mill on Main",
+    "address": "Clifton, NJ 07011",
+    "description": "1 Bed • 1 Bath",
+    "contact": "973‑447‑3700",
+    "price": 1137,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_805023",
+    "title": "Clifton Main Mews",
+    "address": "Clifton, NJ 07011",
+    "description": "3 Bed • 2 Bath",
+    "contact": "973‑773‑0700",
+    "price": 1176,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_1196063",
+    "title": "Clifton Main Mews",
+    "address": "Clifton, NJ 07011",
+    "description": "3 Bed • 2 Bath",
+    "contact": "914‑693‑6613",
+    "price": 1188,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_619721",
+    "image": "https://api.mylavya.com/resources/richville.jpeg",
+    "title": "Richfield Village Apartments",
+    "address": "Clifton, NJ 07012",
+    "description": "0 Bed • 1 Bath • Studio/Efficiency",
+    "contact": "973‑473‑7500",
+    "price": 1295
+  },
+  {
+    "id": "unit_1077985",
+    "title": "Mill on Main",
+    "address": "Clifton, NJ 07011",
+    "description": "2 Bed • 1 Bath",
+    "contact": "973‑447‑3700",
+    "price": 1368,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_619724",
+    "image": "https://api.mylavya.com/resources/richville.jpeg",
+    "title": "Richfield Village Apartments",
+    "address": "Clifton, NJ 07012",
+    "description": "1 Bed • 1 Bath",
+    "contact": "973‑473‑7500",
+    "price": 1395
+  },
+  {
+    "id": "unit_1077986",
+    "title": "Mill on Main",
+    "address": "Clifton, NJ 07011",
+    "description": "3 Bed • 2 Bath",
+    "contact": "973‑447‑3700",
+    "price": 1570,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_619726",
+    "image": "https://api.mylavya.com/resources/richville.jpeg",
+    "title": "Richfield Village Apartments",
+    "address": "Clifton, NJ 07012",
+    "description": "2 Bed • 1 Bath",
+    "contact": "973‑473‑7500",
+    "price": 1695
+  },
+
+  {
+    "id": "unit_1110730",
+    "image": "https://api.mylavya.com/resources/one-thompson.jpeg",
+    "title": "One Thompson Avenue",
+    "address": "Dover, NJ, 07801",
+    "description": "1 Bed • 1 Bath",
+    "contact": "862‑322‑3191",
+    "price": "N/A"
+  },
+  {
+    "id": "unit_1004260",
+    "title": "Spruce Senior Housing",
+    "address": "Dover, NJ 07801",
+    "description": "2 Bed • 1 Bath",
+    "contact": "201‑836‑4500",
+    "price": 1200,
+        "image": "https://api.mylavya.com/resources/placeholder.jpeg" 
+
+  },
+  {
+    "id": "unit_1110734",
+    "image": "https://api.mylavya.com/resources/one-thompson.jpeg",
+    "title": "One Thompson Avenue",
+    "address": "Dover, NJ 07801",
+    "description": "2 Bed • 1 Bath",
+    "contact": "862‑322‑3191",
+    "price": 443
+  },
+  {
+    "id": "unit_1110736",
+    "image": "https://api.mylavya.com/resources/one-thompson.jpeg",
+    "title": "One Thompson Avenue",
+    "address": "Dover, NJ 07801",
+    "description": "3 Bed • 2 Bath",
+    "contact": "862‑322‑3191",
+    "price": 554
+  },
+
+  {
+    "id": "unit_1278311",
+    "title": "Woodmont Forge at Hopewell",
+    "image": "https://api.mylavya.com/resources/wordmont.jpeg",
+    "address": "Hopewell Township, NJ  08534",
+    "description": "1 Bed • 1 Bath",
+    "contact": "609‑664‑2769 (5)",
+    "price": "N/A"
+  },
+  {
+    "id": "unit_1278530",
+    "title": "Woodmont Forge Hopewell",
+    "image": "https://api.mylavya.com/resources/wordmont.jpeg",
+    "address": "Hopewell Township, NJ  08534",
+    "description": "2 Bed • 1 Bath",
+    "contact": "609‑664‑2769 (5)",
+    "price": "N/A"
+  },
+  {
+    "id": "unit_1278531",
+    "title": "Woodmont Forge at Hopewell",
+    "image": "https://api.mylavya.com/resources/wordmont.jpeg",
+    "address": "Hopewell Township, NJ  08534",
+    "description": "3 Bed • 1 Bath",
+    "contact": "609‑664‑2769 (5)",
+    "price": "N/A"
+  },
+  {
+    "id": "unit_1334559",
+    "title": "61 Stiles Avenue, Unit 3",
+    "image": "https://api.mylavya.com/resources/stilles.jpeg",
+
+    "address": "Haddonfield, NJ  08033",
+    "description": "2 Bed • 1 Bath\n\t\t• Duplex",
+    "contact": "856‑690‑5749",
+    "price": 519
+  },
+  {
+    "id": "unit_1021105",
+    "title": "Birchwood at Tarditi Commons.",
+    "image": "https://api.mylavya.com/resources/brichwood.jpeg",
+    "address": "Haddonfield, NJ  08033",
+    "description": "1 Bed • 1 Bath",
+    "contact": "856‑216‑0167",
+    "price": 992
+  },
+  {
+    "id": "unit_1334552",
+    "title": "61 Stiles Avenue, Unit 2",
+    "image": "https://api.mylavya.com/resources/stilles.jpeg",
+    "address": "Haddonfield, NJ  08033",
+    "description": "2 Bed • 1 Bath\n\t\t• Duplex",
+    "contact": "856‑690‑5749",
+    "price": 1035
+  },
+  {
+    "id": "unit_1253891",
+    "title": "129 Fowler Street, Unit 3",
+    "image": "https://api.mylavya.com/resources/fower-street-unit-three.jpeg",
+    "address": "Haddonfield, NJ  08033",
+    "description": "2 Bed • 1 Bath\n\t\t• Duplex",
+    "contact": "856‑690‑5749",
+    "price": 1284
+  },
+  {
+    "id": "unit_1335436",
+    "title": "The Place at Haddonfield",
+    "image": "https://api.mylavya.com/resources/elizabeth.jpeg",
+    "address": "Haddonfield, NJ  08033",
+    "description": "1 Bed • 1 Bath",
+    "contact": "609‑298‑2229",
+    "price": "N/A"
+  },
+  {
+    "id": "unit_1335442",
+    "title": "The Place at Haddonfield",
+    "image": "https://api.mylavya.com/resources/elizabeth.jpeg",
+    "address": "Haddonfield, NJ  08033",
+    "description": "2 Bed • 1 Bath",
+    "contact": "609‑298‑2229",
+    "price": "N/A"
+  },
+  {
+    "id": "unit_1335444",
+    "title": "The Place at Haddonfield",
+    "image": "https://api.mylavya.com/resources/elizabeth.jpeg",
+    "address": "Haddonfield, NJ  08033",
+    "description": "3 Bed • 2 Bath",
+    "contact": "609‑298‑2229",
+    "price": "N/A"
+  }
+]

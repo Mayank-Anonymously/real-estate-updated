@@ -1,0 +1,3083 @@
+[
+  {
+    "property": {
+      "name": "Clifton Main Mews",
+      "address": "988 and 1010 Main Avenue, Clifton, NJ 07011",
+      "image": "https://api.mylavya.com/resources/placeholder.jpeg" ,
+
+      "rent": 216,
+      "deposit": 216,
+      "availability": "Waiting List",
+      "lease_term": "One Year",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": 0,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "sizeSqFt": 736,
+        "year_built": 2017
+      },
+      "contact": {
+        "name": "Elene Vasquez",
+        "role": "Property Manager or Realtor",
+        "phone": "973-773-0700",
+        "language": "Spanish available"
+      },
+      "features": {
+        "pets": {
+          "allowed": true,
+          "policy": "Pets up to 30 pounds; call to inquire about fees and policies"
+        },
+        "smoking_allowed": true,
+        "trash_service": true,
+        "school_district": "Clifton City School District",
+        "flooring": ["Carpet", "Vinyl"],
+        "other_features": ["Dining Room"]
+      },
+      "appliances": {
+        "microwave": false,
+        "refrigerator": "Freezer On Top",
+        "washer": "Stacked Washer / Dryer",
+        "dryer": "Stacked Washer / Dryer",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Dishwasher", "Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "water_heater": "Electric",
+        "internet_ready": true,
+        "cable_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "805019",
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counters": "Standard Height",
+        "door_handles": "Unknown",
+        "kitchen": "Standard",
+        "bathroom": "Standard",
+        "door_width": "32\" or wider",
+        "entry": {
+          "location": "From Interior Hallway",
+          "steps": true,
+          "features": [
+            "Door Knock / Bell Signaler",
+            "Standard Peephole",
+            "Entry Door Intercom",
+            "Deadbolt on Entry Door",
+            "Secured Entry to Building"
+          ]
+        },
+        "elevator": true,
+        "multi_story_unit": true
+      },
+      "safety": {
+        "lead_safety": "Presumed Lead Free (built after 1977)",
+        "fire_safety": ["Smoke Detector", "Carbon Monoxide Detector"]
+      },
+      "parkingAndEntry": {
+        "type": "Unknown",
+        "spaces_allotted": 1,
+        "in_front_of_entrance": true
+      },
+      "nearbyServices": {
+        "busStop": "On Site",
+        "shopping": "One Block",
+        "groceryShopping": "One Block",
+        "senior_center": "Five Blocks",
+        "hospital": "Within One Mile",
+        "pharmacy": "Within One Mile",
+        "additional": ["Sidewalks", "Emergency Exits", "Dumpsters"]
+      }
+    },
+    "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+  },
+  {
+    "property": {
+      "name": "Clifton Main Mews",
+      "image": "https://api.mylavya.com/resources/placeholder.jpeg" ,
+
+      "address": "988 and 1010 Main Avenue, Clifton, NJ 07011",
+      "rent": 869,
+      "deposit": 869,
+      "availability": "Waiting List",
+      "lease_term": "One Year",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": 0,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "sizeSqFt": 736,
+        "year_built": 2017
+      },
+      "contact": {
+        "name": "Fern Spinazzola",
+        "role": "Property Manager or Realtor",
+        "phone": "518-233-0300",
+        "language": "Spanish available"
+      },
+      "features": {
+        "pets": {
+          "allowed": true,
+          "policy": "Pets up to 30 pounds; call to inquire about fees and policies"
+        },
+        "smoking_allowed": true,
+        "trash_service": true,
+        "school_district": "Clifton City School District",
+        "flooring": ["Carpet", "Vinyl"],
+        "other_features": ["Dining Room"]
+      },
+      "appliances": {
+        "microwave": false,
+        "refrigerator": "Freezer On Top",
+        "washer": "Stacked Washer / Dryer",
+        "dryer": "Stacked Washer / Dryer",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Dishwasher", "Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "water_heater": "Electric",
+        "internet_ready": true,
+        "cable_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "805022",
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counters": "Standard Height",
+        "door_handles": "Unknown",
+        "kitchen": "Standard",
+        "bathroom": "Standard",
+        "door_width": "32\" or wider",
+        "entry": {
+          "location": "From Interior Hallway",
+          "steps": true,
+          "features": [
+            "Door Knock / Bell Signaler",
+            "Standard Peephole",
+            "Entry Door Intercom",
+            "Deadbolt on Entry Door",
+            "Secured Entry to Building"
+          ]
+        },
+        "elevator": true,
+        "multi_story_unit": true
+      },
+      "safety": {
+        "lead_safety": "Presumed Lead Free (built after 1977)",
+        "fire_safety": ["Smoke Detector", "Carbon Monoxide Detector"]
+      },
+      "parkingAndEntry": {
+        "type": "Unknown",
+        "spaces_allotted": 1,
+        "in_front_of_entrance": true
+      },
+      "nearbyServices": {
+        "busStop": "On Site",
+        "shopping": "One Block",
+        "groceryShopping": "One Block",
+        "senior_center": "Five Blocks",
+        "hospital": "Within One Mile",
+        "pharmacy": "Within One Mile",
+        "additional": ["Sidewalks", "Emergency Exits", "Dumpsters"]
+      }
+    },
+    "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+  },
+
+  {
+    "property": {
+      "name": "Clifton Main Mews",
+      "image": "https://api.mylavya.com/resources/placeholder.jpeg" ,
+
+      "address": "988 Main Ave, Clifton, NJ 07011",
+      "rent": 877,
+      "deposit": 877,
+      "income_restricted": true,
+      "availability": "Waiting List",
+      "lease_term": "One Year",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": 0,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "sizeSqFt": 700,
+        "year_built": 2017
+      },
+      "contact": {
+        "name": "Fern Spinazzola",
+        "company": "Regan Development Corp.",
+        "role": "Property Manager or Realtor",
+        "phone": "914-693-6613",
+        "fax": "833-954-0003",
+        "email": "rentals@regandevelopment.com",
+        "office_address": "1055 Saw Mill River Road, Suite 204, Ardsley, NY 10502"
+      },
+      "features": {
+        "pets": {
+          "allowed": true,
+          "policy": "Pet friendly with a weight restriction of 30 pounds - non-aggressive breeds. One-time pet deposit of $300.00; one pet per household."
+        },
+        "smoking_allowed": false,
+        "trash_service": true,
+        "pest_control": true,
+        "school_district": "Clifton City School District",
+        "flooring": ["Tile", "Vinyl"]
+      },
+      "appliances": {
+        "microwave": "Unknown",
+        "refrigerator": "Freezer On Top",
+        "washer": "No Hookup",
+        "dryer": "No Hookup",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Dishwasher"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Gas",
+        "water_heater": "Electric",
+        "cable_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "1196061",
+        "tax_credit_property": true,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height",
+        "door_faucet_handles": "Non-lever handles",
+        "kitchen_accessibility": "Non-digital Kitchen Appliances",
+        "bathroom_accessibility": "'T' Turn or 60\" Turning Circle",
+        "entry": {
+          "location": "From Outside",
+          "step_free_entry": true,
+          "door_width": "32\" or wider"
+        }
+      },
+      "safety": {
+        "lead_safety": "Presumed Lead Free (built after 1977)",
+        "fire_safety": [
+          "Smoke Detector",
+          "Carbon Monoxide Detector",
+          "Fire Suppression / Sprinkler System"
+        ]
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "spaces_allotted": 1,
+        "in_front_of_entrance": false
+      },
+      "nearbyServices": {
+        "busStop": "Within One Mile",
+        "playground": "Within One Mile",
+        "shopping": "Within Two Miles",
+        "groceryShopping": "Within One Mile",
+        "recreation": "Within Two Miles",
+        "senior_center": "Within Five Miles",
+        "hospital": "Within Five Miles",
+        "pharmacy": "Within One Mile",
+        "additional": ["Emergency Exits", "Dumpsters", "Clubhouse"]
+      },
+      "income_limits": {
+        "1_person": 44820,
+        "2_person": 51180,
+        "3_person": 57600,
+        "4_person": 63960,
+        "5_person": 69120,
+        "6_person": 74220
+      },
+      "amenities": ["On site laundry room", "On-site parking"],
+      "manager_notes": "Income related info/govt issued ID required"
+    },
+    "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+  },
+  {
+    "property": {
+      "name": "Horizons at Scales Plaza",
+      "image": "https://api.mylavya.com/resources/horizon.jpeg" ,
+
+      "address": "100 & 101 Scales Plaza, Clifton, NJ 07013",
+      "rent": 948,
+      "deposit": 948,
+      "income_restricted": true,
+      "median_income_based_rent": true,
+      "low_income_eligible_only": true,
+      "availability": "Waiting List",
+      "lease_term": "Negotiable",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": 0,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "year_built": 2008
+      },
+      "eligibility": {
+        "seniors_only": true,
+        "minimum_age": 55,
+        "disabled_persons_eligible": true,
+        "licensed": false
+      },
+      "contact": {
+        "name": "Jan Granger",
+        "company": "Horizons at Clifton II and III",
+        "role": "Property Manager or Realtor",
+        "phone": "973-777-1527",
+        "fax": "973-777-1529",
+        "email": "egranger@irm.themichaels.org",
+        "office_address": "100 Scales Plaza, Suite 100, Clifton, NJ 07013"
+      },
+      "features": {
+        "pets": {
+          "allowed": true,
+          "policy": "Please contact for pet information."
+        },
+        "smoking_allowed": true,
+        "trash_service": true,
+        "school_district": "Clifton City School District",
+        "flooring": ["Carpet", "Vinyl"],
+        "other_features": ["Lawn Care Included"]
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator": "Freezer On Top",
+        "washer": "No Hookup",
+        "dryer": "No Hookup",
+        "laundry_facility": "Accessible With Front Controls (On Site)",
+        "other_appliances": ["Dishwasher"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Gas",
+        "water_heater": "Gas",
+        "cable_ready": true,
+        "internet_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "119423",
+        "tax_credit_property": true
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height",
+        "door_faucet_handles": "Lever Handles Only On Doors",
+        "kitchen_accessibility": "Standard",
+        "bathroom_accessibility": "Grab Bars",
+        "entry": {
+          "location": "From Interior Hallway",
+          "step_free_entry": true,
+          "door_width": "32\" or wider"
+        },
+        "other_entry_features": [
+          "Door Knock / Bell Signaler",
+          "Standard Peephole",
+          "Entry Door Intercom",
+          "Secured Entry to Building"
+        ],
+        "elevators": true,
+        "unit_on_first_floor": true
+      },
+      "safety": {
+        "lead_safety": "Presumed Lead Free (built after 1977)",
+        "fire_safety": [
+          "Smoke Detector Extra Audible With Strobe",
+          "Carbon Monoxide Detector",
+          "Strobe Fire Alarm in Unit"
+        ]
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": true,
+        "additional_comments": "Ample Free Parking"
+      },
+      "nearbyServices": {
+        "busStop": "One Block",
+        "playground": "One Block",
+        "shopping": "Two Blocks",
+        "groceryShopping": "Five Blocks",
+        "recreation": "On Site",
+        "senior_center": "Within Two Miles",
+        "hospital": "Within Five Miles",
+        "pharmacy": "One Block",
+        "additional": [
+          "Sidewalks",
+          "Emergency Exits",
+          "Dumpsters",
+          "Work-out Room",
+          "Clubhouse",
+          "Within Paratransit Route"
+        ]
+      },
+      "income_qualifiers": "Call for income restrictions.",
+      "amenities": [
+        "Library with 2 computers",
+        "TV lounge",
+        "Exercise room",
+        "Community room"
+      ],
+      "manager_notes": "Applicants must be 55 years or older. We accept Section 8 Vouchers."
+    },
+    "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+  },
+
+  {
+    "property": {
+      "name": "Senior Horizon at Clifton",
+      "image": "https://api.mylavya.com/resources/placeholder.jpeg" ,
+
+      "address": "714 Clifton Ave, Clifton, NJ 07013",
+      "rent": 1000,
+      "deposit": 1000,
+      "income_restricted": false,
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": 0,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "sizeSqFt": 670,
+        "year_built": 2003,
+        "max_occupants": 126
+      },
+      "eligibility": {
+        "seniors_only": false
+      },
+      "contact": {
+        "name": "Gabriela Martinez Fleming",
+        "company": "The Michael's Organization",
+        "role": "Property Manager or Realtor",
+        "phone": "973-594-0058"
+      },
+      "features": {
+        "pets": "Unknown",
+        "smoking_allowed": false,
+        "trash_service": true,
+        "pest_control": true,
+        "school_district": "Clifton City School District",
+        "flooring": ["Hardwood", "Vinyl"]
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator": "Freezer On Top",
+        "washer": "Front Loading",
+        "dryer": "Front Loading",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Dishwasher"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Gas",
+        "water_heater": "Gas",
+        "cable_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "1155661",
+        "tax_credit_property": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height",
+        "door_faucet_handles": "Lever Handles On Both Doors And Faucets",
+        "kitchen_accessibility": "Non-digital Kitchen Appliances",
+        "bathroom_accessibility": [
+          "Toilet Grab Bars or Reinforcements",
+          "Bath Grab Bars or Reinforcements"
+        ],
+        "entry": {
+          "step_free_entry": true,
+          "door_width": "32\" or wider"
+        },
+        "other_entry_features": [
+          "Entry Door Intercom",
+          "Accessible Elevators",
+          "Multi Story Unit"
+        ]
+      },
+      "safety": {
+        "lead_safety": "Presumed Lead Free (built after 1977)",
+        "fire_safety": [
+          "Smoke Detector",
+          "Carbon Monoxide Detector",
+          "Fire Suppression / Sprinkler System"
+        ]
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": true,
+        "entry_location": "Unknown"
+      },
+      "amenities": [
+        "Community room",
+        "TV Room",
+        "Gym",
+        "Computer room",
+        "Library"
+      ]
+    },
+    "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+  },
+  {
+    "property": {
+      "name": "Clifton Main Mews",
+      "image": "https://api.mylavya.com/resources/placeholder.jpeg" ,
+
+      "address": "988 and 1010 Main Avenue, Clifton, NJ 07011",
+      "rent": 1029,
+      "deposit": 1029,
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": 0,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "sizeSqFt": 961,
+        "year_built": 2017
+      },
+      "eligibility": {
+        "seniors_only": false
+      },
+      "contact": {
+        "name": "Elene Vasquez",
+        "role": "Property Manager or Realtor",
+        "phone": "973-773-0700"
+      },
+      "features": {
+        "pets": "Pets up to 30 pounds; call to inquire about fees and policies",
+        "smoking_allowed": true,
+        "trash_service": true,
+        "school_district": "Clifton City School District",
+        "flooring": ["Carpet", "Vinyl"],
+        "other_features": ["Dining Room"]
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator_freezer": "Freezer On Top",
+        "washer": "Stacked Washer / Dryer",
+        "dryer": "Stacked Washer / Dryer",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Dishwasher", "Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "water_heater": "Electric",
+        "cable_ready": true,
+        "internet_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "805021",
+        "tax_credit_property": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height",
+        "door_faucet_handles": "Unknown",
+        "kitchen": "Standard",
+        "bathroom": "Standard",
+        "unit_entry": {
+          "step_free_entry": false,
+          "door_width": "32 inches or wider",
+          "entry_location": "From Interior Hallway",
+          "features": [
+            "Door Knock / Bell Signaler",
+            "Standard Peephole",
+            "Entry Door Intercom",
+            "Deadbolt on Entry Door",
+            "Secured Entry to Building",
+            "Accessible Elevators",
+            "Multi Story Unit"
+          ]
+        }
+      },
+      "safety": {
+        "lead_safety": "Presumed Lead Free (constructed after 1977)",
+        "fire_safety": ["Smoke Detector", "Carbon Monoxide Detector"]
+      },
+      "parkingAndEntry": {
+        "type": "Unknown",
+        "spaces": 1,
+        "in_front_of_entrance": true
+      },
+      "nearbyServices": {
+        "busStop": "On Site",
+        "shopping_venues": "One Block",
+        "groceryShopping": "One Block",
+        "senior_center": "Five Blocks",
+        "hospital": "Within One Mile",
+        "pharmacy": "Within One Mile",
+        "other_nearby": ["Sidewalks", "Emergency Exits", "Dumpsters"]
+      },
+      "comments": "Pets up to 30 pounds; call to inquire about fees and policies."
+    },
+    "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+  },
+
+  {
+    "property": {
+      "name": "Clifton Main Mews",
+      "image": "https://api.mylavya.com/resources/placeholder.jpeg" ,
+
+      "address": "988 Main Ave, Clifton, NJ 07011",
+      "status": "Income Restricted",
+      "rent": 1040,
+      "deposit": 1040,
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": "No Application Fee",
+      "background_check_policy": "Background Check Policy - More Info",
+      "unit": {
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "type": "Apartments",
+        "sizeSqFt": 920,
+        "year_built": "2017 (approx.)"
+      },
+      "contact": {
+        "name": "Fern Spinazzola",
+        "organization": "Regan Development Corp.",
+        "role": "Property Manager or Realtor",
+        "phone": "914-693-6613",
+        "fax": "833-954-0003",
+        "email": "rentals@regandevelopment.com",
+        "address": "1055 Saw Mill River Road, Suite 204, Ardsley, NY 10502"
+      },
+      "features": {
+        "pets": {
+          "allowed": true,
+          "notes": "Pet friendly with a weight restriction of 30 pounds - non-aggressive breeds - One time pet deposit of $300.00; one pet per household."
+        },
+        "smoking": "No Smoking",
+        "trash_service": true,
+        "pest_control": true,
+        "school_district": "Clifton City School District",
+        "flooring": ["Tile", "Vinyl"]
+      },
+      "appliances": {
+        "microwave": "Unknown",
+        "refrigerator_freezer": "Freezer On Top",
+        "clothes_washer": "No Hookup",
+        "clothes_dryer": "No Hookup",
+        "laundry_room": "On Site",
+        "dishwasher": true
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Gas",
+        "water_heater": "Electric",
+        "cable_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "1196060",
+        "tax_credit_property": true,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "handles": "Non-lever handles On Doors And Faucets",
+        "kitchen": {
+          "accessible_option": true
+        },
+        "bathroom": {
+          "turning_space": "'T' Turn or 60\" Turning Circle in Bathrooms",
+          "accessible_option": true
+        }
+      },
+      "safety": {
+        "lead_safety": "Constructed after 1977 and is therefore presumed to be Lead Free",
+        "fire_safety_features": [
+          "Smoke Detector",
+          "Carbon Monoxide Detector",
+          "Fire Suppression / Sprinkler System"
+        ]
+      },
+      "parkingAndEntry": {
+        "parking_type": "Off Street",
+        "allottedParkingSpaces": 1,
+        "parking_in_front_of_entrance": false,
+        "entry_location": "From Outside",
+        "unit_entry": "Flat or no-step entry",
+        "minimum_door_width": "32\" or wider"
+      },
+      "nearbyServices": {
+        "busStop": "Within One Mile",
+        "playground": "Within One Mile",
+        "shopping_venues": "Within Two Miles",
+        "groceryShopping": "Within One Mile",
+        "recreational_facilities": "Within Two Miles",
+        "senior_center": "Within Five Miles",
+        "hospital": "Within Five Miles",
+        "pharmacy": "Within One Mile"
+      },
+      "other_nearby_features": ["Emergency Exits", "Dumpsters", "Clubhouse"],
+      "income_restrictions": {
+        "1_person": 44820,
+        "2_person": 51180,
+        "3_person": 57600,
+        "4_person": 63960,
+        "5_person": 69120,
+        "6_person": 74220
+      },
+      "amenities": {
+        "laundry_room": "On site laundry room",
+        "parking": "On-site parking"
+      },
+      "comments": {
+        "qualifiers": "1 person $44,820 2 Person $51,180 3 person $57,600 4 person $63,960 5 person $69,120 6 person $74,220",
+        "propertyComments": "Pet friendly with a weight restriction of 30 pounds - non-aggressive breeds - One time pet deposit of $300.00; one pet per household.",
+        "owner_manager_comments": "Income related info/govt issued ID"
+      }
+    }
+  },
+
+  {
+    "property": {
+      "name": "Horizons at Scales Plaza",
+      "image" :"https://api.mylavya.com/resources/horizon.jpeg",
+      "address": "100 & 101 Scales Plaza, Clifton, NJ 07013",
+      "income_restricted": true,
+      "income_based_rent": {
+        "percentage": 60,
+        "rent": 1066
+      },
+      "rent": 1066,
+      "deposit": 1066,
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": 0,
+      "background_check_required": true,
+      "eligibility": {
+        "seniors_only": true,
+        "minimum_age": 55,
+        "disabilities_eligible": true
+      },
+      "contact": {
+        "name": "Jan Granger",
+        "company": "Horizons at Clifton II and III",
+        "role": "Property Manager or Realtor",
+        "phone": "973-777-1527",
+        "fax": "973-777-1529",
+        "email": "egranger@irm.themichaels.org",
+        "mailing_address": "100 Scales Plaza, Suite 100, Clifton, NJ 07013"
+      },
+      "features": {
+        "pets": {
+          "allowed": "Contact landlord for pet policy"
+        },
+        "smoking_allowed": true,
+        "trash_service": true,
+        "school_district": "Clifton City School District",
+        "flooring": ["Carpet", "Vinyl"],
+        "lawn_care_included": true
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator_freezer": "Freezer On Top",
+        "washer": "No Hookup",
+        "dryer": "No Hookup",
+        "laundry_facility": "Accessible With Front Controls (On Site)",
+        "other_appliances": ["Dishwasher"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Gas",
+        "water_heater": "Gas",
+        "cable_ready": true,
+        "high_speed_internet_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "176846",
+        "tax_credit_property": true
+      },
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "square_feet": "Unknown",
+        "year_built": 2008
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height",
+        "door_faucet_handles": "Lever Handles Only On Doors",
+        "kitchen": "Standard",
+        "bathroom": "Grab Bars Accessible Option",
+        "unit_entry": {
+          "step_free_entry": true,
+          "entry_location": "From Interior Hallway"
+        }
+      },
+      "safety": {
+        "lead_safety": "Presumed Lead Free (constructed after 1977)",
+        "fire_safety": [
+          "Smoke Detector Extra Audible With Strobe Accessible Option",
+          "Carbon Monoxide Detector",
+          "Fire Suppression / Sprinkler System",
+          "Strobe Fire Alarm in Unit Accessible Option"
+        ]
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": true,
+        "additional_parking": "Ample Free Parking"
+      },
+      "nearbyServices": {
+        "busStop": "One Block",
+        "playground": "One Block",
+        "shopping_venues": "Two Blocks",
+        "groceryShopping": "Four Blocks",
+        "recreational_facilities": "On Site",
+        "senior_center": "On Site",
+        "hospital": "Within Five Miles",
+        "pharmacy": "One Block",
+        "other_nearby": [
+          "Sidewalks",
+          "Emergency Exits",
+          "Dumpsters",
+          "Work-out Room",
+          "Clubhouse",
+          "Within Paratransit Route"
+        ]
+      },
+      "comments": {
+        "property": "Contact landlord for pet policy.",
+        "qualifiers": "Call for income restrictions.",
+        "amenities": "There is a library; two computers, TV lounge, exercise room and community room."
+      },
+      "owner_manager_comments": {
+        "age_restriction": "Applicants must be 55 years or older.",
+        "section_8_vouchers_accepted": true
+      }
+    },
+    "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+  },
+  {
+    "property": {
+      "name": "Mill on Main",
+      "image" :"https://api.mylavya.com/resources/placeholder.jpeg",
+
+      "address": "1000 Main Ave, Clifton, NJ 07011",
+      "status": "Waiting List",
+      "incomeRestricted": true,
+      "price": {
+        "monthlyRent": 1137,
+        "deposit": 1137
+      },
+      "rent": 1137,
+      "leaseTerm": "One Year",
+      "utilitiesIncluded": ["Water", "Sewer", "Trash Pickup"],
+      "applicationFee": "No Application Fee",
+      "backgroundCheckPolicy": "Background Check Policy - More Info",
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "sizeSqFt": null,
+        "yearBuilt": 2020
+      },
+      "contact": {
+        "name": "Jennifer Liriano-Santelises",
+        "company": "Michaels Org.",
+        "role": "Property Manager or Realtor",
+        "phone": "973-447-3700",
+        "fax": "877-695-0170",
+        "email": "themillonmain@tmo.com",
+        "officeAddress": null
+      },
+      "features": {
+        "pets": {
+          "allowed": true,
+          "weightLimit": null,
+          "restrictions": "Please contact property regarding pet policy.",
+          "deposit": null,
+          "maxPets": null
+        },
+        "smoking": "No Smoking",
+        "trashService": true,
+        "pestControl": null,
+        "schoolDistrict": "Clifton City School District",
+        "flooring": ["Hardwood"]
+      },
+      "appliances": {
+        "microwave": "High Cabinet-mounted Microwave",
+        "refrigeratorFreezer": "Freezer On Top",
+        "washerDryerHookup": false,
+        "laundryFacility": "On Site",
+        "otherAppliances": ["Dishwasher", "Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "waterHeater": "Electric",
+        "cableReady": null,
+        "internetReady": null
+      },
+      "specializedInformation": {
+        "listingID": "1077989",
+        "taxCreditProperty": true,
+        "seniorsOnly": false
+      },
+      "accessibility": {
+        "counterVanity": "Both Lowered With Min 27\" High Knee Space",
+        "doorFaucetHandles": "Lever Handles On Both Doors And Faucets",
+        "kitchen": "Standard",
+        "bathroomAccessibility": "Walk-in Shower; Bath Grab Bars or Reinforcements; Toilet Grab Bars or Reinforcements"
+      },
+      "safety": {
+        "leadSafety": "Constructed after 1977 and presumed to be Lead Free",
+        "fireSafety": ["Smoke Detector", "Carbon Monoxide Detector"]
+      },
+      "parkingAndEntry": {
+        "parkingType": "Off Street",
+        "allottedParkingSpaces": null,
+        "parkingInFront": false,
+        "entryLocation": "From Interior Hallway",
+        "unitEntry": "Step(s)",
+        "doorWidth": "Less Than 32\""
+      },
+      "nearbyServices": {
+        "busStop": "One Block",
+        "groceryShopping": "One Block",
+        "hospital": "Within One Mile",
+        "pharmacy": "Within One Mile"
+      },
+      "comments": {
+        "incomeRestrictions": "Please contact property regarding qualification.",
+        "amenities": [
+          "On-site laundry room",
+          "Pet friendly (contact property for full policy)"
+        ],
+        "propertyComments": "Section 8 welcome; ADA accessible",
+        "ownerManagerComments": "Proof of income, Birth Certificate, and Social Security Card."
+      },
+      "legal": {
+        "fairHousingNotice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+      }
+    }
+  },
+  {
+    "property": {
+      "name": "Mill on Main",
+      "image" :"https://api.mylavya.com/resources/placeholder.jpeg",
+
+      "address": "1000 Main Ave, Clifton, NJ 07011",
+      "status": "Waiting List",
+      "incomeRestricted": true,
+      "price": {
+        "monthlyRent": 1137,
+        "deposit": 1137
+      },
+      "rent": 1137,
+      "leaseTerm": "One Year",
+      "utilitiesIncluded": ["Water", "Sewer", "Trash Pickup"],
+      "applicationFee": "No Application Fee",
+      "backgroundCheckPolicy": "Background Check Policy - More Info",
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "sizeSqFt": null,
+        "yearBuilt": 2020
+      },
+      "contact": {
+        "name": "Jennifer Liriano-Santelises",
+        "company": "Michaels Org.",
+        "role": "Property Manager or Realtor",
+        "phone": "973-447-3700",
+        "fax": "877-695-0170",
+        "email": "themillonmain@tmo.com",
+        "officeAddress": null
+      },
+      "features": {
+        "pets": {
+          "allowed": true,
+          "weightLimit": null,
+          "restrictions": "Please contact property regarding pet policy.",
+          "deposit": null,
+          "maxPets": null
+        },
+        "smoking": "No Smoking",
+        "trashService": true,
+        "pestControl": null,
+        "schoolDistrict": "Clifton City School District",
+        "flooring": ["Hardwood"]
+      },
+      "appliances": {
+        "microwave": "High Cabinet-mounted Microwave",
+        "refrigeratorFreezer": "Freezer On Top",
+        "washerDryerHookup": false,
+        "laundryFacility": "On Site",
+        "otherAppliances": ["Dishwasher", "Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "waterHeater": "Electric",
+        "cableReady": null,
+        "internetReady": null
+      },
+      "specializedInformation": {
+        "listingID": "1077984",
+        "taxCreditProperty": true,
+        "seniorsOnly": false
+      },
+      "accessibility": {
+        "counterVanity": "Standard Height Counters and Vanity",
+        "doorFaucetHandles": "Lever Handles On Both Doors And Faucets",
+        "kitchen": "Standard",
+        "bathroomAccessibility": "Standard"
+      },
+      "safety": {
+        "leadSafety": "Constructed after 1977 and presumed to be Lead Free",
+        "fireSafety": ["Smoke Detector", "Carbon Monoxide Detector"]
+      },
+      "parkingAndEntry": {
+        "parkingType": "Off Street",
+        "allottedParkingSpaces": null,
+        "parkingInFront": false,
+        "entryLocation": "From Interior Hallway",
+        "unitEntry": "Step(s)",
+        "doorWidth": "Less Than 32\""
+      },
+      "nearbyServices": {
+        "busStop": "One Block",
+        "groceryShopping": "One Block",
+        "hospital": "Within One Mile",
+        "pharmacy": "Within One Mile"
+      },
+      "comments": {
+        "incomeRestrictions": "Please contact property regarding qualification.",
+        "amenities": [
+          "On-site laundry room",
+          "Pet friendly (contact property for full policy)"
+        ],
+        "propertyComments": "Section 8 welcome",
+        "ownerManagerComments": "Proof of income, Birth Certificate, and Social Security Card."
+      },
+      "legal": {
+        "fairHousingNotice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+      }
+    }
+  },
+
+  {
+    "property": {
+      "name": "Clifton Main Mews",
+      "image" :"https://api.mylavya.com/resources/placeholder.jpeg",
+
+      "address": "988 Main Ave, Clifton, NJ 07011",
+      "rent": 1176,
+      "deposit": 1176,
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": 0,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "type": "Apartment",
+        "square_feet": 1331,
+        "year_built": 2017
+      },
+      "contact": {
+        "name": "Elene Vasquez",
+        "role": "Property Manager or Realtor",
+        "phone": "973-773-0700",
+        "language": "Hablamos Español"
+      },
+      "features": {
+        "pets": "See Comments",
+        "smoking_allowed": true,
+        "trash_service": true,
+        "school_district": "Clifton City School District",
+        "flooring": ["Carpet", "Vinyl"],
+        "other_features": ["Dining Room"]
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator_freezer": "Freezer On Top",
+        "washer": "Stacked Washer / Dryer",
+        "dryer": "Stacked Washer / Dryer",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Dishwasher", "Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "water_heater": "Electric",
+        "high_speed_internet_ready": true,
+        "cable_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "805023",
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Unknown",
+        "kitchen": "Standard",
+        "bathroom": "Standard"
+      },
+      "safety": {
+        "lead_safety": "Presumed Lead Free (constructed after 1977)",
+        "fire_safety": ["Smoke Detector", "Carbon Monoxide Detector"]
+      },
+      "parkingAndEntry": {
+        "type": "Unknown",
+        "allottedParkingSpaces": 1,
+        "in_front_of_entrance": true,
+        "entry_location": "From Interior Hallway",
+        "unit_entry": "Step(s)",
+        "unit_minimum_door_width": "32\" or wider",
+        "other_entry_options": [
+          "Door Knock / Bell Signaler",
+          "Standard Peephole",
+          "Entry Door Intercom",
+          "Deadbolt on Entry Door",
+          "Secured Entry to Building",
+          "Accessible Elevators",
+          "Multi Story Unit"
+        ]
+      },
+      "nearbyServices": {
+        "busStop": "On Site",
+        "shopping_venues": "One Block",
+        "groceryShopping": "One Block",
+        "senior_center": "Five Blocks",
+        "hospital": "Within One Mile",
+        "pharmacy": "Within One Mile"
+      },
+      "comments": {
+        "property": "Pets up to 30 pounds call to inquire about fees and policies."
+      },
+      "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+    }
+  },
+
+  {
+    "property": {
+      "name": "Clifton Main Mews",
+      "image" :"https://api.mylavya.com/resources/placeholder.jpeg",
+
+      "address": "988 Main Ave, Clifton, NJ 07011",
+      "income_restricted": true,
+      "rent": 1188,
+      "deposit": 1188,
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": 0,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "type": "Apartment",
+        "square_feet": 1358,
+        "year_built": 2017
+      },
+      "contact": {
+        "name": "Fern Spinazzola",
+        "role": "Property Manager or Realtor",
+        "company": "Regan Development Corp.",
+        "phone": "914-693-6613",
+        "fax": "833-954-0003",
+        "email": "rentals@regandevelopment.com",
+        "address": "1055 Saw Mill River Road, Suite 204, Ardsley, NY 10502"
+      },
+      "features": {
+        "pets": "Fee -- See Comments",
+        "smoking_allowed": false,
+        "trash_service": true,
+        "pest_control": true,
+        "school_district": "Clifton City School District",
+        "flooring": ["Tile", "Vinyl"]
+      },
+      "appliances": {
+        "microwave": "Unknown",
+        "refrigerator_freezer": "Freezer On Top",
+        "washer": "No Hookup",
+        "dryer": "No Hookup",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Dishwasher"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Gas",
+        "water_heater": "Electric"
+      },
+      "specialized_info": {
+        "listing_id": "1196063",
+        "tax_credit_property": true,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Non-lever handles On Doors And Faucets",
+        "kitchen": "Non-digital Kitchen Appliances (Accessible Option)",
+        "bathroom": "'T' Turn or 60\" Turning Circle in Bathrooms (Accessible Option)"
+      },
+      "safety": {
+        "lead_safety": "Presumed Lead Free (constructed after 1977)",
+        "fire_safety": [
+          "Smoke Detector",
+          "Carbon Monoxide Detector",
+          "Fire Supression / Sprinkler System"
+        ]
+      },
+      "parkingAndEntry": {
+        "type": "Unknown",
+        "in_front_of_entrance": false,
+        "entry_location": "From Outside",
+        "unit_entry": "Flat or no-step entry",
+        "unit_minimum_door_width": "32\" or wider"
+      },
+      "nearbyServices": {
+        "busStop": "Within One Mile",
+        "playground": "Within One Mile",
+        "shopping_venues": "Within Two Miles",
+        "groceryShopping": "Within One Mile",
+        "recreational_facilities": "Within Two Miles",
+        "senior_center": "Within Five Miles",
+        "hospital": "Within Five Miles",
+        "pharmacy": "Within One Mile"
+      },
+      "comments": {
+        "qualifiers_for_income_restriction": {
+          "1_person": 44820,
+          "2_person": 51180,
+          "3_person": 57600,
+          "4_person": 63960,
+          "5_person": 69120,
+          "6_person": 74220
+        },
+        "amenities": ["On-site laundry room", "On-site parking"],
+        "propertyComments": "Pet friendly with a weight restriction of 30 pounds - non-aggressive breeds - One-time pet deposit of $300.00; one pet per household.",
+        "owner_manager_comments": "Income related info/govt issued ID"
+      },
+      "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988"
+    }
+  },
+  {
+    "property": {
+      "name": "Richfield Village Apartments",
+      "image" :"https://api.mylavya.com/resources/placeholder.jpeg",
+
+      "address": "168 Richfield Terrace, Clifton, NJ 07012",
+      "section_8_welcome": false,
+      "income_restricted": false,
+      "rent": 1295,
+      "deposit": 1943,
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Heat"],
+      "application_fee": "50 Per Adult",
+      "background_check_required": true,
+      "contact": {
+        "name": "Leasing Office",
+        "company": "JMG Realty, Inc",
+        "role": "Property Manager or Realtor",
+        "phone": "973-473-7500",
+        "website": "www.richfieldvillageapartments.com"
+      },
+      "unit": {
+        "bedrooms": 0,
+        "bathrooms": 1,
+        "type": "Studio/Efficiency",
+        "square_feet": 410,
+        "year_built": 1947
+      },
+      "features": {
+        "pets": "See Comments",
+        "smoking_allowed": true,
+        "trash_service": true,
+        "pest_control": true,
+        "school_district": "Clifton City School District",
+        "flooring": "Hardwood",
+        "other_features": ["Lawn Care Included"]
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator_freezer": "Freezer On Top",
+        "washer": "No Hookup",
+        "dryer": "No Hookup",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Window Mounted",
+        "heating_type": "Gas",
+        "water_heater": "Gas",
+        "cable_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "619721",
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Unknown",
+        "kitchen": "Standard",
+        "bathroom": "Standard"
+      },
+      "safety": {
+        "lead_safety": "My unit has had an inspection and was found to be Lead-Free Interior.",
+        "fire_safety": ["Smoke Detector", "Carbon Monoxide Detector"]
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": true,
+        "additional_parking": "Onsite parking and garages - optional for an additional fee.",
+        "entry_location": "From Outside",
+        "unit_entry": "Step(s)",
+        "unit_minimum_door_width": "Unknown",
+        "other_entry_options": "Multi Story Unit"
+      },
+      "nearbyServices": {
+        "busStop": "Three Blocks",
+        "groceryShopping": "Three Blocks",
+        "hospital": "Within One Mile",
+        "pharmacy": "Three Blocks"
+      },
+      "comments": {
+        "amenities": "Dogs and Cats are allowed under the following conditions: There is a maximum of two (2) pets per apartment home. Dogs are allowed under 45lbs with a $500.00 non-refundable pet fee. Restricted breeds include Rottweilers, Pit Bulls, Dobermans, and German Shepherds. Additional breeds may be restricted. Cats are allowed with a $250.00 non-refundable pet fee. Cats must be indoor only. A pet lease addendum is required.",
+        "owner_manager_comments": "Please bring a Government issued photo I.D. and proof of income."
+      },
+      "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+    }
+  },
+  {
+    "property": {
+      "name": "Mill on Main",
+      "image" :"https://api.mylavya.com/resources/placeholder.jpeg",
+
+      "address": "1000 Main Ave, Clifton, NJ 07011",
+      "section_8_welcome": true,
+      "income_restricted": true,
+      "rent": 1368,
+      "deposit": 1368,
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": "No Application Fee",
+      "background_check_required": true,
+      "contact": {
+        "name": "Jennifer Liriano-Santelises",
+        "company": "Michaels Org.",
+        "role": "Property Manager or Realtor",
+        "phone": "973-447-3700",
+        "fax": "877-695-0170",
+        "email": "themillonmain@tmo.com"
+      },
+      "unit": {
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "year_built": 2020
+      },
+      "features": {
+        "pets": "Allowed",
+        "smoking_allowed": false,
+        "trash_service": true,
+        "pest_control": true,
+        "school_district": "Clifton City School District",
+        "flooring": "Hardwood"
+      },
+      "appliances": {
+        "microwave": "High Cabinet-mounted Microwave",
+        "refrigerator_freezer": "Freezer On Top",
+        "washer": "No Hookup",
+        "dryer": "No Hookup",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Dishwasher", "Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "water_heater": "Electric"
+      },
+      "specialized_info": {
+        "listing_id": "1077985",
+        "tax_credit_property": true,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Lever Handles On Both Doors And Faucets",
+        "kitchen": "Standard",
+        "bathroom": "Standard"
+      },
+      "safety": {
+        "lead_safety": "Unit presumed to be Lead Free (constructed after 1977)",
+        "fire_safety": ["Smoke Detector", "Carbon Monoxide Detector"]
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": false,
+        "entry_location": "From Interior Hallway",
+        "unit_entry": "Step(s)",
+        "unit_minimum_door_width": "Less Than 32\""
+      },
+      "nearbyServices": {
+        "busStop": "One Block",
+        "groceryShopping": "One Block",
+        "hospital": "Within One Mile",
+        "pharmacy": "Within One Mile"
+      },
+      "comments": {
+        "qualifiers": "Please contact property regarding qualification.",
+        "propertyComments": "Please contact property regarding pet policy.",
+        "owner_manager_comments": "Proof of income. Birth Certificate, and Social Security Card."
+      },
+      "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+    }
+  },
+  {
+    "property": {
+      "name": "Richfield Village Apartments",
+      "image" :"https://api.mylavya.com/resources/placeholder.jpeg",
+
+      "address": "168 Richfield Terrace, Clifton, NJ 07012",
+      "section_8_welcome": false,
+      "income_restricted": false,
+      "rent": 1395,
+      "deposit": 2093,
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Heat"],
+      "application_fee": "50 Per Adult",
+      "background_check_required": true,
+      "contact": {
+        "name": "Leasing Office",
+        "company": "JMG Realty, Inc",
+        "role": "Property Manager or Realtor",
+        "phone": "973-473-7500",
+        "website": "www.richfieldvillageapartments.com"
+      },
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "square_feet": 530,
+        "year_built": 1947
+      },
+      "features": {
+        "pets": "See Comments",
+        "smoking_allowed": true,
+        "trash_service": true,
+        "pest_control": true,
+        "school_district": "Clifton City School District",
+        "flooring": "Hardwood",
+        "other_features": ["Lawn Care Included"]
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator_freezer": "Freezer On Top",
+        "washer": "No Hookup",
+        "dryer": "No Hookup",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Window Mounted",
+        "heating": "Gas",
+        "water_heater": "Gas",
+        "cable_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "619724",
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Unknown",
+        "kitchen": {
+          "front_controls_on_stove": "Accessible Option"
+        },
+        "bathroom": "Standard"
+      },
+      "safety": {
+        "lead_safety": "My unit has had an inspection and was found to be Lead-Free Interior.",
+        "fire_safety": ["Smoke Detector", "Carbon Monoxide Detector"]
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": true,
+        "additional_parking": "Onsite parking and garages - optional for an additional fee.",
+        "entry_location": "From Outside",
+        "unit_entry": "Step(s)",
+        "unit_minimum_door_width": "Unknown",
+        "other_entry_options": "Multi Story Unit"
+      },
+      "nearbyServices": {
+        "busStop": "Three Blocks",
+        "shopping_venues": "Three Blocks",
+        "groceryShopping": "Three Blocks",
+        "pharmacy": "Three Blocks"
+      },
+      "comments": {
+        "amenities": "Dogs and Cats are allowed under the following conditions: There is a maximum of two (2) pets per apartment home. Dogs are allowed under 45lbs with a $500.00 non-refundable pet fee. Restricted breeds include Rottweilers, Pit Bulls, Dobermans, and German Shepherds. Additional breeds may be restricted. Cats are allowed with a $250.00 non-refundable pet fee. Cats must be indoor only. A pet lease addendum is required.",
+        "owner_manager_comments": "Please bring a Government issued photo I.D. and proof of income."
+      },
+      "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+    }
+  },
+  {
+    "property": {
+      "name": "Mill on Main",
+      "image" :"https://api.mylavya.com/resources/placeholder.jpeg",
+
+      "address": "1000 Main Ave, Clifton, NJ 07011",
+      "section_8_welcome": true,
+      "income_restricted": false,
+      "rent": 1570,
+      "deposit": 1570,
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": "No Application Fee",
+      "background_check_required": true,
+      "contact": {
+        "name": "Jennifer Liriano-Santelises",
+        "company": "Michaels Org.",
+        "role": "Property Manager or Realtor",
+        "phone": "973-447-3700",
+        "fax": "877-695-0170",
+        "email": "themillonmain@tmo.com"
+      },
+      "unit": {
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "type": "Apartment",
+        "year_built": 2020
+      },
+      "features": {
+        "pets": "Allowed",
+        "smoking_allowed": false,
+        "trash_service": true,
+        "school_district": "Clifton City School District",
+        "flooring": "Hardwood"
+      },
+      "appliances": {
+        "microwave": "High Cabinet-mounted Microwave",
+        "refrigerator_freezer": "Freezer On Top",
+        "washer": "No Hookup",
+        "dryer": "No Hookup",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Dishwasher", "Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "water_heater": "Electric"
+      },
+      "specialized_info": {
+        "listing_id": "1077986",
+        "tax_credit_property": true,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Lever Handles On Both Doors And Faucets",
+        "kitchen": "Standard",
+        "bathroom": "Standard"
+      },
+      "safety": {
+        "lead_safety": "My unit was constructed after 1977 and is therefore presumed to be Lead Free.",
+        "fire_safety": ["Smoke Detector", "Carbon Monoxide Detector"]
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": false,
+        "entry_location": "From Interior Hallway",
+        "unit_entry": "Step(s)",
+        "unit_minimum_door_width": "Less Than 32\""
+      },
+      "nearbyServices": {
+        "busStop": "One Block",
+        "groceryShopping": "One Block",
+        "hospital": "Within One Mile",
+        "pharmacy": "Within One Mile"
+      },
+      "comments": {
+        "qualifiers_for_sliding_scale_or_income_restriction": "Please contact property regarding qualification.",
+        "property_comments": "Please contact property regarding pet policy.",
+        "owner_manager_comments": "Proof of income. Birth Certificate, and Social Security Card."
+      },
+      "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+    }
+  },
+
+  {
+    "property": {
+      "name": "Richfield Village Apartments",
+      "image" :"https://api.mylavya.com/resources/placeholder.jpeg",
+
+      "address": "168 Richfield Terrace, Clifton, NJ 07012",
+      "section_8_welcome": false,
+      "income_restricted": false,
+      "rent": 1695,
+      "deposit": 2543,
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Heat"],
+      "application_fee": "50 Per Adult",
+      "background_check_required": true,
+      "contact": {
+        "name": "Leasing Office",
+        "company": "JMG Realty, Inc",
+        "role": "Property Manager or Realtor",
+        "phone": "973-473-7500",
+        "website": "www.richfieldvillageapartments.com"
+      },
+      "unit": {
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "square_feet": 675,
+        "year_built": 1947
+      },
+      "features": {
+        "pets": "See Comments",
+        "smoking_allowed": true,
+        "trash_service": true,
+        "pest_control": true,
+        "school_district": "Clifton City School District",
+        "flooring": "Hardwood",
+        "other_features": ["Lawn Care Included"]
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator_freezer": "Freezer On Top",
+        "washer": "No Hookup",
+        "dryer": "No Hookup",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Window Mounted",
+        "heating": "Gas",
+        "water_heater": "Gas",
+        "cable_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "619726",
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Unknown",
+        "kitchen": "Standard",
+        "bathroom": "Standard"
+      },
+      "safety": {
+        "lead_safety": "My unit has had an inspection and was found to be Lead-Free Interior.",
+        "fire_safety": ["Smoke Detector", "Carbon Monoxide Detector"]
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": true,
+        "additional_parking": "Onsite parking and garages - optional for an additional fee.",
+        "entry_location": "From Outside",
+        "unit_entry": "Step(s)",
+        "unit_minimum_door_width": "Unknown",
+        "other_entry_options": "Multi Story Unit"
+      },
+      "nearbyServices": {
+        "busStop": "Three Blocks",
+        "shopping_venues": "Three Blocks",
+        "groceryShopping": "Three Blocks",
+        "pharmacy": "Three Blocks"
+      },
+      "comments": {
+        "amenities": "Dogs and Cats are allowed under the following conditions: There is a maximum of two (2) pets per apartment home. Dogs are allowed under 45lbs with a $500.00 non-refundable pet fee. Restricted breeds include Rottweilers, Pit Bulls, Dobermans, and German Shepherds. Additional breeds may be restricted. Cats are allowed with a $250.00 non-refundable pet fee. Cats must be indoor only. A pet lease addendum is required.",
+        "owner_manager_comments": "Please bring a Government issued photo I.D. and proof of income."
+      },
+      "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+    }
+  },
+
+  {
+    "property": {
+      "name": "Spruce Senior Housing",
+      "image" :"https://api.mylavya.com/resources/placeholder.jpeg",
+
+      "address": "2 Spruce Street, Dover, NJ 07801",
+      "status": "Waiting List",
+      "incomeRestricted": true,
+      "price": {
+        "monthlyRent": 1200,
+        "deposit": 1800
+      },
+      "rent": 1200,
+      "leaseTerm": "One Year",
+      "utilitiesIncluded": ["Water", "Sewer"],
+      "applicationFee": "No Application Fee",
+      "backgroundCheckPolicy": "Background Check Policy - More Info",
+      "unit": {
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "sizeSqFt": null,
+        "yearBuilt": 2004
+      },
+      "contact": {
+        "name": "Katherine Rodriguez",
+        "company": null,
+        "role": "Property Manager or Realtor",
+        "phone": "201-836-4500",
+        "fax": "201-836-4545",
+        "email": "katherinerodriguez@thealtagroup.net",
+        "officeAddress": null
+      },
+      "features": {
+        "pets": {
+          "allowed": false,
+          "weightLimit": null,
+          "restrictions": null,
+          "deposit": null,
+          "maxPets": null
+        },
+        "smoking": "No Smoking",
+        "trashService": true,
+        "pestControl": true,
+        "schoolDistrict": "Dover Town School District",
+        "flooring": ["Carpet"],
+        "furnished": true
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigeratorFreezer": "Freezer On Top",
+        "washerDryerHookup": false,
+        "laundryFacility": "In Basement",
+        "otherAppliances": ["Dishwasher", "Furnished", "Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Other",
+        "heating": "Electric",
+        "waterHeater": "Electric",
+        "cableReady": true,
+        "internetReady": true
+      },
+      "specializedInformation": {
+        "listingID": "1004260",
+        "taxCreditProperty": true,
+        "seniorsOnly": true,
+        "minimumAge": 55,
+        "licensed": false
+      },
+      "accessibility": {
+        "counterVanity": "Standard Height Counters and Vanity",
+        "doorFaucetHandles": "Lever Handles On Both Doors And Faucets",
+        "kitchen": "Front Controls on Stove/Cook-top; Non-digital Kitchen Appliances",
+        "bathroomAccessibility": "Accessible Height Toilet; 'T' Turn or 60\" Turning Circle in Bathrooms; Toilet Grab Bars or Reinforcements; Bath Grab Bars or Reinforcements"
+      },
+      "safety": {
+        "leadSafety": "Constructed after 1977 and presumed to be Lead Free",
+        "fireSafety": [
+          "Smoke Detector With Strobe Accessible Option",
+          "Carbon Monoxide Detector With Strobe Accessible Option",
+          "Strobe Fire Alarm in Unit Accessible Option",
+          "Fire Supression / Sprinkler System"
+        ]
+      },
+      "parkingAndEntry": {
+        "parkingType": "Off Street",
+        "allottedParkingSpaces": 1,
+        "parkingInFront": true,
+        "entryLocation": "From Outside",
+        "unitEntry": "Flat or no-step entry",
+        "doorWidth": "32 inches or wider",
+        "otherEntryOptions": [
+          "Standard Peephole",
+          "Entry Door Intercom",
+          "Secured Entry to Building",
+          "Accessible Elevators"
+        ]
+      },
+      "nearbyServices": {
+        "otherNearby": [
+          "Sidewalks",
+          "Emergency Exits",
+          "Dumpsters",
+          "Clubhouse"
+        ]
+      },
+      "comments": {
+        "incomeRestrictions": "Please contact office.",
+        "amenities": [
+          "Furnished units",
+          "On-site laundry (in basement)",
+          "Off-street parking"
+        ],
+        "propertyComments": "Seniors only, age 55+",
+        "ownerManagerComments": null
+      },
+      "legal": {
+        "fairHousingNotice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+      }
+    }
+  },
+  {
+    "property": {
+      "name": "One Thompson Avenue",
+      "image":"https://api.mylavya.com/resources/one-thompson.jpeg",
+      "address": "1 Thompson Avenue, Dover, NJ 07801",
+      "status": "Waiting List",
+      "incomeRestricted": true,
+
+      "rent": "N/A",
+      "leaseTerm": "One Year",
+      "utilitiesIncluded": ["Water", "Sewer", "Trash Pickup"],
+      "applicationFee": "$25 Per Adult",
+      "backgroundCheckPolicy": "Background Check Policy - More Info",
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "sizeSqFt": null,
+        "yearBuilt": 2021
+      },  
+      "contact": {
+        "name": "Property Manager",
+        "company": "Pennrose Management Company",
+        "role": "Property Manager or Realtor",
+        "phone": "862-322-3191",
+        "fax": null,
+        "email": null,
+        "officeAddress": null
+      },
+      "features": {
+        "pets": {
+          "allowed": "Unknown",
+          "weightLimit": null,
+          "restrictions": null,
+          "deposit": null,
+          "maxPets": null
+        },
+        "smoking": "No Smoking",
+        "trashService": true,
+        "pestControl": null,
+        "schoolDistrict": "Dover Town School District",
+        "flooring": ["Vinyl"]
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigeratorFreezer": "Freezer On Top",
+        "washerDryerHookup": false,
+        "laundryFacility": "On Site",
+        "otherAppliances": ["Dishwasher"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "waterHeater": "Electric",
+        "cableReady": null
+      },
+      "specializedInformation": {
+        "listingID": "1110730",
+        "taxCreditProperty": false,
+        "seniorsOnly": false
+      },
+      "accessibility": {
+        "counterVanity": "Standard Height Counters and Vanity",
+        "doorFaucetHandles": "Non-lever handles On Doors And Faucets",
+        "kitchen": "Standard",
+        "bathroomAccessibility": "Standard"
+      },
+      "safety": {
+        "leadSafety": "Constructed after 1977 and presumed to be Lead Free",
+        "fireSafety": [
+          "Smoke Detector With Strobe Accessible Option",
+          "Carbon Monoxide Detector",
+          "Strobe Fire Alarm in Unit Accessible Option"
+        ]
+      },
+      "parkingAndEntry": {
+        "parkingType": "Off Street",
+        "allottedParkingSpaces": null,
+        "parkingInFront": false,
+        "entryLocation": "From Interior Hallway",
+        "unitEntry": "Flat or no-step entry",
+        "doorWidth": "Unknown"
+      },
+      "nearbyServices": {},
+      "comments": {
+        "incomeRestrictions": "See OneThompsonAve.com for income qualifications.",
+        "amenities": ["On-site laundry room", "Off-street parking"],
+        "propertyComments": null,
+        "ownerManagerComments": "Please bring four most recent pay stubs and a current government issued photo ID or driver's license."
+      },
+      "legal": {
+        "fairHousingNotice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+      }
+    }
+  },
+  {
+    "property": {
+      "name": "One Thompson Avenue",
+      "image":"https://api.mylavya.com/resources/one-thompson.jpeg",
+      "address": "1 Thompson Avenue, Dover, NJ 07801",
+      "status": "Waiting List",
+      "incomeRestricted": true,
+      "rent": 443,
+      "leaseTerm": "One Year",
+      "utilitiesIncluded": ["Water", "Sewer", "Trash Pickup"],
+      "applicationFee": "$25 Per Adult",
+      "backgroundCheckPolicy": "Background Check Policy - More Info",
+      "unit": {
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "sizeSqFt": null,
+        "yearBuilt": 2021
+      },
+      "contact": {
+        "name": "Property Manager",
+        "company": "Pennrose Management Company",
+        "role": "Property Manager or Realtor",
+        "phone": "862-322-3191",
+        "fax": null,
+        "email": null,
+        "officeAddress": null
+      },
+      "features": {
+        "pets": {
+          "allowed": "Unknown",
+          "weightLimit": null,
+          "restrictions": null,
+          "deposit": null,
+          "maxPets": null
+        },
+        "smoking": "No Smoking",
+        "trashService": true,
+        "pestControl": null,
+        "schoolDistrict": "Dover Town School District",
+        "flooring": ["Vinyl"]
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigeratorFreezer": "Freezer On Top",
+        "washerDryerHookup": false,
+        "laundryFacility": "On Site",
+        "otherAppliances": ["Dishwasher"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "waterHeater": "Electric",
+        "cableReady": null
+      },
+      "specializedInformation": {
+        "listingID": "1110734",
+        "taxCreditProperty": false,
+        "seniorsOnly": false
+      },
+      "accessibility": {
+        "counterVanity": "Standard Height Counters and Vanity",
+        "doorFaucetHandles": "Non-lever handles On Doors And Faucets",
+        "kitchen": "Standard",
+        "bathroomAccessibility": "Standard"
+      },
+      "safety": {
+        "leadSafety": "Constructed after 1977 and presumed to be Lead Free",
+        "fireSafety": [
+          "Smoke Detector With Strobe Accessible Option",
+          "Carbon Monoxide Detector",
+          "Strobe Fire Alarm in Unit Accessible Option"
+        ]
+      },
+      "parkingAndEntry": {
+        "parkingType": "Off Street",
+        "allottedParkingSpaces": null,
+        "parkingInFront": false,
+        "entryLocation": "From Interior Hallway",
+        "unitEntry": "Flat or no-step entry",
+        "doorWidth": "Unknown"
+      },
+      "nearbyServices": {},
+      "comments": {
+        "incomeRestrictions": "See OneThompsonAve.com for income qualifications.",
+        "amenities": ["On-site laundry room", "Off-street parking"],
+        "propertyComments": null,
+        "ownerManagerComments": "Please bring four most recent pay stubs and a current government issued photo ID or driver's license."
+      },
+      "legal": {
+        "fairHousingNotice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+      }
+    }
+  },
+  {
+    "property": {
+      "name": "One Thompson Avenue",
+      "image":"https://api.mylavya.com/resources/one-thompson.jpeg",
+      "address": "1 Thompson Avenue, Dover, NJ 07801",
+      "status": "Waiting List",
+      "incomeRestricted": true,
+      "rent": 554,
+      "leaseTerm": "One Year",
+      "utilitiesIncluded": ["Water", "Sewer", "Trash Pickup"],
+      "applicationFee": "$25 Per Adult",
+      "backgroundCheckPolicy": "Background Check Policy - More Info",
+      "unit": {
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "type": "Apartment",
+        "sizeSqFt": null,
+        "yearBuilt": 2021
+      },
+      "contact": {
+        "name": "Property Manager",
+        "company": "Pennrose Management Company",
+        "role": "Property Manager or Realtor",
+        "phone": "862-322-3191",
+        "fax": null,
+        "email": null,
+        "officeAddress": null
+      },
+      "features": {
+        "pets": {
+          "allowed": "Unknown",
+          "weightLimit": null,
+          "restrictions": null,
+          "deposit": null,
+          "maxPets": null
+        },
+        "smoking": "No Smoking",
+        "trashService": true,
+        "pestControl": null,
+        "schoolDistrict": "Dover Town School District",
+        "flooring": ["Vinyl"]
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigeratorFreezer": "Freezer On Top",
+        "washerDryerHookup": false,
+        "laundryFacility": "On Site",
+        "otherAppliances": ["Dishwasher"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "waterHeater": "Electric",
+        "cableReady": null
+      },
+      "specializedInformation": {
+        "listingID": "1110736",
+        "taxCreditProperty": false,
+        "seniorsOnly": false
+      },
+      "accessibility": {
+        "counterVanity": "Standard Height Counters and Vanity",
+        "doorFaucetHandles": "Non-lever handles On Doors And Faucets",
+        "kitchen": "Standard",
+        "bathroomAccessibility": "Standard"
+      },
+      "safety": {
+        "leadSafety": "Constructed after 1977 and presumed to be Lead Free",
+        "fireSafety": [
+          "Smoke Detector With Strobe Accessible Option",
+          "Carbon Monoxide Detector",
+          "Strobe Fire Alarm in Unit Accessible Option"
+        ]
+      },
+      "parkingAndEntry": {
+        "parkingType": "Off Street",
+        "allottedParkingSpaces": null,
+        "parkingInFront": false,
+        "entryLocation": "From Interior Hallway",
+        "unitEntry": "Flat or no-step entry",
+        "doorWidth": "Unknown"
+      },
+      "nearbyServices": {},
+      "comments": {
+        "incomeRestrictions": "See OneThompsonAve.com for income qualifications.",
+        "amenities": ["On-site laundry room", "Off-street parking"],
+        "propertyComments": null,
+        "ownerManagerComments": "Please bring four most recent pay stubs and a current government issued photo ID or driver's license."
+      },
+      "legal": {
+        "fairHousingNotice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+      }
+    }
+  },
+
+  {
+    "property": {
+      "name": "Woodmont Forge Hopewell",
+      "image" :"https://api.mylavya.com/resources/placeholder.jpeg",
+
+      "address": "87 Federal City Road, Hopewell Township, NJ 08534",
+      "income_restricted": true,
+      "income_based_rent_range": {
+        "min": 629,
+        "max": 1507
+      },
+      "deposit": 1507,
+      "rent": "N/A",
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": [],
+      "application_fee": 25,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "sizeSqFt": 936,
+        "built_year": 2023,
+        "max_occupants": 4
+      },
+      "contact": {
+        "company": "CGP&H",
+        "phone": "609-664-2769 (5)",
+        "fax": "609-664-2786",
+        "email": "homes@cgph.net",
+        "address": "1249 South River Road, Suite 301, Cranbury, NJ 08512-3633",
+        "language": "Hablamos Español"
+      },
+      "features": {
+        "pets": "Allowed",
+        "smoking_allowed": true,
+        "trash_service": true,
+        "school_district": "Hopewell Valley Regional School District"
+      },
+      "appliances": {
+        "microwave": "Unknown",
+        "refrigerator_freezer": "Freezer On Top",
+        "clothes_washer": "Front Loading",
+        "clothes_dryer": "Front Loading",
+        "laundry_facility": "In Unit",
+        "other_appliances": ["Dishwasher"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Gas",
+        "water_heater": "Electric"
+      },
+      "specialized_info": {
+        "listing_id": "1278530",
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Non-lever handles On Doors And Faucets",
+        "kitchen": {
+          "type": "Standard"
+        },
+        "bathroom": {
+          "type": "Standard"
+        },
+        "fire_safety": ["Smoke Detector", "Carbon Monoxide Detector"],
+        "entry": {
+          "type": "Flat or no-step entry",
+          "location": "From Interior Hallway"
+        }
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": false,
+        "additional_parking_comments": "Outdoor unassigned parking at no charge. Optional garage parking to rent."
+      },
+      "comments": {
+        "income_qualification": "This is an income restricted property. There is a waiting list for these units. Rents listed are subject to change. Please visit affordablehomesnewjersey.com for current income limits and to join the waiting list.",
+        "property_amenities": [
+          "Clubroom with resident lounge and fireplace",
+          "Avid Game Den",
+          "Ovation Screening Room",
+          "Revolution Fitness Studio",
+          "Virtual Fitness Studio",
+          "Resident Workplace Huddle Rooms",
+          "Pool Terrace with Sundeck",
+          "Bark Park"
+        ],
+        "propertyComments": "There is a waiting list for these units. Please visit affordablehomesnewjersey.com for current income limits and to join the waiting list. This website also has more information about estimated wait times and an FAQ for questions about the programs."
+      },
+      "owner_manager_comments": "Please complete preliminary application online at www.affordablehomesnewjersey.com. If you cannot apply online, please call us at the number on this listing. Please leave a detailed message with your name, phone number, address, and reason for calling so we may assist you. CGP&H administers the Affordable Housing Opportunities on behalf of municipalities throughout the state. Please note that interested applicants must submit a pre-application. There may be a waiting list for units listed as available now. The application process takes several weeks even if there is no waiting list."
+    }
+  },
+
+  {
+    "property": {
+      "name": "Woodmont Forge at Hopewell",
+      "image" :"https://api.mylavya.com/resources/placeholder.jpeg",
+
+      "address": "87 Federal City Road, Hopewell Township, NJ 08534",
+      "income_restricted": true,
+      "income_based_rent_range": {
+        "min": 718,
+        "max": 1733
+      },
+      "deposit": 1733,
+      "rent": "N/A",
+
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Trash Pickup"],
+      "application_fee": 25,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 3,
+        "bathrooms": 1,
+        "sizeSqFt": 1060,
+        "built_year": 2023
+      },
+      "contact": {
+        "company": "CGP&H",
+        "phone": "609-664-2769 (5)",
+        "fax": "609-664-2786",
+        "email": "homes@cgph.net",
+        "address": "1249 South River Road, Suite 301, Cranbury, NJ 08512-3633",
+        "language": "Hablamos Español"
+      },
+      "features": {
+        "pets": "Allowed",
+        "smoking_allowed": true,
+        "trash_service": true,
+        "school_district": "Hopewell Valley Regional School District"
+      },
+      "appliances": {
+        "microwave": "Unknown",
+        "refrigerator_freezer": "Freezer On Top",
+        "clothes_washer": "Front Loading",
+        "clothes_dryer": "Front Loading",
+        "laundry_facility": "In Unit",
+        "other_appliances": ["Dishwasher"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Gas",
+        "water_heater": "Electric"
+      },
+      "specialized_info": {
+        "listing_id": "1278531",
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Non-lever handles On Doors And Faucets",
+        "kitchen": {
+          "type": "Standard"
+        },
+        "bathroom": {
+          "type": "Standard"
+        },
+        "fire_safety": ["Smoke Detector", "Carbon Monoxide Detector"],
+        "entry": {
+          "type": "Flat or no-step entry",
+          "location": "From Interior Hallway"
+        }
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": false,
+        "additional_parking_comments": "Unassigned outdoor parking included. Optional garage parking available to lease at extra cost."
+      },
+      "comments": {
+        "income_qualification": "This is an income restricted property. There is a waiting list for these units. Rents listed are subject to change. Please visit affordablehomesnewjersey.com for current income limits and to join the waiting list.",
+        "property_amenities": [
+          "Clubroom with resident lounge and fireplace",
+          "Avid Game Den",
+          "Ovation Screening Room",
+          "Revolution Fitness Studio",
+          "Virtual Fitness Studio",
+          "Resident Workplace Huddle Rooms",
+          "Pool Terrace with Sundeck",
+          "Bark Park"
+        ],
+        "propertyComments": "There is a waiting list for these units. Please visit affordablehomesnewjersey.com for current income limits and to join the waiting list. This website also has more information about estimated wait times and an FAQ for questions about the programs."
+      },
+      "owner_manager_comments": "Please complete preliminary application online at www.affordablehomesnewjersey.com. If you cannot apply online, please call us at the number on this listing. Please leave a detailed message with your name, phone number, address, and reason for calling so we may assist you. CGP&H administers the Affordable Housing Opportunities on behalf of municipalities throughout the state. Please note that interested applicants must submit a pre-application. There may be a waiting list for units listed as available now. The application process takes several weeks even if there is no waiting list."
+    }
+  },
+
+  {
+    "property": {
+      "name": "61 Stiles Avenue, Unit 3",
+      "image" :"https://api.mylavya.com/resources/stilles.jpeg",
+
+      "address": "61 Stiles Avenue, Unit 3, Haddonfield, NJ 08033",
+      "rent": 519,
+      "deposit": 519,
+
+      "available_from": "04/01/25",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Sewer", "Trash Pickup"],
+      "application_fee": 50,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "type": "Duplex",
+        "built_year": 1908,
+        "sizeSqFt": "Unknown",
+        "max_occupants": 4
+      },
+      "contact": {
+        "company": "Triad Housing, Triad Associates",
+        "phone": "856-690-5749",
+        "fax": "856-690-5622",
+        "email": "housing@triadincorporated.com",
+        "website": "www.triadhousingprograms.com",
+        "address": "1301 W. Forest Grove rd, Vineland, NJ 08360"
+      },
+      "features": {
+        "pets": "Unknown",
+        "smoking_allowed": true,
+        "trash_service": true,
+        "pest_control": true,
+        "school_district": "Haddonfield Borough School District",
+        "flooring": ["Tile", "Vinyl"]
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator_freezer": "Freezer On Top",
+        "clothes_washer": "Stacked Washer / Dryer",
+        "clothes_dryer": "Stacked Washer / Dryer",
+        "laundry_facility": "In Unit",
+        "other_appliances": ["Dishwasher"]
+      },
+      "utilities": {
+        "airConditioner": "Other",
+        "heating": "Gas",
+        "water_heater": "Electric",
+        "cable_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "1334559",
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Lever Handles Only On Faucets",
+        "kitchen": {
+          "type": "Standard"
+        },
+        "bathroom": {
+          "type": "Accessible Height Toilet"
+        },
+        "fire_safety": [
+          "Smoke Detector",
+          "Carbon Monoxide Detector",
+          "Fire Extinguisher"
+        ],
+        "entry": {
+          "type": "Step(s)",
+          "location": "From Outside",
+          "minimum_door_width": "Unknown",
+          "other_entry_options": [
+            "Door Knock / Bell Signaler Accessible Option",
+            "Deadbolt on Entry Door"
+          ]
+        }
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": false
+      },
+      "comments": {
+        "income_qualification": {
+          "2_person": {
+            "min": 18684,
+            "max": 27528
+          },
+          "3_person": {
+            "min": 18684,
+            "max": 30969
+          },
+          "4_person": {
+            "min": 18684,
+            "max": 34410
+          }
+        }
+      }
+    }
+  },
+
+  {
+    "property": {
+      "name": "Birchwood at Tarditi Commons.",
+      "image":"https://api.mylavya.com/resources/brichwood.jpeg",
+
+      "address": "325 Lincoln Ave, Haddonfield, NJ 08033",
+      "price": {
+        "fair_market_rate": 992,
+        "50_percent_income_restricted": 992
+      },
+      "rent": 992,
+      "deposit": 992,
+      "available_from": "Unknown",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Sewer"],
+      "application_fee": 50,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartments",
+        "built_year": 2002,
+        "sizeSqFt": "Unknown",
+        "max_occupants": "Unknown"
+      },
+      "contact": {
+        "company": "Tarditi Commons, Property Manager or Realtor",
+        "phone": "856-216-0167",
+        "email": "Unknown",
+        "website": "Unknown"
+      },
+      "features": {
+        "pets": "Allowed",
+        "smoking_allowed": false,
+        "school_district": "Haddonfield Borough School District",
+        "flooring": "Carpet"
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator_freezer": "Freezer On Top",
+        "clothes_washer": "No Hookup",
+        "clothes_dryer": "No Hookup",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Dishwasher", "Garbage Disposal", "Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Gas",
+        "water_heater": "Gas"
+      },
+      "specialized_info": {
+        "listing_id": "1021105",
+        "tax_credit_property": true,
+        "seniors_only": true,
+        "minimum_age": 62,
+        "licensed": true
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Non-lever handles On Doors And Faucets",
+        "kitchen": {
+          "type": "Standard"
+        },
+        "bathroom": {
+          "type": "Standard"
+        },
+        "fire_safety": [
+          "Smoke Detector Extra Audible With Strobe Accessible Option",
+          "Carbon Monoxide Detector",
+          "Fire Suppression / Sprinkler System",
+          "Fire Extinguisher",
+          "Strobe Fire Alarm in Unit Accessible Option"
+        ],
+        "entry": {
+          "type": "Flat or no-step entry",
+          "location": "From Interior Hallway",
+          "minimum_door_width": "Unknown",
+          "other_entry_options": [
+            "Standard Peephole",
+            "Accessible Peephole Accessible Option",
+            "Secured Entry to Building",
+            "Automatic Entry Door Accessible Option",
+            "Accessible Elevators Accessible Option"
+          ]
+        }
+      },
+      "parkingAndEntry": {
+        "type": "Unknown",
+        "in_front_of_entrance": false
+      },
+      "nearbyServices": [
+        "Sidewalks",
+        "Emergency Exits",
+        "Dumpsters",
+        "Work-out Room"
+      ],
+      "comments": {
+        "income_qualification": "See HUD requirements for min – max income ranges. Please call for income restrictions."
+      },
+      "owner_manager_comments": "We are a provider of quality affordable housing throughout New Jersey and surrounding states. Income restrictions do apply. Prospective Residents should bring all of the following with them: Driver's License or Government issued photo I.D., Birth Certificate, Social Security Card, (4) weeks of Pay stubs and all bank account information. Provide information on stocks, bonds, 401k, annuities, pension, etc. Application fee to be paid by money order only."
+    }
+  },
+
+  {
+    "property": {
+      "name": "61 Stiles Avenue, Unit 2",
+      "address": "61 Stiles Avenue, Unit 2, Haddonfield, NJ, 08033",
+      "image":"https://api.mylavya.com/resources/stilles.jpeg", 
+      "rent": 1035,
+      "deposit": 1035,
+      "available_date": "2025-04-01",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Sewer", "Trash Pickup"],
+      "application_fee": {
+        "amount": 50,
+        "per": "Adult"
+      },
+      "background_check_policy": true,
+      "unit": {
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "property_type": "Duplex",
+        "year_built": 1908,
+        "max_occupants": 4,
+        "days_on_market": 56
+      },
+      "contact": {
+        "name": "Triad Housing",
+        "company": "Triad Associates",
+        "phone": "856-690-5749",
+        "fax": "856-690-5622",
+        "email": "housing@triadincorporated.com",
+        "website": "https://www.triadhousingprograms.com",
+        "address": "1301 W. Forest Grove Rd, Vineland, NJ 08360"
+      },
+      "features": {
+        "pets": "Unknown",
+        "smoking": "Allowed",
+        "trash_service": true,
+        "pest_control": true,
+        "school_district": "Haddonfield Borough School District",
+        "flooring": ["Tile", "Vinyl"]
+      },
+      "appliances": {
+        "microwave": false,
+        "refrigerator_freezer": "Freezer On Top",
+        "clothes_washer": "Stacked Washer / Dryer",
+        "clothes_dryer": "Stacked Washer / Dryer",
+        "laundry_facility": "In Unit",
+        "dishwasher": true
+      },
+      "utilities": {
+        "airConditioner": "Other",
+        "heating": "Gas",
+        "water_heater": "Electric",
+        "cable_ready": true
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Lever Handles Only On Faucets",
+        "kitchen": "Standard",
+        "bathroom": {
+          "accessible_toilet": true
+        }
+      },
+      "safety": {
+        "lead_safety": "Lead-Free",
+        "smoke_detector": true,
+        "carbon_monoxide_detector": true,
+        "fire_extinguisher": true
+      },
+      "parkingAndEntry": {
+        "parking_type": "Off Street",
+        "parking_in_front": false,
+        "entry_location": "From Outside",
+        "unit_entry_steps": true,
+        "unit_minimum_door_width": "Unknown",
+        "other_entry_options": [
+          "Door Knock / Bell Signaler",
+          "Deadbolt on Entry Door"
+        ]
+      },
+      "listing": {
+        "id": 1334552,
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "qualifiers": {
+        "2_person_income": {
+          "min": 27528,
+          "max": 45880
+        },
+        "3_person_income": {
+          "min": 30969,
+          "max": 51615
+        },
+        "4_person_income": {
+          "min": 34410,
+          "max": 57350
+        }
+      },
+      "comments": "Qualifiers For Sliding Scale or Income Restriction: 2 Person: MINIMUM $27,528 per year MAXIMUM $45,880 per year • 3 Person: MINIMUM $30,969 per year MAXIMUM $51,615 per year • 4 Person: MINIMUM $34,410 per year MAXIMUM $57,350 per year"
+    }
+  },
+  {
+    "property": {
+      "name": "129 Fowler Street, Unit 3",
+      "address": "129 Fowler Street, Unit 3, Haddonfield, NJ 08033",
+      "image" : "https://api.mylavya.com/resources/fower-street-unit-three.jpeg",
+      "rent": 1284,
+      "deposit": 1284,
+      "available_from": "03/01/25",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Trash Pickup"],
+      "application_fee": 35,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "type": "Duplex",
+        "built_year": 1897,
+        "days_on_market": 56
+      },
+      "contact": {
+        "company": "Triad Housing, Triad Associates",
+        "phone": "856-690-5749",
+        "fax": "856-690-5622",
+        "email": "housing@triadincorporated.com",
+        "website": "www.triadhousingprograms.com"
+      },
+      "features": {
+        "pets": "Unknown",
+        "smoking_allowed": true,
+        "trash_service": true,
+        "school_district": "Haddonfield Borough School District",
+        "flooring": ["Hardwood", "Tile"],
+        "other_features": ["Half Finished Basement"]
+      },
+      "appliances": {
+        "microwave": "Unknown",
+        "refrigerator_freezer": "Freezer On Top",
+        "clothes_washer": "Top Loading",
+        "clothes_dryer": "Top Loading",
+        "laundry_facility": "In Unit"
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Gas",
+        "water_heater": "Gas",
+        "cable_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "1253891",
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Non-lever handles On Doors And Faucets",
+        "kitchen": {
+          "front_controls_on_stove": "Accessible Option"
+        },
+        "bathroom": {
+          "type": "Standard"
+        },
+        "fire_safety": [
+          "Smoke Detector",
+          "Carbon Monoxide Detector",
+          "Fire Extinguisher"
+        ],
+        "entry": {
+          "type": "Step(s)",
+          "location": "From Outside",
+          "minimum_door_width": "Unknown",
+          "other_entry_options": [
+            "Door Knock / Bell Signaler Accessible Option",
+            "Deadbolt on Entry Door"
+          ]
+        }
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": true,
+        "additional_parking": "Driveway"
+      },
+      "comments": {
+        "income_qualification": {
+          "2_person_minimum_income": 45880,
+          "2_person_maximum_income": 73408,
+          "3_person_minimum_income": 51615,
+          "3_person_maximum_income": 82584,
+          "4_person_minimum_income": 57350,
+          "4_person_maximum_income": 91760
+        }
+      },
+      "owner_manager_comments": "We monitor listings, but if you see an issue, we want to hear from you. Please report any issues related to the listing."
+    }
+  },
+  {
+    "property": {
+      "name": "The Place at Haddonfield",
+      "image" :"https://api.mylavya.com/resources/elizabeth.jpeg",
+      "address": "1105-2205 Elizabeth Place - 20 Snowden Avenue - Haddonfield, NJ 08033",
+      "status": "COMING SOON",
+      "deposit_range": {
+        "min": 654,
+        "max": 1469
+      },
+      "price": {
+        "fair_market_rate": 1480,
+        "60_percent": 979,
+        "50_percent": 798,
+        "30_percent": 436
+      },
+      "construction_status": "Under Construction",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": 30,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartments",
+        "sizeSqFt": 711,
+        "built_year": 2024
+      },
+      "contact": {
+        "company": "Community Investment Strategies INC",
+        "phone": "609-298-2229",
+        "email": "residentrelations@cisnj.com",
+        "website": "www.theplaceathaddonfield.com"
+      },
+      "features": {
+        "pets_allowed": false,
+        "smoking_allowed": false,
+        "trash_service": true,
+        "lawn_care_included": true
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator_freezer": "Freezer On Top",
+        "clothes_washer": "Hookup Only (in Unit)",
+        "clothes_dryer": "Hookup Only (in Unit)",
+        "laundry_facility": "In Unit",
+        "other_appliances": ["Dishwasher", "Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "water_heater": "Electric",
+        "cable_ready": true,
+        "high_speed_internet_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "1335436",
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Lever Handles On Both Doors And Faucets",
+        "kitchen": {
+          "type": "Standard"
+        },
+        "bathroom": {
+          "type": "Standard"
+        },
+        "fire_safety": [
+          "Smoke Detector",
+          "Carbon Monoxide Detector",
+          "Fire Suppression / Sprinkler System"
+        ],
+        "entry": {
+          "type": "Step(s)",
+          "location": "From Outside",
+          "minimum_door_width": "Doorway clear width -- 32\" or wider",
+          "other_entry_options": [
+            "Door Knock / Bell Signaler Accessible Option",
+            "Unit on First Floor Accessible Option",
+            "Multi Story Unit Accessible Option"
+          ]
+        }
+      },
+      "parkingAndEntry": {
+        "type": "On Street",
+        "in_front_of_entrance": true
+      },
+      "comments": {
+        "income_qualification": {
+          "very_low_income": {
+            "1_person_minimum": 24087,
+            "2_person_minimum": 27528,
+            "3_person_minimum": 30969,
+            "4_person_minimum": 34410,
+            "5_person_minimum": 37163,
+            "6_person_minimum": 39916
+          },
+          "low_income": {
+            "1_person_minimum": 40145,
+            "2_person_minimum": 45880,
+            "3_person_minimum": 51615,
+            "4_person_minimum": 57350,
+            "5_person_minimum": 61938,
+            "6_person_minimum": 66526
+          },
+          "moderate_income": {
+            "1_person_minimum": 64232,
+            "2_person_minimum": 73408,
+            "3_person_minimum": 82584,
+            "4_person_minimum": 91760,
+            "5_person_minimum": 99101,
+            "6_person_minimum": 106442
+          }
+        },
+        "preliminary_applications": {
+          "acceptance_period": "60 days",
+          "lottery_process": "A random lottery process will be used to determine the priority order.",
+          "deadline": "Preliminary applications must be received by May 7, 2025.",
+          "estimated_occupancy_start": "July 2025"
+        },
+        "property_application_form": "www.theplaceathaddonfield.com"
+      }
+    }
+  },
+  {
+    "property": {
+      "name": "The Place at Haddonfield",
+      "image" :"https://api.mylavya.com/resources/elizabeth.jpeg",
+      "address": "1105-2205 Elizabeth Place - 20 Snowden Avenue - Haddonfield, NJ 08033",
+      "status": "COMING SOON",
+      "rent": "N/A",
+      "construction_status": "Under Construction",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": 30,
+      "background_check_required": true,
+      "unit": {
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "type": "Apartments",
+        "sizeSqFt": 925,
+        "built_year": 2024
+      },
+      "contact": {
+        "company": "Community Investment Strategies INC",
+        "phone": "609-298-2229",
+        "email": "residentrelations@cisnj.com",
+        "website": "www.theplaceathaddonfield.com"
+      },
+      "features": {
+        "pets_allowed": false,
+        "smoking_allowed": false,
+        "trash_service": true,
+        "lawn_care_included": true
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator_freezer": "Freezer On Top",
+        "clothes_washer": "Hookup Only (in Unit)",
+        "clothes_dryer": "Hookup Only (in Unit)",
+        "laundry_facility": "In Unit",
+        "other_appliances": ["Dishwasher", "Miniblinds"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Electric",
+        "water_heater": "Electric",
+        "cable_ready": true,
+        "high_speed_internet_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "1335442",
+        "tax_credit_property": false,
+        "seniors_only": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Lever Handles On Both Doors And Faucets",
+        "kitchen": {
+          "type": "Standard"
+        },
+        "bathroom": {
+          "type": "Standard"
+        },
+        "fire_safety": [
+          "Smoke Detector",
+          "Carbon Monoxide Detector",
+          "Fire Suppression / Sprinkler System"
+        ],
+        "entry": {
+          "type": "Step(s)",
+          "location": "From Outside",
+          "minimum_door_width": "Doorway clear width -- 32\" or wider",
+          "other_entry_options": [
+            "Door Knock / Bell Signaler Accessible Option",
+            "Unit on First Floor Accessible Option",
+            "Multi Story Unit Accessible Option"
+          ]
+        }
+      },
+      "parkingAndEntry": {
+        "type": "On Street",
+        "in_front_of_entrance": true
+      },
+      "comments": {
+        "income_qualification": {
+          "very_low_income": {
+            "1_person_minimum": 24087,
+            "2_person_minimum": 27528,
+            "3_person_minimum": 30969,
+            "4_person_minimum": 34410,
+            "5_person_minimum": 37163,
+            "6_person_minimum": 39916
+          },
+          "low_income": {
+            "1_person_minimum": 40145,
+            "2_person_minimum": 45880,
+            "3_person_minimum": 51615,
+            "4_person_minimum": 57350,
+            "5_person_minimum": 61938,
+            "6_person_minimum": 66526
+          },
+          "moderate_income": {
+            "1_person_minimum": 64232,
+            "2_person_minimum": 73408,
+            "3_person_minimum": 82584,
+            "4_person_minimum": 91760,
+            "5_person_minimum": 99101,
+            "6_person_minimum": 106442
+          }
+        },
+        "preliminary_applications": {
+          "acceptance_period": "60 days",
+          "lottery_process": "A random lottery process will be used to determine the priority order.",
+          "deadline": "Preliminary applications must be received by May 7, 2025.",
+          "estimated_occupancy_start": "July 2025"
+        },
+        "property_application_form": "www.theplaceathaddonfield.com"
+      }
+    }
+  },
+  {
+    "property": {
+      "name": "SENIOR HORIZON AT CLIFTON",
+      "image": "https://api.mylavya.com/resources/placeholder.jpeg" ,
+      "address": "714 Clifton Ave, Clifton, NJ 07013",
+      "section_8_welcome": false,
+      "income_restricted": false,
+      "rent": 1000,
+      "deposit": 1000,
+      "availability": "Waiting List",
+      "lease_term": "One Year Lease",
+      "utilities_included": ["Water", "Sewer", "Trash Pickup"],
+      "application_fee": "No Application Fee",
+      "background_check_required": true,
+      "contact": {
+        "name": "Gabriela Martinez Fleming",
+        "company": "The Michael's Organization",
+        "role": "Property Manager or Realtor",
+        "phone": "973-594-0058",
+        "fax": "Unknown",
+        "email": "Unknown",
+        "address": "Unknown"
+      },
+      "unit": {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "type": "Apartment",
+        "square_feet": 670,
+        "year_built": 2003,
+        "max_occupants": 126
+      },
+      "features": {
+        "pets": "Unknown",
+        "smoking_allowed": false,
+        "trash_service": true,
+        "pest_control": true,
+        "school_district": "Clifton City School District",
+        "flooring": "Hardwood, Vinyl"
+      },
+      "appliances": {
+        "microwave": "None",
+        "refrigerator_freezer": "Freezer On Top",
+        "washer": "Front Loading",
+        "dryer": "Front Loading",
+        "laundry_facility": "On Site",
+        "other_appliances": ["Dishwasher"]
+      },
+      "utilities": {
+        "airConditioner": "Central",
+        "heating": "Gas",
+        "water_heater": "Gas",
+        "cable_ready": true
+      },
+      "specialized_info": {
+        "listing_id": "1155661",
+        "tax_credit_property": false,
+        "seniors_only": true,
+        "minimum_age": "Unknown",
+        "licensed": false
+      },
+      "accessibility": {
+        "counter_vanity": "Standard Height Counters and Vanity",
+        "door_faucet_handles": "Lever Handles On Both Doors And Faucets",
+        "kitchen": "Non-digital Kitchen Appliances Accessible Option",
+        "bathroom": [
+          "Toilet Grab Bars or Reinforcements Accessible Option",
+          "Bath Grab Bars or Reinforcements Accessible Option"
+        ]
+      },
+      "safety": {
+        "lead_safety": "My unit was constructed after 1977 and is therefore presumed to be Lead Free.",
+        "fire_safety": [
+          "Smoke Detector",
+          "Carbon Monoxide Detector",
+          "Fire Suppression / Sprinkler System"
+        ]
+      },
+      "parkingAndEntry": {
+        "type": "Off Street",
+        "in_front_of_entrance": true,
+        "entry_location": "Unknown",
+        "unit_entry": "Flat or no-step entry",
+        "unit_minimum_door_width": "Doorway clear width -- 32\" or wider",
+        "other_entry_options": [
+          "Entry Door Intercom",
+          "Accessible Elevators Accessible Option",
+          "Multi Story Unit Accessible Option"
+        ]
+      },
+      "nearbyServices": {
+        "busStop": "Unknown",
+        "playground": "Unknown",
+        "shopping_venues": "Unknown",
+        "groceryShopping": "Unknown",
+        "recreational_facilities": "Unknown",
+        "seniorCenter": "Unknown",
+        "hospital": "Unknown",
+        "pharmacy": "Unknown",
+        "alsoNearby": [
+          "Community room",
+          "TV Room",
+          "Gym",
+          "Computer room",
+          "Library"
+        ]
+      },
+      "comments": {
+        "qualifiers_for_sliding_scale_or_income_restriction": "Not specified.",
+        "amenities": [
+          "Community room",
+          "TV Room",
+          "Gym",
+          "Computer room",
+          "Library"
+        ],
+        "property_comments": "Unknown",
+        "owner_manager_comments": "Unknown"
+      },
+      "legal_notice": "Under the Federal Fair Housing Act of 1968, as amended in 1988, it is illegal to engage in discriminatory advertising based on race, color, religion, sex, familial status, disability, and national origin."
+    }
+  }
+]
+
