@@ -18,7 +18,6 @@ import AvailableforRent from "./HomeScreenComp/AvailableforRent";
 
 import CustomText from "../common/Text";
 
-
 const { width } = Dimensions.get("window");
 
 const HomeScreen = () => {
@@ -64,11 +63,9 @@ const HomeScreen = () => {
 
   return (
     <>
-
       <SafeAreaView style={{ flex: 1 }}>
-
-      <StatusBar barStyle="dark-content" backgroundColor="white" />
-      <ScrollView style={styles.container}>
+        <StatusBar barStyle="dark-content" backgroundColor="white" />
+        <ScrollView style={styles.container}>
           <Image
             source={require("../../assets/images/background/picnic.png")}
             style={{

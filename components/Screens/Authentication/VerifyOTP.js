@@ -64,7 +64,7 @@ const VerifyOTPScreen = () => {
         </TouchableOpacity>
 
         {/* Back to Login */}
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Login")}>
           <Text style={styles.backText}>back to login</Text>
         </TouchableOpacity>
       </View>

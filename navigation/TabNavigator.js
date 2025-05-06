@@ -83,8 +83,8 @@ const TabNavigator = () => {
                 iconName = focused ? ProfileActive : Profile;
                 break;
               case "Subscriptions":
-                  iconName = focused ? SubscriptionActive : Subscription;
-                  break;
+                iconName = focused ? SubscriptionActive : Subscription;
+                break;
             }
 
             return (

@@ -12,14 +12,14 @@ const InternationalMigrations = () => {
           imageSource={{
             uri: "https://images.unsplash.com/photo-1557335200-a65f7f032602?q=80&w=3558&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           }}
-          title="Texas"
+          title="Dover"
           subtitle="345 rented props"
         />
         <Card
           imageSource={{
             uri: "https://images.unsplash.com/photo-1619083382085-9452906b7157?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhbGlmb3JuaWF8ZW58MHx8MHx8fDA%3D",
           }}
-          title="California"
+          title="Clifton"
           subtitle="290 rented props"
         />
       </View>
@@ -40,10 +40,7 @@ const InternationalMigrations = () => {
             Want to host your {"\n"} own place?
           </CustomTextBold>
           <Text></Text>
-          <CustomText style={styles.hostSubtitle}>
-            Earn passive income by
-            {"\n"}renting or selling your
-          </CustomText>
+          <CustomText style={styles.hostSubtitle}>COMING SOON</CustomText>
         </View>
       </View>
     </View>

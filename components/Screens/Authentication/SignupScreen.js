@@ -10,8 +10,6 @@ import {
   Image,
   ActivityIndicator,
 } from "react-native";
-import axios from "axios";
-import { Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { SignupAPI } from "../../../utils/apicalls/SignupApi";
 
@@ -21,17 +19,43 @@ export default function SignupScreen() {
   const [email, setEmail] = useState("");
   const [passcode, setPasscode] = useState("");
   const [confirmPasscode, setConfirmPasscode] = useState("");
-  const [userType, setUserType] = useState("");
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+
   const navigation = useNavigation();
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!firstName.trim()) newErrors.firstName = "First name is required.";
+    if (!lastName.trim()) newErrors.lastName = "Last name is required.";
+    if (!email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = "Enter a valid email.";
+    }
+    if (!passcode) newErrors.passcode = "Passcode is required.";
+    else if (passcode.length < 6)
+      newErrors.passcode = "Passcode must be at least 6 characters.";
+    if (!confirmPasscode)
+      newErrors.confirmPasscode = "Confirm passcode is required.";
+    else if (confirmPasscode !== passcode)
+      newErrors.confirmPasscode = "Passcodes do not match.";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = async () => {
+    if (!validateForm()) return;
+
     const userData = {
       firstName,
       lastName,
       email,
       password: passcode,
     };
+
     await SignupAPI(
       passcode,
       confirmPasscode,
@@ -40,6 +64,7 @@ export default function SignupScreen() {
       navigation
     );
   };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -47,25 +72,35 @@ export default function SignupScreen() {
           <Image
             style={styles.image}
             source={require("../../../assets/images/background/login.png")}
-            resizeMode="cover" // Or "contain", depending on desired fit
+            resizeMode="cover"
           />
         </View>
         <Text style={styles.title}>Sign up</Text>
         <Text style={styles.subtitle}>we need something more</Text>
 
         <View style={styles.row}>
-          <TextInput
-            style={[styles.input, { flex: 1, marginRight: 8 }]}
-            placeholder="Firstname"
-            value={firstName}
-            onChangeText={setFirstName}
-          />
-          <TextInput
-            style={[styles.input, { flex: 1 }]}
-            placeholder="Lastname"
-            value={lastName}
-            onChangeText={setLastName}
-          />
+          <View style={{ flex: 1, marginRight: 8 }}>
+            <TextInput
+              style={styles.input}
+              placeholder="Firstname"
+              value={firstName}
+              onChangeText={setFirstName}
+            />
+            {errors.firstName && (
+              <Text style={styles.errorText}>{errors.firstName}</Text>
+            )}
+          </View>
+          <View style={{ flex: 1 }}>
+            <TextInput
+              style={styles.input}
+              placeholder="Lastname"
+              value={lastName}
+              onChangeText={setLastName}
+            />
+            {errors.lastName && (
+              <Text style={styles.errorText}>{errors.lastName}</Text>
+            )}
+          </View>
         </View>
 
         <TextInput
@@ -76,6 +111,7 @@ export default function SignupScreen() {
           value={email}
           onChangeText={setEmail}
         />
+        {errors.email && <Text style={styles.errorText}>{errors.email}</Text>}
 
         <TextInput
           style={styles.input}
@@ -84,6 +120,9 @@ export default function SignupScreen() {
           value={passcode}
           onChangeText={setPasscode}
         />
+        {errors.passcode && (
+          <Text style={styles.errorText}>{errors.passcode}</Text>
+        )}
 
         <TextInput
           style={styles.input}
@@ -92,14 +131,9 @@ export default function SignupScreen() {
           value={confirmPasscode}
           onChangeText={setConfirmPasscode}
         />
-
-        <Text style={styles.label}>TYPE OF USER</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Choose your user-type"
-          value={userType}
-          onChangeText={setUserType}
-        />
+        {errors.confirmPasscode && (
+          <Text style={styles.errorText}>{errors.confirmPasscode}</Text>
+        )}
 
         <TouchableOpacity
           style={styles.submitButton}
@@ -134,19 +168,6 @@ const styles = StyleSheet.create({
     padding: 24,
     justifyContent: "center",
   },
-  titleTop: {
-    fontSize: 20,
-    fontWeight: "700",
-    color: "#1F1D5B",
-    textAlign: "center",
-    marginBottom: 4,
-  },
-  subtitleTop: {
-    fontSize: 14,
-    color: "#1F1D5B",
-    textAlign: "center",
-    marginBottom: 24,
-  },
   title: {
     fontSize: 32,
     fontWeight: "700",
@@ -162,20 +183,19 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: "row",
-    marginBottom: 16,
   },
   input: {
     backgroundColor: "#F2F2F2",
     borderRadius: 8,
     padding: 14,
     fontSize: 16,
-    marginBottom: 16,
+    marginBottom: 4,
+    marginTop: 10,
   },
-  label: {
+  errorText: {
+    color: "red",
     fontSize: 12,
-    color: "#999",
-    marginBottom: 6,
-    marginTop: 8,
+    marginBottom: 8,
   },
   submitButton: {
     backgroundColor: "#3E5BF5",

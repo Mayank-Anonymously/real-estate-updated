@@ -8,11 +8,17 @@ import {
   SafeAreaView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-const SubscriptionScreen = ({ navigation }) => {
+const SubscriptionScreen = () => {
+  const route = useRoute();
+  const { title, address } = route?.params ?? "";
+  const navigation = useNavigation();
   const handleSubscribe = () => {
-    // navigate to payment flow or show modal
-    alert("Subscribe functionality coming soon!");
+    navigation.navigate("Contact_now", {
+      title: title,
+      address: address,
+    });
   };
 
   return (
@@ -20,20 +26,22 @@ const SubscriptionScreen = ({ navigation }) => {
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.header}>Choose Your Plan</Text>
 
-        {/* Free Plan Section */}
         <View style={styles.card}>
-          <Text style={[styles.planTitle ,  {  color : "#000"}]}>Free Plan</Text>
+          <Text style={[styles.planTitle, { color: "#000" }]}>Free Plan</Text>
           <View style={styles.feature}>
             <Ionicons name="checkmark-circle" size={20} color="#6246EA" />
-            <Text style={styles.featureText}>View all listings (no pricing)</Text>
+            <Text style={styles.featureText}>
+              View all listings (no pricing)
+            </Text>
           </View>
           <View style={styles.feature}>
             <Ionicons name="checkmark-circle" size={20} color="#6246EA" />
-            <Text style={styles.featureText}>Create account & save preferences</Text>
+            <Text style={styles.featureText}>
+              Create account & save preferences
+            </Text>
           </View>
         </View>
 
-        {/* Premium Plan Section */}
         <View style={[styles.card, styles.premiumCard]}>
           <Text style={styles.planTitle}>Premium Plan</Text>
           <Text style={styles.price}>$29 / month</Text>
@@ -66,7 +74,8 @@ const SubscriptionScreen = ({ navigation }) => {
         </TouchableOpacity>
 
         <Text style={styles.disclaimer}>
-          Cancel anytime. Applications will be submitted manually on 3rd-party portals with your consent.
+          Cancel anytime. Applications will be submitted manually on 3rd-party
+          portals with your consent.
         </Text>
       </ScrollView>
     </SafeAreaView>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import {
   View,
   Text,
@@ -9,7 +9,11 @@ import {
   Pressable,
   Platform,
 } from "react-native";
-import { Ionicons, FontAwesome } from "@expo/vector-icons";
+import {
+  Ionicons,
+  FontAwesome,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
 import CustomText from "../common/Text";
 import { Button } from "react-native-paper";
 
@@ -32,6 +36,22 @@ const PropertyCard = ({
     }
     loadFonts();
   }, []);
+
+  const desc = description
+    .replace(/\u00A0/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const cleanedStrig = desc.split("•").map((part) => part.trim());
+
+  // Define the function inside the component
+  const getRandomRating = () => {
+    const min = 3.0;
+    const max = 5.0;
+    return (Math.random() * (max - min) + min).toFixed(1);
+  };
+
+  // Use useMemo to call the function once when the component renders
+  const randomRating = useMemo(() => getRandomRating(), []);
 
   return (
     <>
@@ -57,8 +77,34 @@ const PropertyCard = ({
 
               <View style={styles.infoRow}>
                 <View style={styles.iconText}>
-                  <Ionicons name="bed-outline" size={16} color="#888" />
-                  <CustomText style={styles.infoText}>{description}</CustomText>
+                  <MaterialCommunityIcons
+                    name="bed-outline"
+                    size={16}
+                    color="#888"
+                  />
+                  <CustomText style={styles.infoText}>
+                    {cleanedStrig[0]}
+                  </CustomText>
+                </View>
+                <View style={styles.iconText}>
+                  <MaterialCommunityIcons
+                    name="shower"
+                    size={16}
+                    color="#888"
+                  />
+                  <CustomText style={styles.infoText}>
+                    {cleanedStrig[1]}
+                  </CustomText>
+                </View>
+                <View style={styles.iconText}>
+                  <MaterialCommunityIcons
+                    name="office-building"
+                    size={16}
+                    color="#888"
+                  />
+                  <CustomText style={styles.infoText}>
+                    {cleanedStrig[2]}
+                  </CustomText>
                 </View>
               </View>
             </View>
@@ -75,7 +121,8 @@ const PropertyCard = ({
               </View>
               <TouchableOpacity>
                 <CustomText style={styles.ratingText}>
-                  <FontAwesome name="star" size={14} color="#FFA500" /> 4.8{" "}
+                  <FontAwesome name="star" size={14} color="#FFA500" />{" "}
+                  {randomRating}{" "}
                 </CustomText>
               </TouchableOpacity>
             </View>
@@ -101,13 +148,12 @@ const styles = StyleSheet.create({
     elevation: 3,
     width: width / 1.2,
     flexDirection: "row",
-    height: height / 4,
+    height: height / 3.5,
     shadowColor: "black",
     shadowOpacity: 2,
     shadowRadius: 16,
     borderWidth: 1,
     borderColor: "whitesmoke",
-    marginTop: 30,
   },
   image: {
     width: 120,
@@ -142,7 +188,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   infoRow: {
-    flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 10,
   },

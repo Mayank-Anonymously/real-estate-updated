@@ -19,7 +19,7 @@ const RootStack = createStackNavigator();
 
 const RootStackNavigator = () => {
   return (
-    <RootStack.Navigator >
+    <RootStack.Navigator>
       <RootStack.Screen
         name="Splash"
         options={{ headerShown: false, headerTitle: "" }}

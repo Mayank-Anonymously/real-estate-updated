@@ -38,9 +38,7 @@ export default function PropertyDetailScreen() {
       await Font.loadAsync({
         "Hind-Jalandhar": require("../../assets/fonts/Hind/Hind-Regular.ttf"),
         "Hind-Jalandhar-Bold": require("../../assets/fonts/Hind/Hind-Bold.ttf"),
-
         "Hind-Jalandhar": require("../../assets/fonts/Hind/Hind-Light.ttf"),
-
         "Hind-Jalandhar": require("../../assets/fonts/Hind/Hind-Medium.ttf"),
       });
       setFontsLoaded(true);
@@ -61,6 +59,11 @@ export default function PropertyDetailScreen() {
   // var accessibility = data.accessibility;
 
   if (data.length === undefined) {
+    const desc = data.description
+      .replace(/\u00A0/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    const cleanedStrig = desc.split("•").map((part) => part.trim());
     return (
       <>
         <StatusBar />
@@ -121,8 +124,8 @@ export default function PropertyDetailScreen() {
               <TouchableOpacity
                 style={styles.videoButton}
                 onPress={() =>
-                  navigation.navigate("Contact_now", {
-                    title: data.name,
+                  navigation.navigate("Subscriptions", {
+                    title: data.title,
                     address: data.address,
                   })
                 }
@@ -153,7 +156,7 @@ export default function PropertyDetailScreen() {
                   <CustomText>{data.address}</CustomText>
                 </View>
                 <View>
-                  <CustomText>{data.description}</CustomText>
+                  <CustomText>{cleanedStrig}</CustomText>
                 </View>
                 <ScrollView horizontal={true}>
                   <View style={{ marginTop: 60 }}>
@@ -632,20 +635,14 @@ export default function PropertyDetailScreen() {
               </View>
             </ScrollView>
             <View style={styles.footerFixed}>
-              <View>
-                <CustomText style={styles.footerPrice}>
-                  {data.price} / month
-                </CustomText>
-                <CustomText style={styles.footerEstimation}>
-                  Payment estimation
-                </CustomText>
-              </View>
               <TouchableOpacity
                 style={styles.contactButton}
                 onPress={() =>
-                  navigation.navigate("Contact_now", {
-                    title: data.name,
-                    address: data.address,
+                  navigation.navigate("Root", {
+                    screen: "Tabs",
+                    params: {
+                      screen: "Subscriptions",
+                    },
                   })
                 }
               >
@@ -659,8 +656,10 @@ export default function PropertyDetailScreen() {
     );
   } else {
     return (
-      <><ActivityIndicator size="small" color="#917AFD" />
-      </>)
+      <>
+        <ActivityIndicator size="small" color="#917AFD" />
+      </>
+    );
   }
 }
 
@@ -742,7 +741,7 @@ const styles = StyleSheet.create({
   contactText: { color: "#fff", fontWeight: "600" },
   footerFixed: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 16,
     paddingVertical: 16,

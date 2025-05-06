@@ -22,18 +22,20 @@ const RenderList = ({ item }) => {
   const navigation = useNavigation();
 
   return (
-    <PropertyCard
-      onPress={() =>
-        navigation.navigate("PropertyDetail", {
-         id : item._id,
-        })
-      }
-      title={item.title}
-      location={item.address}
-      price={item.price}
-      description={item.description}
-      image={item.image}
-    />
+    <View style={{ justifyContent: "center", alignItems: "center" }}>
+      <PropertyCard
+        onPress={() =>
+          navigation.navigate("PropertyDetail", {
+            id: item._id,
+          })
+        }
+        title={item.title}
+        location={item.address}
+        price={item.price}
+        description={item.description}
+        image={item.image}
+      />
+    </View>
   );
 };
 
@@ -47,51 +49,50 @@ const Propertlistings = () => {
 
   return (
     <>
-    <View style={{ backgroundColor: "white", alignItems: "center" }}>
-      <View
-        style={{
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexDirection: "row",
-          width: "90%",
-          marginHorizontal: 20,
-          margin: 20,
-        }}
-        >
-        <Pressable
-          onPress={() => {
-            navigation.goBack();
+      <View style={{ backgroundColor: "white", alignItems: "center" }}>
+        <View
+          style={{
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexDirection: "row",
+            width: "90%",
+            marginHorizontal: 20,
+            margin: 20,
           }}
+        >
+          <Pressable
+            onPress={() => {
+              navigation.goBack();
+            }}
           >
-          <Image
-            style={{ width: 30, height: 30 }}
-            source={require("../../assets/navigation/back.png")}
+            <Image
+              style={{ width: 30, height: 30 }}
+              source={require("../../assets/navigation/back.png")}
             />
-        </Pressable>
-        <Text style={{ fontWeight: "bold", color: "#1A1E25", fontSize: 19 }}>
-          Showing Results
-        </Text>
-        <Text>
-          <Ionicons
-            name="filter-outline"
-            onPress={() => setModalVisible(!modalVisible)}
-            size={23}
-            color="black"
+          </Pressable>
+          <Text style={{ fontWeight: "bold", color: "#1A1E25", fontSize: 19 }}>
+            Showing Results
+          </Text>
+          <Text>
+            <Ionicons
+              name="filter-outline"
+              onPress={() => setModalVisible(!modalVisible)}
+              size={23}
+              color="black"
             />
-        </Text>
+          </Text>
+        </View>
       </View>
-      
-      </View>    {modalVisible && <FilterScreen />}
-    {
-      data.length >  0 ? 
-      <FlatList
-        data={data}
-        renderItem={({ item }) => <RenderList item={item} />}
-      />
-      : <ActivityIndicator size="large" color="#917AFD"/> 
-    }
-
-</>
+      {modalVisible && <FilterScreen />}
+      {data.length > 0 ? (
+        <FlatList
+          data={data}
+          renderItem={({ item }) => <RenderList item={item} />}
+        />
+      ) : (
+        <ActivityIndicator size="large" color="#917AFD" />
+      )}
+    </>
   );
 };
 

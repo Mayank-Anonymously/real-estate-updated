@@ -30,7 +30,8 @@
     "react-native-raw-bottom-sheet": "^3.0.0",
     "react-native-reanimated": "~3.17.4",
     "react-native-safe-area-context": "^5.4.0",
-    "expo-updates": "~0.28.12"
+    "expo-updates": "~0.28.12",
+    "react-native-gesture-handler": "~2.24.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
