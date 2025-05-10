@@ -17,6 +17,9 @@ import Explore from "../../assets/tabbaricon/explore.png";
 import ExploreActive from "../../assets/tabbaricon/explore-fill.png";
 import Profile from "../../assets/tabbaricon/profile.png";
 import ProfileActive from "../../assets/tabbaricon/profile-fill.png";
+
+import Subscription from "../../assets/tabbaricon/subscription.png";
+import SubscriptionActive from "../../assets/tabbaricon/subscription-fill.png";
 const TabArr = [
   {
     route: "Home",
@@ -29,8 +32,8 @@ const TabArr = [
     alphaClr: Colors.whitesmoke,
   },
   {
-    route: "Wishlist",
-    label: "Wishlist",
+    route: "Explore",
+    label: "Explore",
     type: Icons.Feather,
     icon: "heart",
     component: ExploreScreen,
@@ -38,17 +41,17 @@ const TabArr = [
     alphaClr: Colors.whitesmoke,
   },
   {
-    route: "Orders",
-    label: "Orders",
+    route: "Subscription",
+    label: "Subs",
     type: Icons.Feather,
     icon: "clipboard",
-    component: ProfileScreen,
+    component: SubscriptionScreen,
     color: Colors.pink,
     alphaClr: Colors.whitesmoke,
   },
   {
-    route: "Account",
-    label: "Account",
+    route: "Profile",
+    label: "Profile",
     type: Icons.AntDesign,
     icon: "user",
     component: ProfileScreen,
@@ -61,7 +64,7 @@ const Tab = createBottomTabNavigator();
 
 const TabButton = (props) => {
   const { item, onPress, accessibilityState } = props;
-  const focused = accessibilityState?.selected ?? false;
+  const focused = useIsFocused();
 
   const viewRef = useRef(null);
   const textViewRef = useRef(null);
@@ -75,6 +78,61 @@ const TabButton = (props) => {
     }
   }, [focused]);
 
+  // Replace vector icons with images based on the 'focused' state
+  const renderImage = (focused) => {
+    switch (item.route) {
+      case "Home":
+        return focused ? (
+          <Image
+            source={HomeActive}
+            style={{ width: 22, height: 22, resizeMode: "contain" }}
+          />
+        ) : (
+          <Image
+            source={Home}
+            style={{ width: 22, height: 22, resizeMode: "contain" }}
+          />
+        );
+      case "Explore":
+        return focused ? (
+          <Image
+            source={ExploreActive}
+            style={{ width: 22, height: 22, resizeMode: "contain" }}
+          />
+        ) : (
+          <Image
+            source={Explore}
+            style={{ width: 22, height: 22, resizeMode: "contain" }}
+          />
+        );
+      case "Subscription":
+        return focused ? (
+          <Image
+            source={SubscriptionActive}
+            style={{ width: 22, height: 22, resizeMode: "contain" }}
+          />
+        ) : (
+          <Image
+            source={Subscription}
+            style={{ width: 22, height: 22, resizeMode: "contain" }}
+          />
+        );
+      case "Profile":
+        return focused ? (
+          <Image
+            source={ProfileActive}
+            style={{ width: 22, height: 22, resizeMode: "contain" }}
+          />
+        ) : (
+          <Image
+            source={Profile}
+            style={{ width: 22, height: 22, resizeMode: "contain" }}
+          />
+        );
+      default:
+        return null;
+    }
+  };
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -96,12 +154,7 @@ const TabButton = (props) => {
             { backgroundColor: focused ? null : item.alphaClr },
           ]}
         >
-          <Icon
-            type={item.type}
-            name={item.icon}
-            size={20}
-            color={focused ? Colors.white : Colors.dark}
-          />
+          {renderImage(focused)} {/* Render the image based on focus state */}
           <Animatable.View ref={textViewRef} easing={"ease-in-out-cubic"}>
             {focused && (
               <View style={{ flexDirection: "row" }}>
@@ -128,11 +181,12 @@ import {
   AntDesign,
   EvilIcons,
 } from "react-native-vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 import { DrawerActions } from "@react-navigation/native";
 import HomeScreen from "../../components/Screens/HomeScreen";
 import ExploreScreen from "../../components/Screens/ExploreScreen";
 import ProfileScreen from "../../components/Screens/ProfileScreen";
+import SubscriptionScreen from "../../components/Screens/SubscriptionScreen";
 
 export default function MyTabs(props) {
   const Width = Dimensions.get("screen").width;
@@ -170,6 +224,7 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 20,
   },
   btn: {
     flexDirection: "row",

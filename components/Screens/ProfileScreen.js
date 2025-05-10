@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   SafeAreaView,
   StatusBar,
@@ -7,13 +7,25 @@ import {
   StyleSheet,
   Switch,
   ScrollView,
+  Pressable,
 } from "react-native";
 import { Avatar } from "react-native-paper";
 import { AntDesign, Entypo } from "react-native-vector-icons";
+import { getUserEmail, getUserName } from "../../utils/AsyncData/getItem";
+import { useNavigation } from "@react-navigation/native";
 
 const ProfileScreen = () => {
   const [isLandlord, setIsLandlord] = useState(false);
   const toggleSwitch = () => setIsLandlord((prev) => !prev);
+  const [value, setValue] = useState("");
+  const [email, setEmail] = useState("");
+
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    getUserName(setValue);
+    getUserEmail(setEmail);
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -23,9 +35,9 @@ const ProfileScreen = () => {
       <View style={styles.content}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.header}>
-            <Avatar.Image source={require("../../assets/icon.png")} />
-            <Text style={styles.name}>Bimal Shrestha</Text>
-            <Text style={styles.email}>bimalxyzz@gmail.com</Text>
+            <Avatar.Image source={require("../../assets/avatars/male.png")} />
+            <Text style={styles.name}>{value}</Text>
+            <Text style={styles.email}>{email}</Text>
           </View>
 
           {[
@@ -48,12 +60,15 @@ const ProfileScreen = () => {
 
       {/* Bottom Switch */}
       <View style={styles.bottomSwitch}>
-        <View style={styles.optionLeft}>
+        <Pressable
+          style={styles.optionLeft}
+          onPress={() => navigation.navigate("Login")}
+        >
           <View style={styles.iconBox}>
             <AntDesign name="swap" size={20} color={"black"} />
           </View>
           <Text style={styles.optionLabel}>Logout</Text>
-        </View>
+        </Pressable>
       </View>
     </SafeAreaView>
   );

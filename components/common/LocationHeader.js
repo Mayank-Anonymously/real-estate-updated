@@ -1,5 +1,6 @@
 import {
   Image,
+  Pressable,
   SafeAreaView,
   StatusBar,
   StyleSheet,
@@ -56,9 +57,9 @@ const LocationHeader = () => {
             />
           </View>
         </View>
-        <View>
+        <Pressable onPress={() => navigation.openDrawer()}>
           <EvilIcons name="user" size={50} color={"white"} />
-        </View>
+        </Pressable>
       </View>
     </SafeAreaView>
   );

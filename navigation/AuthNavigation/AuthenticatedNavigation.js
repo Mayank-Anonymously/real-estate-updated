@@ -1,7 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState, useEffect } from "react";
 import SplashScreen from "../../components/Screens/SplashScreen";
-import DrawerNavigator from "../DrawerNavigator";
 import LiveChat from "../../components/Screens/LiveChat";
 import { Avatar } from "react-native-paper";
 import { Text, View } from "react-native";
@@ -13,19 +12,19 @@ import SignupScreen from "../../components/Screens/Authentication/SignupScreen";
 import PropertyDetailScreen from "../../components/Screens/PropertyDetail";
 import ContactQueryForm from "../../components/ContactQueryForm";
 import VerifyOTPScreen from "../../components/Screens/Authentication/VerifyOTP";
+import DrawerNavigator from "../drawer/navigtor";
 
 const RootStack = createStackNavigator();
 
 const AuthRootStackNavigator = () => {
   return (
     <RootStack.Navigator>
-   
       <RootStack.Screen
         name="Root"
         options={{ headerShown: false, headerTitle: "" }}
         component={DrawerNavigator}
       ></RootStack.Screen>
-       <RootStack.Screen
+      <RootStack.Screen
         name="Login"
         options={{ headerShown: false, headerTitle: "" }}
         component={LoginScreen}
