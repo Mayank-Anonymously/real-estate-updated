@@ -1,4 +1,11 @@
-import { ActivityIndicator, Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import PropertyCard from "../../cards/ProppertCard";
 import { ScrollView } from "react-native";
@@ -44,10 +51,9 @@ const AvailableforRent = () => {
             See all
           </Button>
         </View>
-        <View style={{justifyContent: "space-between",
-              alignItems: "center",}} >
+        <View style={{ justifyContent: "space-between", alignItems: "center" }}>
           <ScrollView horizontal={true}>
-            {data.length > 0 ?
+            {data.length > 0 ? (
               data.map((item, index) => {
                 item.price = item.price === undefined ? "N/A" : item.price;
                 return (
@@ -64,8 +70,12 @@ const AvailableforRent = () => {
                     image={item.image}
                   />
                 );
-              }) :
-              <View style={{ justifyContent: "center", alignItems: "center" }}><ActivityIndicator size="large" color="#917AFD" /> </View>}
+              })
+            ) : (
+              <View style={{ justifyContent: "center", alignItems: "center" }}>
+                <ActivityIndicator size="large" color="#917AFD" />{" "}
+              </View>
+            )}
           </ScrollView>
         </View>
         <View>
@@ -85,27 +95,37 @@ const AvailableforRent = () => {
               See all
             </Button>
           </View>
-          <View style={{justifyContent: "space-between",
-              alignItems: "center",}}> 
-          <ScrollView horizontal={true} contentContainerStyle ={{justifyContent: "space-between",
-              alignItems: "center",}}>
-            {otherCity.length > 0 ? otherCity.map((item, index) => {
-              return (
-                <PropertyCard
-                  onPress={() =>
-                    navigation.navigate("PropertyDetail", {
-                      id: item._id,
-                    })
-                  }
-                  title={item.title}
-                  location={item.address}
-                  price={item.price}
-                  description={item.description}
-                  image={item.image}
-                />
-              );
-            }) : <ActivityIndicator size="large" color="#917AFD" />}
-          </ScrollView>
+          <View
+            style={{ justifyContent: "space-between", alignItems: "center" }}
+          >
+            <ScrollView
+              horizontal={true}
+              contentContainerStyle={{
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              {otherCity.length > 0 ? (
+                otherCity.map((item, index) => {
+                  return (
+                    <PropertyCard
+                      onPress={() =>
+                        navigation.navigate("PropertyDetail", {
+                          id: item._id,
+                        })
+                      }
+                      title={item.title}
+                      location={item.address}
+                      price={item.price}
+                      description={item.description}
+                      image={item.image}
+                    />
+                  );
+                })
+              ) : (
+                <ActivityIndicator size="large" color="#917AFD" />
+              )}
+            </ScrollView>
           </View>
         </View>
         <InternationalMigrations />

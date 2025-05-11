@@ -13,12 +13,13 @@ import {
   Ionicons,
   FontAwesome,
   MaterialCommunityIcons,
+  AntDesign,
 } from "@expo/vector-icons";
 import CustomText from "../common/Text";
-import { Button } from "react-native-paper";
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
+
 const PropertyCard = ({
   onPress,
   title,
@@ -26,110 +27,80 @@ const PropertyCard = ({
   price,
   description,
   image,
+  type = "Villa",
 }) => {
-  useEffect(() => {
-    async function loadFonts() {
-      await Font.loadAsync({
-        "Hind-Jalandhar": require("../../assets/fonts/Hind/Hind-Regular.ttf"),
-      });
-      setFontsLoaded(true);
-    }
-    loadFonts();
-  }, []);
-
   const desc = description
     .replace(/\u00A0/g, " ")
     .replace(/\s+/g, " ")
     .trim();
   const cleanedStrig = desc.split("•").map((part) => part.trim());
 
-  // Define the function inside the component
   const getRandomRating = () => {
-    const min = 3.0;
+    const min = 4.0;
     const max = 5.0;
     return (Math.random() * (max - min) + min).toFixed(1);
   };
 
-  // Use useMemo to call the function once when the component renders
   const randomRating = useMemo(() => getRandomRating(), []);
 
   return (
-    <>
-      <Pressable onPress={onPress}>
-        <View style={styles.card}>
+    <Pressable onPress={onPress}>
+      <View style={styles.card}>
+        <View style={styles.imageContainer}>
           <Image
             source={{
               uri: "https://api.mylavya.com/resources/placeholder.jpeg",
             }}
             style={styles.image}
           />
-          <View style={styles.content}>
-            <View>
-              <View style={styles.ratingRow}></View>
-              <CustomText
-                style={styles.title}
-                numberOfLines={2}
-                ellipsizeMode="tail"
-              >
-                {title}
-              </CustomText>
-              <CustomText style={styles.location}>{location}</CustomText>
+          <TouchableOpacity style={styles.heartIcon}>
+            <AntDesign name="hearto" size={16} color="#6246EA" />
+          </TouchableOpacity>
+          <View style={styles.typeBadge}>
+            <Text style={styles.typeText}>{cleanedStrig[2]}</Text>
+          </View>
+        </View>
 
-              <View style={styles.infoRow}>
-                <View style={styles.iconText}>
-                  <MaterialCommunityIcons
-                    name="bed-outline"
-                    size={16}
-                    color="#888"
-                  />
-                  <CustomText style={styles.infoText}>
-                    {cleanedStrig[0]}
-                  </CustomText>
-                </View>
-                <View style={styles.iconText}>
-                  <MaterialCommunityIcons
-                    name="shower"
-                    size={16}
-                    color="#888"
-                  />
-                  <CustomText style={styles.infoText}>
-                    {cleanedStrig[1]}
-                  </CustomText>
-                </View>
-                <View style={styles.iconText}>
-                  <MaterialCommunityIcons
-                    name="office-building"
-                    size={16}
-                    color="#888"
-                  />
-                  <CustomText style={styles.infoText}>
-                    {cleanedStrig[2]}
-                  </CustomText>
-                </View>
-              </View>
+        <View style={styles.content}>
+          <View style={styles.titleRow}>
+            <CustomText style={styles.title}>{title}</CustomText>
+            <View style={styles.rating}>
+              <FontAwesome name="star" size={14} color="#FFA500" />
+              <Text style={styles.ratingText}>{randomRating}</Text>
             </View>
-            <View style={styles.footer}>
-              <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
-                <Button
-                  textColor="white"
-                  mode="contained"
-                  style={{}}
-                  buttonColor="#917AFD"
-                >
-                  Contact
-                </Button>
-              </View>
-              <TouchableOpacity>
-                <CustomText style={styles.ratingText}>
-                  <FontAwesome name="star" size={14} color="#FFA500" />{" "}
-                  {randomRating}{" "}
-                </CustomText>
-              </TouchableOpacity>
+          </View>
+
+          <CustomText style={styles.location}>{location}</CustomText>
+
+          <TouchableOpacity style={styles.priceButton} onPress={onPress}>
+            <Text style={styles.priceButtonText}>Contact</Text>
+          </TouchableOpacity>
+
+          <View style={styles.specs}>
+            <View style={styles.specItem}>
+              <MaterialCommunityIcons
+                name="bed-outline"
+                size={16}
+                color="#888"
+              />
+              <Text style={styles.specText}>{cleanedStrig[0]}</Text>
+            </View>
+            <View style={styles.specItem}>
+              <MaterialCommunityIcons name="shower" size={16} color="#888" />
+              <Text style={styles.specText}>{cleanedStrig[1]}</Text>
+            </View>
+            <View style={styles.specItem}>
+              <MaterialCommunityIcons
+                name="ruler-square"
+                size={16}
+                color="#888"
+              />
+              <Text style={styles.specText}>{cleanedStrig[2]}</Text>
             </View>
           </View>
         </View>
-      </Pressable>
-    </>
+      </View>
+    </Pressable>
   );
 };
 
@@ -137,86 +108,118 @@ export default PropertyCard;
 
 const styles = StyleSheet.create({
   card: {
-    shadowOffset: {
-      x: 5,
-      y: 0,
-    },
     backgroundColor: "#fff",
-    borderRadius: 16,
-    overflow: "hidden",
-    margin: 10,
-    elevation: 3,
-    width: width / 1.2,
-    flexDirection: "row",
-    height: height / 3.5,
-    shadowColor: "black",
-    shadowOpacity: 2,
-    shadowRadius: 16,
-    borderWidth: 1,
-    borderColor: "whitesmoke",
+    borderRadius: 12,
+    marginBottom: 20,
+    width: width * 0.8,
+    marginHorizontal: 10,
+    marginVertical: 10,
+
+    // Android shadow
+    elevation: 5,
+
+    // iOS shadow
+    shadowColor: "#dimgray",
+    shadowOffset: { width: 1, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+
+    // IMPORTANT: overflow: 'hidden' disables shadow on iOS
+    // Remove it or use overflow: 'visible' if you need the shadow to show
+    overflow: Platform.OS === "ios" ? "visible" : "hidden",
+  },
+  imageContainer: {
+    position: "relative",
   },
   image: {
-    width: 120,
-    height: height / 4,
+    width: "100%",
+    height: 140,
+  },
+  heartIcon: {
+    position: "absolute",
+    top: 10,
+    right: 10,
+    backgroundColor: "#fff",
+    padding: 6,
+    borderRadius: 20,
+    elevation: 2,
+  },
+  typeBadge: {
+    position: "absolute",
+    bottom: 10,
+    left: 10,
+    backgroundColor: "#E1DBFE",
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 10,
+  },
+  typeText: {
+    fontSize: 12,
+    color: "#6246EA",
+    fontWeight: "500",
   },
   content: {
-    padding: 14,
-    marginTop: 10,
-    width: 220,
-    justifyContent: "space-between",
+    padding: 12,
   },
-  ratingRow: {
+  titleRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "#000",
+    flex: 1,
+  },
+  rating: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 4,
   },
   ratingText: {
     marginLeft: 4,
-
-    fontSize: Platform.OS === "ios" ? 16 : 14,
-    color: "#666",
-  },
-  title: {
-    fontWeight: "bold",
-    fontSize: Platform.OS === "ios" ? 16 : 13,
-    marginBottom: 4,
-    color: "#000",
+    fontSize: 13,
+    color: "#888",
   },
   location: {
-    fontSize: Platform.OS === "ios" ? 15 : 13,
+    fontSize: 13,
     color: "#999",
-    marginBottom: 8,
+    marginVertical: 6,
   },
-  infoRow: {
+  price: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#FF914D",
+  },
+  month: {
+    fontSize: 12,
+    color: "#999",
+  },
+  specs: {
+    flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 10,
+    marginTop: 10,
   },
-  iconText: {
+  specItem: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 4,
   },
-  infoText: {
-    fontSize: Platform.OS === "ios" ? 13 : 12,
+  specText: {
+    fontSize: 12,
     color: "#666",
     marginLeft: 4,
   },
-  footer: {
-    flexDirection: "row",
-    alignItems: "flex-end",
-    justifyContent: "space-between",
-    marginBottom: 4,
-    marginRight: 20,
+  priceButton: {
+    backgroundColor: "#6246EA",
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    alignItems: "center",
+    marginTop: 8,
   },
-  price: {
-    fontWeight: "bold",
-
-    fontSize: Platform.OS === "ios" ? 18 : 16,
-    color: "#000",
-  },
-  perMonth: {
-    fontSize: 12,
-    color: "#666",
-    marginLeft: 2,
+  priceButtonText: {
+    color: "#fff",
+    fontSize: 14,
+    fontWeight: "600",
   },
 });

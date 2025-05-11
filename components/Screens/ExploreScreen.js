@@ -1,38 +1,9 @@
-import React, { useRef, useState } from "react";
-import { View, StyleSheet } from "react-native";
-import RBSheet from "react-native-raw-bottom-sheet";
+import React from "react";
+import { SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
+import MapView from "react-native-maps";
 import PropertyListings from "../Listings/PropertyListings"; // Fixed typo
-import { useFocusEffect } from "@react-navigation/native";
-import MapView, { Marker } from "react-native-maps";
-import CustomText from "../common/Text";
 
 const ExploreScreen = () => {
-  // Create a reference for the bottom sheet
-  const bottomSheetRef = useRef();
-
-  // Open state, you can control whether the bottom sheet is open or closed
-  const [isSheetOpen, setIsSheetOpen] = useState(false);
-
-  // Use useFocusEffect to open the bottom sheet when ExploreScreen is focused
-  useFocusEffect(
-    React.useCallback(() => {
-      // When the screen comes into focus, open the bottom sheet
-      bottomSheetRef.current.open();
-      setIsSheetOpen(true);
-
-      // Return a cleanup function to close the bottom sheet when leaving the screen
-      return () => {
-        bottomSheetRef.current.close();
-        setIsSheetOpen(false);
-      };
-    }, [])
-  );
-
-  const closeBottomSheet = () => {
-    bottomSheetRef.current.close(); // Close it programmatically
-    setIsSheetOpen(false);
-  };
-
   const region = {
     latitude: 40.0583, // Center latitude for New Jersey
     longitude: -74.4057, // Center longitude for New Jersey
@@ -41,31 +12,25 @@ const ExploreScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.section}>
-        <MapView style={styles.map} initialRegion={region} />
-      </View>
-      <RBSheet
-        ref={bottomSheetRef}
-        height={700}
-        closeOnDragDown={true} // Allows closing by dragging down
-        closeOnPressMask={false} // Allows closing by tapping outside
-        customStyles={{
-          draggableIcon: {
-            backgroundColor: "#000",
-          },
-          container: {
-            borderTopLeftRadius: 30, // Rounded top-left corner
-            borderTopRightRadius: 30, // Rounded top-right corner
-          },
-        }}
-      >
-        {/* Property Listings inside the Bottom Sheet */}
-        <View style={styles.bottomSheetContent}>
+    <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar />
+      <View style={styles.container}>
+        <View style={styles.section}>
+          <MapView style={styles.map} initialRegion={region} />
+        </View>
+
+        <View
+          style={{
+            backgroundColor: "white",
+            height: 900,
+            position: "absolute",
+            top: 100,
+          }}
+        >
           <PropertyListings />
         </View>
-      </RBSheet>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 };
 
@@ -91,5 +56,4 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-
 export default ExploreScreen;

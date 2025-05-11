@@ -2,50 +2,130 @@ import {
   StyleSheet,
   Text,
   View,
-  ScrollView,
   FlatList,
   Image,
   Pressable,
-  Modal,
-  Alert,
   ActivityIndicator,
+  Animated,
+  Dimensions,
+  TouchableWithoutFeedback,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PropertyCard from "../cards/ProppertCard";
-import states from "../../utils/County.json";
 import { Ionicons } from "react-native-vector-icons";
-import { useNavigation } from "@react-navigation/native";
-import { fetchallcounty } from "../../utils/apicalls/fetchallcounty";
 import FilterScreen from "../Screens/FilterScreen";
 import { fetchallcity } from "../../utils/apicalls/fetchall";
-const RenderList = ({ item }) => {
-  const navigation = useNavigation();
+import { useNavigation } from "@react-navigation/native";
 
-  return (
-    <View style={{ justifyContent: "center", alignItems: "center" }}>
-      <PropertyCard
-        onPress={() =>
-          navigation.navigate("PropertyDetail", {
-            id: item._id,
-          })
-        }
-        title={item.title}
-        location={item.address}
-        price={item.price}
-        description={item.description}
-        image={item.image}
-      />
-    </View>
-  );
-};
+const screenWidth = Dimensions.get("window").width;
+const screenHeight = Dimensions.get("window").height;
+
+const RenderList = ({ item, navigation }) => (
+  <View style={{ justifyContent: "center", alignItems: "center" }}>
+    <PropertyCard
+      onPress={() =>
+        navigation.navigate("PropertyDetail", {
+          id: item._id,
+        })
+      }
+      title={item.title}
+      location={item.address}
+      price={item.price}
+      description={item.description}
+      image={item.image}
+    />
+  </View>
+);
 
 const Propertlistings = () => {
   const navigation = useNavigation();
   const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
+
+  const [filters, setFilters] = useState({
+    location: "",
+    minPrice: 0,
+    maxPrice: 1000000,
+    bedrooms: [],
+    propertyType: [],
+  });
+
+  const slideAnim = useRef(new Animated.Value(-screenWidth)).current;
+
   useEffect(() => {
-    fetchallcity(setData);
+    fetchallcity((res) => {
+      setData(res);
+      setFilteredData(res); // Initialize filteredData to all data initially
+    });
   }, []);
+
+  const openFilter = () => {
+    setModalVisible(true);
+    Animated.timing(slideAnim, {
+      toValue: 0,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const closeFilter = () => {
+    Animated.timing(slideAnim, {
+      toValue: -screenWidth,
+      duration: 300,
+      useNativeDriver: true,
+    }).start(() => setModalVisible(false));
+  };
+
+  // Function to extract information from description
+  const extractDescriptionInfo = (description) => {
+    const descriptionParts = description.split(" • ");
+    const bedrooms = parseInt(descriptionParts[0].split(" ")[0]); // Extract number of bedrooms
+    const bathrooms = parseInt(descriptionParts[1].split(" ")[0]); // Extract number of bathrooms
+    const propertyType = descriptionParts[2]; // Extract property type (e.g., "Apartments")
+
+    return { bedrooms, bathrooms, propertyType };
+  };
+
+  const applyFilters = () => {
+    const { location, minPrice, maxPrice, bedrooms, propertyType } = filters;
+
+    const filtered = data.filter((item) => {
+      const {
+        bedrooms: itemBedrooms,
+        bathrooms: itemBathrooms,
+        propertyType: itemPropertyType,
+      } = extractDescriptionInfo(item.description);
+
+      const matchesLocation =
+        location === "" ||
+        item.address?.toLowerCase().includes(location.toLowerCase());
+
+      const matchesPrice = item.price >= minPrice && item.price <= maxPrice;
+
+      const matchesBedrooms =
+        bedrooms.length === 0 || bedrooms.includes(itemBedrooms);
+
+      const matchesPropertyType =
+        propertyType.length === 0 || propertyType.includes(itemPropertyType);
+
+      return (
+        matchesLocation &&
+        matchesPrice &&
+        matchesBedrooms &&
+        matchesPropertyType
+      );
+    });
+
+    setFilteredData(filtered); // Update the filtered data with the result
+  };
+
+  // Update filter state based on changes from FilterScreen component
+  const handleApplyFilters = (newFilters) => {
+    setFilters(newFilters);
+    applyFilters(); // Apply the new filters to the data
+    closeFilter();
+  };
 
   return (
     <>
@@ -60,11 +140,7 @@ const Propertlistings = () => {
             margin: 20,
           }}
         >
-          <Pressable
-            onPress={() => {
-              navigation.goBack();
-            }}
-          >
+          <Pressable onPress={() => navigation.goBack()}>
             <Image
               style={{ width: 30, height: 30 }}
               source={require("../../assets/navigation/back.png")}
@@ -76,21 +152,45 @@ const Propertlistings = () => {
           <Text>
             <Ionicons
               name="filter-outline"
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={openFilter}
               size={23}
               color="black"
             />
           </Text>
         </View>
       </View>
-      {modalVisible && <FilterScreen />}
-      {data.length > 0 ? (
+
+      {filteredData.length > 0 ? (
         <FlatList
-          data={data}
-          renderItem={({ item }) => <RenderList item={item} />}
+          data={filteredData}
+          renderItem={({ item }) => (
+            <RenderList item={item} navigation={navigation} />
+          )}
         />
       ) : (
         <ActivityIndicator size="large" color="#917AFD" />
+      )}
+
+      {modalVisible && (
+        <View style={styles.overlay}>
+          <TouchableWithoutFeedback onPress={closeFilter}>
+            <View style={styles.backdrop} />
+          </TouchableWithoutFeedback>
+
+          <Animated.View
+            style={[
+              styles.filterPanel,
+              {
+                transform: [{ translateX: slideAnim }],
+              },
+            ]}
+          >
+            <Pressable style={styles.closeButton} onPress={closeFilter}>
+              <Ionicons name="close" size={30} color="black" />
+            </Pressable>
+            <FilterScreen onApplyFilters={handleApplyFilters} />
+          </Animated.View>
+        </View>
       )}
     </>
   );
@@ -99,17 +199,34 @@ const Propertlistings = () => {
 export default Propertlistings;
 
 const styles = StyleSheet.create({
-  modalView: {
-    margin: 20,
+  overlay: {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: 999,
+    flexDirection: "row",
+  },
+  backdrop: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
+  filterPanel: {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    width: screenWidth,
+    height: screenHeight,
     backgroundColor: "white",
-    borderRadius: 20,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
+    padding: 10,
+    zIndex: 1000,
+  },
+  closeButton: {
+    position: "absolute",
+    top: 10,
+    right: 20,
+    zIndex: 1001,
   },
 });

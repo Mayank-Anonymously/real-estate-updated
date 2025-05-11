@@ -189,8 +189,6 @@ import ProfileScreen from "../../components/Screens/ProfileScreen";
 import SubscriptionScreen from "../../components/Screens/SubscriptionScreen";
 
 export default function MyTabs(props) {
-  const Width = Dimensions.get("screen").width;
-  const navigation = useNavigation();
   return (
     <Tab.Navigator
       screenOptions={{
