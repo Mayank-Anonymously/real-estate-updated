@@ -98,35 +98,9 @@ const FilterScreen = ({ onApplyFilters }) => {
         />
       </View>
 
+    
       <View style={styles.inputContainer}>
-        <CustomText style={styles.label}>Property Types</CustomText>
-        <View style={styles.tabContainer}>
-          {propertyTypes.map((type, index) => (
-            <TouchableOpacity
-              key={index}
-              style={[
-                styles.tab,
-                propertyType.includes(type) && styles.selectedTab,
-              ]}
-              onPress={() =>
-                toggleSelection(type, propertyType, setPropertyType)
-              }
-            >
-              <Text
-                style={[
-                  styles.tabText,
-                  propertyType.includes(type) && styles.selectedTabText,
-                ]}
-              >
-                {type}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-      </View>
-
-      <View style={styles.inputContainer}>
-        <CustomText style={styles.label}>Bedrooms</CustomText>
+        <CustomText style={styles.label}>Filters</CustomText>
         <View style={styles.tabContainer}>
           {filters.map((num) => (
             <TouchableOpacity

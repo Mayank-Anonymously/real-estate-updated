@@ -42,12 +42,14 @@ const Propertlistings = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
+  const [bedrooms, setBedrooms] = useState([]);
 
   const [filters, setFilters] = useState({
     location: "",
     minPrice: 0,
     maxPrice: 1000000,
     bedrooms: [],
+    bathrooms: [],
     propertyType: [],
   });
 
@@ -56,7 +58,7 @@ const Propertlistings = () => {
   useEffect(() => {
     fetchallcity((res) => {
       setData(res);
-      setFilteredData(res); // Initialize filteredData to all data initially
+      setFilteredData(res);
     });
   }, []);
 
@@ -77,55 +79,83 @@ const Propertlistings = () => {
     }).start(() => setModalVisible(false));
   };
 
-  // Function to extract information from description
+  // Extracts structured info from the description string
   const extractDescriptionInfo = (description) => {
-    const descriptionParts = description.split(" • ");
-    const bedrooms = parseInt(descriptionParts[0].split(" ")[0]); // Extract number of bedrooms
-    const bathrooms = parseInt(descriptionParts[1].split(" ")[0]); // Extract number of bathrooms
-    const propertyType = descriptionParts[2]; // Extract property type (e.g., "Apartments")
+    const desc = description
+      .replace(/\u00A0/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    const cleanedStrig = desc.split("•").map((part) => part.trim());
+
+    const bedrooms = parseInt(cleanedStrig[0].split(" ")[0]);
+    const bathrooms = parseInt(cleanedStrig[1].split(" ")[0]);
+    const propertyType = cleanedStrig[2];
 
     return { bedrooms, bathrooms, propertyType };
   };
+  
 
-  const applyFilters = () => {
-    const { location, minPrice, maxPrice, bedrooms, propertyType } = filters;
+  var bed  = ""
+  const applyFilters = ({ newFilters}) => {
+    const { bedrooms } = newFilters;
+    // const {  minPrice, maxPrice, bedrooms, bathrooms, propertyType } = newFilters;
 
     const filtered = data.filter((item) => {
-      const {
-        bedrooms: itemBedrooms,
-        bathrooms: itemBathrooms,
-        propertyType: itemPropertyType,
-      } = extractDescriptionInfo(item.description);
 
-      const matchesLocation =
-        location === "" ||
-        item.address?.toLowerCase().includes(location.toLowerCase());
+      
+      // // Extract structured info from description
+      const desc = item.description
+        .replace(/\u00A0/g, " ")
+        
+        .replace(/\s+/g, " ")
+        .trim();
+      const cleanedStrig = desc.split("•").map((part) => part.trim());
 
-      const matchesPrice = item.price >= minPrice && item.price <= maxPrice;
+      const itemBedrooms = parseInt(cleanedStrig[0].split(" ")[0]);
+      const itemBathrooms = parseInt(cleanedStrig[1].split(" ")[0]);
+      const itemPropertyType = cleanedStrig[2];
+      
 
-      const matchesBedrooms =
-        bedrooms.length === 0 || bedrooms.includes(itemBedrooms);
+      console.log("checkforbed:" , itemBedrooms)
+      // console.log("checkforbed:" , bedrooms)
+      // Apply individual filters
+      // const matchesLocation =
+      //   location === "" ||
+      //   item.address?.toLowerCase().includes(location.toLowerCase());
 
-      const matchesPropertyType =
-        propertyType.length === 0 || propertyType.includes(itemPropertyType);
+      // const matchesPrice = item.price >= minPrice && item.price <= maxPrice;
 
-      return (
-        matchesLocation &&
-        matchesPrice &&
-        matchesBedrooms &&
-        matchesPropertyType
-      );
+      // const matchesBedrooms =
+      //   bedrooms.length === 0 || bedrooms.includes(itemBedrooms);
+
+      // const matchesBathrooms =
+      //   bathrooms.length === 0 || bathrooms.includes(itemBathrooms);
+
+      // const matchesPropertyType =
+      //   propertyType.length === 0 || propertyType.includes(itemPropertyType);
+  
+      // return (
+      //   matchesLocation &&
+      //   matchesPrice &&
+      //   matchesBedrooms &&
+      //   matchesBathrooms &&
+      //   matchesPropertyType
+      // );
     });
 
-    setFilteredData(filtered); // Update the filtered data with the result
+    setFilteredData(filtered);
   };
 
-  // Update filter state based on changes from FilterScreen component
+
+
   const handleApplyFilters = (newFilters) => {
     setFilters(newFilters);
-    applyFilters(); // Apply the new filters to the data
+    setTimeout(applyFilters({newFilters}), 100); // Apply filters after state update
     closeFilter();
   };
+
+  const checkforbed =  data.filter(( item , index) =>  item.description.includes(bed))
+  
 
   return (
     <>
@@ -163,6 +193,7 @@ const Propertlistings = () => {
       {filteredData.length > 0 ? (
         <FlatList
           data={filteredData}
+          keyExtractor={(item) => item._id}
           renderItem={({ item }) => (
             <RenderList item={item} navigation={navigation} />
           )}
