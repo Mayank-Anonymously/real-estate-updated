@@ -13,13 +13,15 @@ import { Avatar } from "react-native-paper";
 import { AntDesign, Entypo } from "react-native-vector-icons";
 import { getUserEmail, getUserName } from "../../utils/AsyncData/getItem";
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { clearUser } from "../../redux/slices/user";
 
 const ProfileScreen = () => {
   const [isLandlord, setIsLandlord] = useState(false);
   const toggleSwitch = () => setIsLandlord((prev) => !prev);
   const [value, setValue] = useState("");
   const [email, setEmail] = useState("");
-
+  const dispatch = useDispatch();
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -62,7 +64,10 @@ const ProfileScreen = () => {
       <View style={styles.bottomSwitch}>
         <Pressable
           style={styles.optionLeft}
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => {
+            navigation.navigate("Splash");
+            dispatch(clearUser(null));
+          }}
         >
           <View style={styles.iconBox}>
             <AntDesign name="swap" size={20} color={"black"} />

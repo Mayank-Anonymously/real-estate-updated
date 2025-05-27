@@ -79,84 +79,40 @@ const Propertlistings = () => {
     }).start(() => setModalVisible(false));
   };
 
-  // Extracts structured info from the description string
-  const extractDescriptionInfo = (description) => {
-    const desc = description
-      .replace(/\u00A0/g, " ")
-      .replace(/\s+/g, " ")
-      .trim();
-    const cleanedStrig = desc.split("•").map((part) => part.trim());
+  const applyFilters = (newFilters) => {
+    const { location, minPrice, maxPrice, bedrooms, bathrooms, propertyType } =
+      newFilters;
 
-    const bedrooms = parseInt(cleanedStrig[0].split(" ")[0]);
-    const bathrooms = parseInt(cleanedStrig[1].split(" ")[0]);
-    const propertyType = cleanedStrig[2];
+    bedrooms.forEach((element) => {
+      var bedroom = data.filter((item) => element == item.bedrooms);
 
-    return { bedrooms, bathrooms, propertyType };
-  };
-  
-
-  var bed  = ""
-  const applyFilters = ({ newFilters}) => {
-    const { bedrooms } = newFilters;
-    // const {  minPrice, maxPrice, bedrooms, bathrooms, propertyType } = newFilters;
-
-    const filtered = data.filter((item) => {
-
-      
-      // // Extract structured info from description
-      const desc = item.description
-        .replace(/\u00A0/g, " ")
-        
-        .replace(/\s+/g, " ")
-        .trim();
-      const cleanedStrig = desc.split("•").map((part) => part.trim());
-
-      const itemBedrooms = parseInt(cleanedStrig[0].split(" ")[0]);
-      const itemBathrooms = parseInt(cleanedStrig[1].split(" ")[0]);
-      const itemPropertyType = cleanedStrig[2];
-      
-
-      console.log("checkforbed:" , itemBedrooms)
-      // console.log("checkforbed:" , bedrooms)
-      // Apply individual filters
-      // const matchesLocation =
-      //   location === "" ||
-      //   item.address?.toLowerCase().includes(location.toLowerCase());
-
-      // const matchesPrice = item.price >= minPrice && item.price <= maxPrice;
-
-      // const matchesBedrooms =
-      //   bedrooms.length === 0 || bedrooms.includes(itemBedrooms);
-
-      // const matchesBathrooms =
-      //   bathrooms.length === 0 || bathrooms.includes(itemBathrooms);
-
-      // const matchesPropertyType =
-      //   propertyType.length === 0 || propertyType.includes(itemPropertyType);
-  
-      // return (
-      //   matchesLocation &&
-      //   matchesPrice &&
-      //   matchesBedrooms &&
-      //   matchesBathrooms &&
-      //   matchesPropertyType
-      // );
+      setFilteredData(bedroom);
     });
 
-    setFilteredData(filtered);
+    bathrooms.forEach((element) => {
+      console.log(element);
+      var bathro = data.filter((item) => element == item.bathrooms);
+
+      setFilteredData(bathro);
+    });
+
+    propertyType.forEach((element) => {
+      console.log(element);
+      var propertyType = data.filter((item) => element == item.type);
+
+      setFilteredData(propertyType);
+    });
+
+    setFilteredData(data.filter((item) => item.address.split(",")[0] == location));
+
+    // setFilteredData(filtered);
   };
-
-
 
   const handleApplyFilters = (newFilters) => {
     setFilters(newFilters);
-    setTimeout(applyFilters({newFilters}), 100); // Apply filters after state update
+    applyFilters(newFilters);
     closeFilter();
   };
-
-  const checkforbed =  data.filter(( item , index) =>  item.description.includes(bed))
-  
-
   return (
     <>
       <View style={{ backgroundColor: "white", alignItems: "center" }}>
@@ -192,6 +148,7 @@ const Propertlistings = () => {
 
       {filteredData.length > 0 ? (
         <FlatList
+          style={{ marginBottom: 300 }}
           data={filteredData}
           keyExtractor={(item) => item._id}
           renderItem={({ item }) => (

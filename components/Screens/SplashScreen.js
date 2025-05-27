@@ -30,10 +30,7 @@ const SplashScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
-      <WebView
-        source={{ uri: "https://www.myhousingsearch.com/WebFile?id=2873479" }}
-        style={{ width: 300, height: 300 }}
-      />
+
       <View style={{ marginHorizontal: 50 }}>
         <View
           style={{

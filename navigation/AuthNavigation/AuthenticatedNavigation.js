@@ -13,6 +13,7 @@ import PropertyDetailScreen from "../../components/Screens/PropertyDetail";
 import ContactQueryForm from "../../components/ContactQueryForm";
 import VerifyOTPScreen from "../../components/Screens/Authentication/VerifyOTP";
 import DrawerNavigator from "../drawer/navigtor";
+import SeacrResults from "../../components/Screens/SearchResults";
 
 const RootStack = createStackNavigator();
 
@@ -127,6 +128,12 @@ const AuthRootStackNavigator = () => {
         name="Contact_now"
         options={{ headerShown: true, headerTitle: "" }}
         component={ContactQueryForm}
+      ></RootStack.Screen>
+
+      <RootStack.Screen
+        name="Search_Results"
+        options={{ headerShown: true, headerTitle: "" }}
+        component={SeacrResults}
       ></RootStack.Screen>
     </RootStack.Navigator>
   );

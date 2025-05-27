@@ -1,13 +1,15 @@
 import axios from "axios";
 import { HOST } from "../static";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { setUser } from "../../redux/slices/user";
 
 export const loginApi = async (
   email,
   password,
   router,
   setErros,
-  setLoading
+  setLoading,
+  dispatch
 ) => {
   setLoading(true);
   try {
@@ -26,6 +28,7 @@ export const loginApi = async (
       .then(async (response) => {
         setLoading(false);
         router.navigate("Root");
+        dispatch(setUser(response.data));
         await AsyncStorage.setItem("isAuthenticated", "true");
         await AsyncStorage.setItem("userEmail", email);
         await AsyncStorage.setItem(

@@ -217,40 +217,6 @@ export default function PropertyDetailScreen() {
                     </View>
                   </View>
 
-                  {/* <View style={styles.ownerInfo}>
-                  <View style={{ flexDirection: "row" }}>
-                    <Image
-                      source={require("../../assets/avatars/female.png")}
-                      style={styles.ownerAvatar}
-                    />
-                    <View>
-                      <CustomText style={styles.ownerName}>
-                        {data.contact.name}
-                      </CustomText>
-                      <CustomText style={styles.ownerRole}>
-                        {data.contact.role}
-                      </CustomText>
-                    </View>
-                  </View>
-                  <View
-                    style={{
-                      alignItems: "center",
-                      shadowColor: "#eeeff0",
-                      shadowRadius: 5,
-                      elevation: 10,
-                      padding: 10,
-                      shadowOpacity: 1,
-                      backgroundColor: "white",
-                      borderRadius: 10,
-                      shadowOffset: {
-                        x: 10,
-                        y: 5,
-                      },
-                    }}
-                  >
-                    <Feather name="phone-call" size={20} color="#7D7F88" />
-                  </View>
-                </View> */}
                   {/* Tabs */}
                   <View style={styles.tabRow}>
                     <ToggleScreen active={active} setActive={setActive} />
@@ -273,12 +239,6 @@ export default function PropertyDetailScreen() {
                                 borderRadius: 10,
                               }}
                             >
-                              {console.log(
-                                value.trim().split(key)[0].trim() === "No |"
-                                  ? "Yes"
-                                  : "No"
-                              )}
-
                               <CustomText
                                 style={[styles.value, { width: 300 }]}
                               >
@@ -630,19 +590,21 @@ const ToggleScreen = ({ active, setActive }) => {
             },
           ]}
         />
-        {["Kitchen", "Utilities", "Appliances"].map((label, index) => (
-          <Pressable
-            key={index}
-            style={styles.toggleButton}
-            onPress={() => handlePress(index)}
-          >
-            <CustomText
-              style={[styles.text, active === index && styles.activeText]}
+        {["First Detail", "Second Detail", "Third Detail"].map(
+          (label, index) => (
+            <Pressable
+              key={index}
+              style={styles.toggleButton}
+              onPress={() => handlePress(index)}
             >
-              {label}
-            </CustomText>
-          </Pressable>
-        ))}
+              <CustomText
+                style={[styles.text, active === index && styles.activeText]}
+              >
+                {label}
+              </CustomText>
+            </Pressable>
+          )
+        )}
       </View>
     </View>
   );

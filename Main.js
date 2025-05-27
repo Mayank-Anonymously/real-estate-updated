@@ -6,8 +6,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { View, StatusBar } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import AuthRootStackNavigator from "./navigation/AuthNavigation/AuthenticatedNavigation";
+import { useSelector } from "react-redux";
 
 const Main = () => {
+  const user = useSelector((state) => state.user.loggedIn);
   const checking = async () => {
     const isAuthenticated = AsyncStorage.getItem("isAuthenticated");
     return true;
@@ -17,11 +19,7 @@ const Main = () => {
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
 
-      {checking() === "true" ? (
-        <AuthRootStackNavigator />
-      ) : (
-        <RootStackNavigator />
-      )}
+      {user === true ? <AuthRootStackNavigator /> : <RootStackNavigator />}
     </View>
   );
 };

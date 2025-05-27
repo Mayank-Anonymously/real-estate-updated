@@ -53,9 +53,9 @@ const PropertyCard = ({
             }}
             style={styles.image}
           />
-          <TouchableOpacity style={styles.heartIcon}>
+          {/* <TouchableOpacity style={styles.heartIcon}>
             <AntDesign name="hearto" size={16} color="#6246EA" />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <View style={styles.typeBadge}>
             <Text style={styles.typeText}>{cleanedStrig[2]}</Text>
           </View>

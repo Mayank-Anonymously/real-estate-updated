@@ -61,7 +61,6 @@ const SeacrResults = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.searchBar}></View>
       <FlatList data={data} renderItem={({ item }) => <Item item={item} />} />
     </View>
   );

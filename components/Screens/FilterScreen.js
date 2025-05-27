@@ -18,37 +18,16 @@ const FilterScreen = ({ onApplyFilters }) => {
   const [location, setLocation] = useState("");
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(10000);
-  const [bedrooms, setBedrooms] = useState([]);
-  const [propertyType, setPropertyType] = useState([]);
+  const [selectedBedrooms, setSelectedBedrooms] = useState([]);
+  const [selectedBathrooms, setSelectedBathrooms] = useState([]);
+  const [selectedPropertyTypes, setSelectedPropertyTypes] = useState([]);
   const [filters, setFilters] = useState([]);
-  const [propertyTypes, setPropertyTypes] = useState([]);
-  const [bedroomOptions, setBedroomOptions] = useState([]);
-  const [bathroomOptions, setBathroomOptions] = useState([]);
-
-  const handleApplyFilters = () => {
-    onApplyFilters({
-      location,
-      minPrice,
-      maxPrice,
-      bedrooms,
-      propertyType,
-    });
-  };
-
-  const handleResetFilters = () => {
-    // Reset to default values
-    setLocation("");
-    setMinPrice(0);
-    setMaxPrice(10000);
-    setBedrooms([]);
-    setPropertyType([]);
-  };
 
   useEffect(() => {
     fetchFilters(
-      setPropertyTypes,
-      setBedroomOptions,
-      setBathroomOptions,
+      () => {},
+      () => {},
+      () => {},
       setFilters
     );
   }, []);
@@ -61,8 +40,44 @@ const FilterScreen = ({ onApplyFilters }) => {
     }
   };
 
+  const handleApplyFilters = () => {
+    onApplyFilters({
+      location,
+      minPrice,
+      maxPrice,
+      bedrooms: selectedBedrooms,
+      bathrooms: selectedBathrooms,
+      propertyType: selectedPropertyTypes,
+    });
+  };
+
+  const handleResetFilters = () => {
+    setLocation("");
+    setMinPrice(0);
+    setMaxPrice(10000);
+    setSelectedBedrooms([]);
+    setSelectedBathrooms([]);
+    setSelectedPropertyTypes([]);
+  };
+
+  const bedrooms = filters.filter((item) => item.includes("Bed"));
+  const bathrooms = filters.filter((item) => item.includes("Bath"));
+  const types = filters.filter(
+    (item) => !item.includes("Bed") && !item.includes("Bath")
+  );
+
+  const bedroomNumbers = [
+    ...new Set(bedrooms.map((b) => parseInt(b)).filter((n) => !isNaN(n))),
+  ].sort((a, b) => a - b);
+
+  const bathNumbers = [
+    ...new Set(bathrooms.map((b) => parseInt(b)).filter((n) => !isNaN(n))),
+  ].sort((a, b) => a - b);
+
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView
+      contentContainerStyle={[styles.container, { paddingBottom: 300 }]}
+    >
       <View style={styles.inputContainer}>
         <CustomText style={styles.label}>Location</CustomText>
         <TextInput
@@ -74,67 +89,94 @@ const FilterScreen = ({ onApplyFilters }) => {
       </View>
 
       <View style={styles.inputContainer}>
-        <CustomText style={styles.label}>Min Price: ${minPrice}</CustomText>
-        <Slider
-          style={styles.slider}
-          minimumValue={0}
-          maximumValue={10000}
-          step={500}
-          value={minPrice}
-          onValueChange={setMinPrice}
-          minimumTrackTintColor="#5A67D8"
-          maximumTrackTintColor="#ccc"
-        />
-        <CustomText style={styles.label}>Max Price: ${maxPrice}</CustomText>
-        <Slider
-          style={styles.slider}
-          minimumValue={0}
-          maximumValue={10000}
-          step={500}
-          value={maxPrice}
-          onValueChange={setMaxPrice}
-          minimumTrackTintColor="#5A67D8"
-          maximumTrackTintColor="#ccc"
-        />
-      </View>
-
-    
-      <View style={styles.inputContainer}>
-        <CustomText style={styles.label}>Filters</CustomText>
+        <CustomText style={styles.label}>Bedrooms</CustomText>
         <View style={styles.tabContainer}>
-          {filters.map((num) => (
+          {bedroomNumbers.map((num) => (
             <TouchableOpacity
               key={num}
-              style={[styles.tab, bedrooms.includes(num) && styles.selectedTab]}
-              onPress={() => toggleSelection(num, bedrooms, setBedrooms)}
+              style={[
+                styles.tab,
+                selectedBedrooms.includes(num) && styles.selectedTab,
+              ]}
+              onPress={() =>
+                toggleSelection(num, selectedBedrooms, setSelectedBedrooms)
+              }
             >
               <Text
                 style={[
                   styles.tabText,
-                  bedrooms.includes(num) && styles.selectedTabText,
+                  selectedBedrooms.includes(num) && styles.selectedTabText,
                 ]}
               >
-                {num}
+                {num} Bed
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        <CustomText style={styles.label}>Bathrooms</CustomText>
+        <View style={styles.tabContainer}>
+          {bathNumbers.map((num) => (
+            <TouchableOpacity
+              key={num}
+              style={[
+                styles.tab,
+                selectedBathrooms.includes(num) && styles.selectedTab,
+              ]}
+              onPress={() =>
+                toggleSelection(num, selectedBathrooms, setSelectedBathrooms)
+              }
+            >
+              <Text
+                style={[
+                  styles.tabText,
+                  selectedBathrooms.includes(num) && styles.selectedTabText,
+                ]}
+              >
+                {num} Bath
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        <CustomText style={styles.label}>Property Type</CustomText>
+        <View style={styles.tabContainer}>
+          {types.map((type) => (
+            <TouchableOpacity
+              key={type}
+              style={[
+                styles.tab,
+                selectedPropertyTypes.includes(type) && styles.selectedTab,
+              ]}
+              onPress={() =>
+                toggleSelection(
+                  type,
+                  selectedPropertyTypes,
+                  setSelectedPropertyTypes
+                )
+              }
+            >
+              <Text
+                style={[
+                  styles.tabText,
+                  selectedPropertyTypes.includes(type) &&
+                    styles.selectedTabText,
+                ]}
+              >
+                {type}
               </Text>
             </TouchableOpacity>
           ))}
         </View>
       </View>
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-around",
-          alignItems: "center",
-        }}
-      >
+
+      <View style={styles.buttonRow}>
         <TouchableOpacity
           onPress={handleApplyFilters}
-          style={[styles.applyButton]}
+          style={styles.applyButton}
         >
           <CustomText style={styles.applyButtonText}>Apply Filters</CustomText>
         </TouchableOpacity>
-
-        {/* Reset Filters Button */}
         <TouchableOpacity
           onPress={handleResetFilters}
           style={styles.resetButton}
@@ -198,26 +240,35 @@ const styles = StyleSheet.create({
     borderColor: "#5A67D8",
     padding: 15,
     borderRadius: 10,
-    marginBottom: "70%",
-
     alignItems: "center",
     borderWidth: 1,
-  },
-  applyButtonText: {
-    color: "#5A67D8",
-    fontSize: 16,
+    flex: 1,
+    marginRight: 10,
+    marginBottom: 20,
   },
   resetButton: {
     borderColor: "#E53E3E",
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
-    marginBottom: "70%",
     borderWidth: 1,
+    flex: 1,
+    marginLeft: 10,
+    marginBottom: 20,
   },
   resetButtonText: {
     color: "#E53E3E",
     fontSize: 16,
+  },
+  applyButtonText: {
+    color: "#5A67D8",
+    fontSize: 16,
+  },
+  buttonRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 20,
   },
 });
 

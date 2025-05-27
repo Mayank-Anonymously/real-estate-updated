@@ -18,6 +18,7 @@ import { Button } from "react-native-paper";
 import CustomText from "../../common/Text";
 import CustomTextBold from "../../common/BoldCustomtext";
 import CustomTextSemi from "../../common/CustomTextSemi";
+import { useDispatch, useSelector } from "react-redux";
 export default function LoginScreen() {
   const { width, height } = Dimensions.get("screen");
   const [email, setEmail] = useState("");
@@ -26,8 +27,10 @@ export default function LoginScreen() {
   const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
   const [error, setErros] = useState("");
+
+  const dispatch = useDispatch();
   const handleLogin = () => {
-    loginApi(email, password, navigation, setErros, setLoading);
+    loginApi(email, password, navigation, setErros, setLoading, dispatch);
   };
 
   return (
