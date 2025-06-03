@@ -14,16 +14,39 @@ import ContactQueryForm from "../../components/ContactQueryForm";
 import VerifyOTPScreen from "../../components/Screens/Authentication/VerifyOTP";
 import SeacrResults from "../../components/Screens/SearchResults";
 import DrawerNavigator from "../drawer/navigtor";
+import Splashone from "../../components/Screens/SplashScreens/Splashone";
+import Splashtwo from "../../components/Screens/SplashScreens/Splashtwo";
+import Splashthree from "../../components/Screens/SplashScreens/Splashthree";
 
 const RootStack = createStackNavigator();
 
 const RootStackNavigator = () => {
   return (
-    <RootStack.Navigator>
+    <RootStack.Navigator
+      screenOptions={{
+        transition: {
+          config: (transitionProps) => ({
+            transition: "slide",
+            duration: 500,
+            easing: Easing.linear,
+          }),
+        },
+      }}
+    >
       <RootStack.Screen
-        name="Splash"
+        name="Splashone"
         options={{ headerShown: false, headerTitle: "" }}
-        component={SplashScreen}
+        component={Splashone}
+      ></RootStack.Screen>
+      <RootStack.Screen
+        name="Splashtwo"
+        options={{ headerShown: false, headerTitle: "" }}
+        component={Splashtwo}
+      ></RootStack.Screen>
+      <RootStack.Screen
+        name="Splashthree"
+        options={{ headerShown: false, headerTitle: "" }}
+        component={Splashthree}
       ></RootStack.Screen>
 
       <RootStack.Screen

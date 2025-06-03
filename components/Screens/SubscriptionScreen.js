@@ -21,6 +21,33 @@ const SubscriptionScreen = () => {
     });
   };
 
+  const premiumFeatures = [
+    {
+      icon: "star",
+      text: "Access to Diane Gloria's video guidance",
+    },
+    {
+      icon: "notifications",
+      text: "Push notifications for new lotteries",
+    },
+    {
+      icon: "person-add",
+      text: "We apply on behalf of user (with consent)",
+    },
+    {
+      icon: "chatbubble-ellipses",
+      text: "Live chat support",
+    },
+    {
+      icon: "mail",
+      text: "Auto-email updates",
+    },
+    {
+      icon: "document-text",
+      text: "Document management and eligibility tracking",
+    },
+  ];
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -29,13 +56,13 @@ const SubscriptionScreen = () => {
         <View style={styles.card}>
           <Text style={[styles.planTitle, { color: "#000" }]}>Free Plan</Text>
           <View style={styles.feature}>
-            <Ionicons name="checkmark-circle" size={20} color="#6246EA" />
+            <Ionicons name="checkmark-circle" size={20} color="#051138" />
             <Text style={styles.featureText}>
               View all listings (no pricing)
             </Text>
           </View>
           <View style={styles.feature}>
-            <Ionicons name="checkmark-circle" size={20} color="#6246EA" />
+            <Ionicons name="checkmark-circle" size={20} color="#051138" />
             <Text style={styles.featureText}>
               Create account & save preferences
             </Text>
@@ -45,29 +72,15 @@ const SubscriptionScreen = () => {
         <View style={[styles.card, styles.premiumCard]}>
           <Text style={styles.planTitle}>Premium Plan</Text>
           <Text style={styles.price}>$29 / month</Text>
+          <Text style={styles.price}>$299 / annual</Text>
 
-          <View style={styles.feature}>
-            <Ionicons name="star" size={20} color="#fff" />
-            <Text style={styles.featureTextPremium}>
-              Access to Diane Gloria’s housing videos
-            </Text>
-          </View>
-
-          <View style={styles.feature}>
-            <Ionicons name="star" size={20} color="#fff" />
-            <Text style={styles.featureTextPremium}>
-              Automatic alerts for new lotteries
-            </Text>
-          </View>
-
-          <View style={styles.feature}>
-            <Ionicons name="star" size={20} color="#fff" />
-            <Text style={styles.featureTextPremium}>
-              We apply for lotteries on your behalf
-            </Text>
-          </View>
+          {premiumFeatures.map((feature, index) => (
+            <View key={index} style={styles.feature}>
+              <Ionicons name={feature.icon} size={20} color="#fff" />
+              <Text style={styles.featureTextPremium}>{feature.text}</Text>
+            </View>
+          ))}
         </View>
-
         {/* Subscribe Button */}
         <TouchableOpacity style={styles.button} onPress={handleSubscribe}>
           <Text style={styles.buttonText}>Subscribe Now</Text>
@@ -95,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginVertical: 20,
-    color: "#6246EA",
+    color: "#051138",
   },
   card: {
     backgroundColor: "#fff",
@@ -106,7 +119,7 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   premiumCard: {
-    backgroundColor: "#917AFD",
+    backgroundColor: "#051138",
   },
   planTitle: {
     fontSize: 20,
@@ -136,7 +149,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   button: {
-    backgroundColor: "#6246EA",
+    backgroundColor: "#051138",
     paddingVertical: 15,
     paddingHorizontal: 50,
     borderRadius: 30,

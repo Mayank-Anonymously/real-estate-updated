@@ -14,7 +14,7 @@ const Main = () => {
     const isAuthenticated = AsyncStorage.getItem("isAuthenticated");
     return true;
   };
-
+  console.log(user);
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />

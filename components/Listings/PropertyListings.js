@@ -16,6 +16,7 @@ import { Ionicons } from "react-native-vector-icons";
 import FilterScreen from "../Screens/FilterScreen";
 import { fetchallcity } from "../../utils/apicalls/fetchall";
 import { useNavigation } from "@react-navigation/native";
+import { ScrollView } from "react-native-gesture-handler";
 
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
@@ -103,9 +104,9 @@ const Propertlistings = () => {
       setFilteredData(propertyType);
     });
 
-    setFilteredData(data.filter((item) => item.address.split(",")[0] == location));
-
-    // setFilteredData(filtered);
+    setFilteredData(
+      data.filter((item) => item.address.split(",")[0] == location)
+    );
   };
 
   const handleApplyFilters = (newFilters) => {
@@ -148,7 +149,7 @@ const Propertlistings = () => {
 
       {filteredData.length > 0 ? (
         <FlatList
-          style={{ marginBottom: 300 }}
+          contentContainerStyle={{ marginBottom: 300 }}
           data={filteredData}
           keyExtractor={(item) => item._id}
           renderItem={({ item }) => (

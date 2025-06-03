@@ -3,7 +3,6 @@ import { HOST } from "../static";
 
 export const fetchallcounty = async (setData, query) => {
   try {
-    console.log(`${HOST}property/get-properties-by-city/${query}`);
     const response = await axios.get(
       `${HOST}property/get-properties-by-city/${query}`,
       {
@@ -13,7 +12,6 @@ export const fetchallcounty = async (setData, query) => {
         },
       }
     );
-
     setData(response.data);
   } catch (error) {
     console.error("Error fetching county listings:", error);

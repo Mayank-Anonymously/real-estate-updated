@@ -96,6 +96,7 @@ export default function PropertyDetailScreen() {
         </Pressable>
       );
     };
+
     const desc = data.description
       .replace(/\u00A0/g, " ")
       .replace(/\s+/g, " ")
@@ -143,9 +144,7 @@ export default function PropertyDetailScreen() {
             <>
               <ScrollView>
                 <Image
-                  source={{
-                    uri: "https://api.mylavya.com/resources/placeholder.jpeg",
-                  }}
+                  source={require("../../assets/images/cards/image-background.png")}
                   style={styles.image}
                 />
                 <TouchableOpacity
@@ -158,7 +157,7 @@ export default function PropertyDetailScreen() {
                   }
                 >
                   <CustomText style={styles.videoButtonText}>
-                    Contact Now
+                    Subscribe
                   </CustomText>
                 </TouchableOpacity>
                 <View style={styles.content}>
@@ -190,6 +189,7 @@ export default function PropertyDetailScreen() {
                         name="bed-outline"
                         size={16}
                         color="#888"
+                        style={{ marginLeft: 5 }}
                       />
                       <CustomText style={styles.infoText}>
                         {cleanedStrig[0]}
@@ -200,6 +200,7 @@ export default function PropertyDetailScreen() {
                         name="shower"
                         size={16}
                         color="#888"
+                        style={{ marginLeft: 5 }}
                       />
                       <CustomText style={styles.infoText}>
                         {cleanedStrig[1]}
@@ -210,6 +211,7 @@ export default function PropertyDetailScreen() {
                         name="office-building"
                         size={16}
                         color="#888"
+                        style={{ marginLeft: 5 }}
                       />
                       <CustomText style={styles.infoText}>
                         {cleanedStrig[2]}
@@ -313,40 +315,6 @@ export default function PropertyDetailScreen() {
                     </CustomText>
                     <MapView style={styles.map} initialRegion={region} />
                   </View>
-
-                  <View style={styles.section}>
-                    <CustomText style={styles.sectionTitle}>
-                      Testimonials
-                    </CustomText>
-                    <View style={styles.testimonial}>
-                      <Avatar.Image
-                        size={44}
-                        source={require("../../assets/avatars/male.png")}
-                      />
-                      <CustomText style={styles.testimonialName}>
-                        Biggy Shahi ⭐⭐⭐⭐⭐
-                      </CustomText>
-                      <CustomText style={styles.paragraph}>
-                        My wife and I had a dream of downsizing from our house
-                        in Cape Elizabeth into a small condo closer to where we
-                        work and play in Portland...
-                      </CustomText>
-                    </View>
-                    <View style={styles.testimonial}>
-                      <Avatar.Image
-                        size={44}
-                        source={require("../../assets/avatars/male.png")}
-                      />
-                      <CustomText style={styles.testimonialName}>
-                        C. J. Upohrel ⭐⭐⭐⭐⭐
-                      </CustomText>
-                      <CustomText style={styles.paragraph}>
-                        My wife & I have moved 6 times in the last 25 years.
-                        Obviously, we’ve dealt with many realtors both on the
-                        buying and selling side...
-                      </CustomText>
-                    </View>
-                  </View>
                 </View>
               </ScrollView>
 
@@ -362,7 +330,7 @@ export default function PropertyDetailScreen() {
                     })
                   }
                 >
-                  <CustomText style={styles.contactText}>Contact</CustomText>
+                  <CustomText style={styles.contactText}>Subscribe</CustomText>
                 </TouchableOpacity>
               </View>
             </>
@@ -546,7 +514,7 @@ const styles = StyleSheet.create({
     zIndex: 0,
   },
   infoRow: {
-    justifyContent: "space-between",
+    flexDirection: "row",
     marginBottom: 10,
   },
   iconText: {

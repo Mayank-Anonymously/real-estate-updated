@@ -19,6 +19,7 @@ import CustomText from "../../common/Text";
 import CustomTextBold from "../../common/BoldCustomtext";
 import CustomTextSemi from "../../common/CustomTextSemi";
 import { useDispatch, useSelector } from "react-redux";
+import CustomLogo from "../../CustomLogo";
 export default function LoginScreen() {
   const { width, height } = Dimensions.get("screen");
   const [email, setEmail] = useState("");
@@ -35,25 +36,9 @@ export default function LoginScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "row",
-        }}
-      >
-        <View style={{ justifyContent: "center", alignItems: "center" }}>
-          <CustomTextBold style={{ fontSize: 38, color: "#051138" }}>
-            AFFORDABLE{" "}
-          </CustomTextBold>
-          <CustomTextBold style={{ fontSize: 30, color: "#051138" }}>
-            NJ <CustomText>HOUSING</CustomText>{" "}
-          </CustomTextBold>
-        </View>
-        <Image
-          source={require("../../../assets/images/logo_comp/nj_house_map.png")}
-        />
-      </View>
+      <CustomLogo
+        image={require("../../../assets/images/logo_comp/nj_house_map.png")}
+      />
       <View style={{ padding: 25 }}>
         <CustomTextSemi
           style={[
@@ -109,7 +94,7 @@ export default function LoginScreen() {
         <TouchableOpacity onPress={handleLogin} style={styles.loginButton}>
           <Text style={{ color: "white", fontSize: 18 }}>
             {loading ? (
-              <ActivityIndicator color=" white" size={"small"} />
+              <ActivityIndicator color="white" size={"small"} />
             ) : (
               "Login"
             )}

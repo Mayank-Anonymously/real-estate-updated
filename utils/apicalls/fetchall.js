@@ -2,13 +2,17 @@ import axios from "axios";
 import { HOST } from "../static";
 
 export const fetchallcity = async (setData) => {
+  console.log(`${HOST}property/get-all-properties-city`);
   try {
-    const response = await axios.get(`${HOST}property/get-properties-by-city`, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await axios.get(
+      `${HOST}property/get-all-properties-city`,
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     setData(response.data);
   } catch (error) {

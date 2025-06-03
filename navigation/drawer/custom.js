@@ -1,8 +1,69 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
-import d from "../../assets/images/logo_comp/nj_house_map.png";
-import CustomText from "../../components/common/Text";
-import CustomTextBold from "../../components/common/BoldCustomtext";
+import CustomLogo from "../../components/CustomLogo";
+import {
+  AntDesign,
+  MaterialCommunityIcons,
+  Entypo,
+  Ionicons,
+  MaterialIcons,
+} from "react-native-vector-icons";
+
+const drawerItems = [
+  {
+    id: "home",
+    icon: <AntDesign name="home" size={18} color="#051138" />,
+    label: "Home",
+    screen: "HomeScreen",
+  },
+  {
+    id: "applications",
+    icon: (
+      <MaterialCommunityIcons
+        name="application-outline"
+        size={18}
+        color="#051138"
+      />
+    ),
+
+    label: "My Applications",
+    screen: "ApplicationsScreen",
+  },
+  {
+    id: "videos",
+    icon: <Entypo name="video" size={18} color="#051138" />,
+    label: "Diane’s Videos",
+    screen: "VideosScreen",
+  },
+  {
+    id: "vault",
+    icon: <Ionicons name="document-lock-sharp" size={18} color="#051138" />,
+    label: "Document Vault",
+    screen: "VaultScreen",
+  },
+  {
+    id: "notifications",
+    icon: <Entypo name="notification" size={18} color="#051138" />,
+
+    label: "Notifications Center",
+    screen: "NotificationsScreen",
+  },
+  {
+    id: "help",
+    icon: <Entypo name="help-with-circle" size={18} color="#051138" />,
+    label: "Help & FAQs",
+    screen: "HelpScreen",
+  },
+  // Optional - conditionally render this for free users only
+  {
+    id: "upgrade",
+    label: "Upgrade to Premium",
+    icon: <MaterialIcons name="workspace-premium" size={18} color="#051138" />,
+
+    screen: "UpgradeScreen",
+    optional: true,
+  },
+];
 
 const CustomDrawer = (props) => {
   return (
@@ -12,31 +73,19 @@ const CustomDrawer = (props) => {
     >
       <View>
         <View style={styles.drawerHeader}>
-          <Image
-            source={d}
-            resizeMode="cover"
-            style={{ resizeMode: "contain", width: 100, height: 100 }}
+          <CustomLogo
+            image={require("../../assets/images/logo_comp/nj_house_map.png")}
           />
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <CustomTextBold style={{ fontSize: 30, color: "#051138" }}>
-              AFFORDABLE{" "}
-            </CustomTextBold>
-            <CustomText style={{ fontSize: 20, color: "#051138" }}>
-              NJ <CustomText>HOUSING</CustomText>{" "}
-            </CustomText>
-          </View>
         </View>
         <View>
-          {[
-            "Profile",
-            "FAQs",
-            "Lottery",
-            "Subscription",
-            "Privacy Policy",
-            "Terms & Conditions",
-            "Support",
-          ].map((item) => (
-            <DrawerItem label={item} labelStyle={styles.drawerLabel} />
+          {drawerItems.map((item) => (
+            <View>
+              <DrawerItem
+                label={item.label}
+                icon={({ color, size }) => item.icon}
+                labelStyle={styles.drawerLabel}
+              />
+            </View>
           ))}
         </View>
       </View>
@@ -72,14 +121,14 @@ const styles = StyleSheet.create({
     color: "#FFFF",
   },
   drawerLabel: {
-    fontSize: 16,
+    fontSize: 12,
     color: "#444",
   },
   footer: {
     padding: 20,
     borderTopWidth: 1,
     borderTopColor: "#ccc",
-    backgroundColor: "#6246EA",
+    backgroundColor: "#051138",
     borderRadius: 10,
   },
   footerText: {

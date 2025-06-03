@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   user: null,
   loggedIn: false,
+  premiumEnabled: false,
 };
 
 const userSlice = createSlice({
@@ -11,13 +12,15 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setUser(state, action) {
-      console.log("action.payload:", action.payload);
       state.user = action.payload;
       state.loggedIn = true;
     },
     clearUser(state) {
       state.user = null;
       state.loggedIn = false;
+    },
+    permiumPurchased(state, action) {
+      state.premiumEnabled = true;
     },
   },
 });

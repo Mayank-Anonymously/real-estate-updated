@@ -12,21 +12,14 @@ const ExploreScreen = () => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.container}>
       <StatusBar />
       <View style={styles.container}>
         <View style={styles.section}>
           <MapView style={styles.map} initialRegion={region} />
         </View>
 
-        <View
-          style={{
-            backgroundColor: "white",
-            height: 900,
-            position: "absolute",
-            top: 100,
-          }}
-        >
+        <View style={{ flex: 1 }}>
           <PropertyListings />
         </View>
       </View>

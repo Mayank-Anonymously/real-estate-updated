@@ -21,10 +21,17 @@ const AuthRootStackNavigator = () => {
   return (
     <RootStack.Navigator>
       <RootStack.Screen
+        name="Splash"
+        options={{ headerShown: false, headerTitle: "" }}
+        component={SplashScreen}
+      ></RootStack.Screen>
+
+      <RootStack.Screen
         name="Root"
         options={{ headerShown: false, headerTitle: "" }}
         component={DrawerNavigator}
       ></RootStack.Screen>
+
       <RootStack.Screen
         name="Login"
         options={{ headerShown: false, headerTitle: "" }}

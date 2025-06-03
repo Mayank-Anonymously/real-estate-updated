@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     color: "#888",
   },
   hostSection: {
-    backgroundColor: "#6246EA",
+    backgroundColor: "#051138",
     borderRadius: 10,
     flexDirection: "row",
     alignItems: "center",

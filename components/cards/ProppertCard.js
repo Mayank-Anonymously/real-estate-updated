@@ -48,9 +48,7 @@ const PropertyCard = ({
       <View style={styles.card}>
         <View style={styles.imageContainer}>
           <Image
-            source={{
-              uri: "https://api.mylavya.com/resources/placeholder.jpeg",
-            }}
+            source={require("../../assets/images/cards/image-background.png")}
             style={styles.image}
           />
           {/* <TouchableOpacity style={styles.heartIcon}>
@@ -148,14 +146,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 10,
     left: 10,
-    backgroundColor: "#E1DBFE",
+    backgroundColor: "#777D92",
     paddingHorizontal: 10,
     paddingVertical: 4,
     borderRadius: 10,
   },
   typeText: {
     fontSize: 12,
-    color: "#6246EA",
+    color: "white",
     fontWeight: "500",
   },
   content: {
@@ -210,7 +208,7 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   priceButton: {
-    backgroundColor: "#6246EA",
+    backgroundColor: "#051138",
     paddingVertical: 8,
     paddingHorizontal: 16,
     borderRadius: 8,

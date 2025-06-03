@@ -29,6 +29,14 @@ const ProfileScreen = () => {
     getUserEmail(setEmail);
   }, []);
 
+  const profileOptions = [
+    { label: "Eligibility Info", icon: "profile" },
+    { label: "Membership: Free", icon: "staro", action: "upgrade" }, // You can change the label dynamically
+    { label: "Auto-apply for me", icon: "checkcircleo", isToggle: true },
+    { label: "Address / Phone / Password", icon: "setting" },
+    { label: "FAQs", icon: "questioncircleo" },
+  ];
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
@@ -42,11 +50,7 @@ const ProfileScreen = () => {
             <Text style={styles.email}>{email}</Text>
           </View>
 
-          {[
-            { label: "Personal details", icon: "user" },
-            { label: "Payment details", icon: "creditcard" },
-            { label: "FAQs", icon: "questioncircleo" },
-          ].map((item, index) => (
+          {profileOptions.map((item, index) => (
             <View key={index} style={styles.optionRow}>
               <View style={styles.optionLeft}>
                 <View style={styles.iconBox}>
@@ -54,7 +58,12 @@ const ProfileScreen = () => {
                 </View>
                 <Text style={styles.optionLabel}>{item.label}</Text>
               </View>
-              <Entypo name="chevron-right" size={20} color="gray" />
+
+              {item.isToggle ? (
+                <Switch value={isLandlord} onValueChange={toggleSwitch} />
+              ) : (
+                <Entypo name="chevron-right" size={20} color="gray" />
+              )}
             </View>
           ))}
         </ScrollView>

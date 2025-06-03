@@ -15,10 +15,12 @@ import { useNavigation } from "@react-navigation/native";
 import CustomTextBold from "../common/BoldCustomtext";
 import CustomText from "../common/Text";
 import CustomTextLight from "../common/CustomTextLight";
+import CustomLogo from "../CustomLogo";
 const SplashScreen = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
+    setTimeout(() => navigation.navigate("Root"), [1000]);
     async function loadFonts() {
       await Font.loadAsync({
         "Hind-Jalandhar": require("../../assets/fonts/Hind/Hind-Regular.ttf"),
@@ -32,25 +34,9 @@ const SplashScreen = () => {
       <StatusBar barStyle="dark-content" backgroundColor="white" />
 
       <View style={{ marginHorizontal: 50 }}>
-        <View
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "row",
-          }}
-        >
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <CustomTextBold style={{ fontSize: 38, color: "#051138" }}>
-              AFFORDABLE{" "}
-            </CustomTextBold>
-            <CustomTextBold style={{ fontSize: 30, color: "#051138" }}>
-              NJ <CustomText>HOUSING</CustomText>{" "}
-            </CustomTextBold>
-          </View>
-          <Image
-            source={require("../../assets/images/logo_comp/nj_house_map.png")}
-          />
-        </View>
+        <CustomLogo
+          image={require("../../assets/images/logo_comp/nj_house_map.png")}
+        />
         <View style={{ justifyContent: "center", alignItems: "center" }}>
           <CustomText
             style={[
@@ -90,23 +76,6 @@ const SplashScreen = () => {
             Find homes, check your eligibility, and get expert guidance - all in
             one app
           </Text>
-
-          <Button
-            mode="contained"
-            outlineColor="#6246ea"
-            onPress={() => navigation.navigate("Login")}
-            buttonColor="#051138"
-            style={{
-              width: 300,
-              borderColor: "#6246ea",
-
-              marginHorizontal: 20,
-              marginTop: 20,
-              marginRight: 20,
-            }}
-          >
-            GET STARTED
-          </Button>
         </View>
       </View>
     </SafeAreaView>
