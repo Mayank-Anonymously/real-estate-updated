@@ -30,6 +30,11 @@ const SplashScreen = () => {
     loadFonts();
   }, []);
   return (
+    <ImageBackground style={[styles.container, {
+      flex: 1,
+      justifyContent: "space-between",
+      backgroundColor: "white"
+    }]} source={require("../../assets/images/background/splash.png")}  >
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
 
@@ -79,6 +84,8 @@ const SplashScreen = () => {
         </View>
       </View>
     </SafeAreaView>
+    </ImageBackground>
+
   );
 };
 
@@ -89,7 +96,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "white",
   },
   content: {
     justifyContent: "center",

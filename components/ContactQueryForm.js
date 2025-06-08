@@ -1,209 +1,3 @@
-// import React, { useState } from "react";
-// import {
-//   View,
-//   Text,
-//   TextInput,
-//   TouchableOpacity,
-//   StyleSheet,
-//   ScrollView,
-// } from "react-native";
-// import { useNavigation, useRoute } from "@react-navigation/native";
-// import CustomText from "./common/Text";
-// import { submitContactQuery } from "../utils/apicalls/submitQuery";
-
-// const ContactQueryForm = () => {
-//   const route = useRoute();
-//   const navigation = useNavigation();
-//   const { title, address } = route.params;
-//   const [loading, setLoading] = useState(false);
-//   // State to hold form data
-//   const [formData, setFormData] = useState({
-//     title: title || "",
-//     address: address || "",
-//     name: "",
-//     contactNo: "",
-//     email: "",
-//     query: "",
-//   });
-
-//   // State for form validation
-//   const [errors, setErrors] = useState({
-//     title: false,
-//     address: false,
-//     name: false,
-//     contactNo: false,
-//     email: false,
-//     query: false,
-//   });
-
-//   // Function to handle input changes
-//   const handleInputChange = (field, value) => {
-//     setFormData({
-//       ...formData,
-//       [field]: value,
-//     });
-//   };
-
-//   // Form validation function
-//   const validateForm = () => {
-//     const newErrors = {
-//       title: !formData.title,
-//       address: !formData.address,
-//       name: !formData.name,
-//       contactNo: !formData.contactNo,
-//       email: !formData.email,
-//       query: !formData.query,
-//     };
-
-//     setErrors(newErrors);
-
-//     return Object.values(newErrors).every((error) => !error);
-//   };
-
-//   // Handle form submission
-//   const handleSubmit = async () => {
-//     if (validateForm()) {
-//       await submitContactQuery(formData, navigation, setLoading);
-//       alert(
-//         "Your query has been received successfully. We will contact you shortly."
-//       );
-//     } else {
-//       alert("Please fill in all the fields.");
-//     }
-//   };
-
-//   return (
-//     <ScrollView contentContainerStyle={styles.container}>
-//       {/* Form Inputs */}
-//       <CustomText style={styles.title}>Interested In Property</CustomText>
-//       <CustomText style={styles.subtitle}>Send us your query for</CustomText>
-
-//       <View style={styles.input}>
-//         <TextInput
-//           placeholder="Property title"
-//           value={formData.title}
-//           onChangeText={(text) => handleInputChange("title", text)}
-//           disabled={true}
-//         />
-//         {errors.title && (
-//           <Text style={styles.errorText}>This field is required</Text>
-//         )}
-//       </View>
-
-//       <View style={styles.input}>
-//         <TextInput
-//           placeholder="Address and location"
-//           value={formData.address}
-//           onChangeText={(text) => handleInputChange("address", text)}
-//         />
-//         {errors.address && (
-//           <Text style={styles.errorText}>This field is required</Text>
-//         )}
-//       </View>
-
-//       <View style={styles.input}>
-//         <TextInput
-//           placeholder="Your name"
-//           value={formData.name}
-//           disabled={true}
-//           onChangeText={(text) => handleInputChange("name", text)}
-//         />
-//         {errors.name && (
-//           <Text style={styles.errorText}>This field is required</Text>
-//         )}
-//       </View>
-
-//       <View style={styles.row}>
-//         <View style={[styles.input, { flex: 1, marginRight: 8 }]}>
-//           <TextInput
-//             placeholder="Contact No"
-//             value={formData.contactNo}
-//             onChangeText={(text) => handleInputChange("contactNo", text)}
-//           />
-//           {errors.contactNo && (
-//             <Text style={styles.errorText}>This field is required</Text>
-//           )}
-//         </View>
-//         <View style={[styles.input, { flex: 1, marginLeft: 8 }]}>
-//           <TextInput
-//             placeholder="Email"
-//             value={formData.email}
-//             onChangeText={(text) => handleInputChange("email", text)}
-//           />
-//           {errors.email && (
-//             <Text style={styles.errorText}>This field is required</Text>
-//           )}
-//         </View>
-//       </View>
-
-//       <View style={[styles.input, { height: 100 }]}>
-//         <TextInput
-//           placeholder="Query"
-//           multiline
-//           style={{ flex: 1, textAlignVertical: "top" }}
-//           value={formData.query}
-//           onChangeText={(text) => handleInputChange("query", text)}
-//         />
-//         {errors.query && (
-//           <Text style={styles.errorText}>This field is required</Text>
-//         )}
-//       </View>
-
-//       {/* Submit Button */}
-//       <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
-//         <CustomText style={styles.submitButtonText}>SUBMIT</CustomText>
-//       </TouchableOpacity>
-//     </ScrollView>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     padding: 16,
-//     backgroundColor: "white",
-//     flexGrow: 1,
-//   },
-//   title: {
-//     fontSize: 28,
-//     fontWeight: "bold",
-//     marginTop: 16,
-//   },
-//   subtitle: {
-//     fontSize: 14,
-//     color: "gray",
-//     marginBottom: 24,
-//   },
-//   input: {
-//     backgroundColor: "#f2f2f2",
-//     borderRadius: 8,
-//     paddingHorizontal: 12,
-//     paddingVertical: 16,
-//     marginBottom: 12,
-//   },
-//   row: {
-//     flexDirection: "row",
-//     marginBottom: 12,
-//   },
-//   submitButton: {
-//     backgroundColor: "#3E5BF5",
-//     paddingVertical: 16,
-//     borderRadius: 8,
-//     alignItems: "center",
-//     marginBottom: 24,
-//   },
-//   submitButtonText: {
-//     color: "white",
-//     fontWeight: "bold",
-//   },
-//   errorText: {
-//     color: "red",
-//     fontSize: 12,
-//     marginTop: 4,
-//   },
-// });
-
-// export default ContactQueryForm;
-
 import React, { useState } from "react";
 import {
   View,
@@ -217,177 +11,269 @@ import {
 } from "react-native";
 import { ProgressBar } from "react-native-paper";
 import DateTimePicker from "@react-native-community/datetimepicker";
-const ContactQueryform = () => {
-  const totalSteps = 5;
-  const [step, setStep] = useState(1);
-  const [form, setForm] = useState({});
+import { Formik } from "formik";
+import * as Yup from "yup";
+import { submitContactQuery } from "../utils/apicalls/submitQuery";
+
+const totalSteps = 5;
+
+const validationSchemas = [
+  Yup.object().shape({
+    property: Yup.string().required("Property location is required"),
+  }),
+  Yup.object().shape({
+    firstName: Yup.string().required("First name is required"),
+    lastName: Yup.string().required("Last name is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    phone: Yup.string().required("Phone is required"),
+  }),
+  Yup.object().shape({
+    dob: Yup.date().required("Date of birth is required"),
+  }),
+  Yup.object().shape({
+    income: Yup.number().required("Annual income is required"),
+    rent: Yup.number().required("Monthly rent is required"),
+  }),
+  Yup.object().shape({
+    signature: Yup.string().required("Signature is required"),
+    referral: Yup.string().required("Referral info is required"),
+  }),
+];
+
+const ContactQueryForm = () => {
+  const [step, setStep] = useState(0);
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const handleChange = (name, value) => {
-    setForm({ ...form, [name]: value });
+
+  const initialValues = {
+    property: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    dob: "",
+    disabled: false,
+    income: "",
+    rent: "",
+    veteran: false,
+    signature: "",
+    referral: "",
   };
-  const nextStep = () => {
-    if (step < totalSteps) setStep(step + 1);
-  };
-  const prevStep = () => {
-    if (step > 1) setStep(step - 1);
-  };
-  const renderStep = () => {
+
+  const renderStep = (formikProps) => {
+    const { values, handleChange, setFieldValue, errors, touched } = formikProps;
+
     switch (step) {
-      case 1:
+      case 0:
         return (
           <View>
-              <Text style={styles.header}>1. Select Property</Text> {" "}
-            <Text>Select the location you wish to apply for:</Text> {" "}
+            <Text style={styles.header}>1. Select Property</Text>
             <TextInput
               style={styles.input}
               placeholder="Property Location"
-              value={form.property || ""}
-              onChangeText={(text) => handleChange("property", text)}
+              value={values.property}
+              onChangeText={handleChange("property")}
             />
-                {" "}
+            {touched.property && errors.property && (
+              <Text style={styles.error}>{errors.property}</Text>
+            )}
           </View>
         );
-      case 2:
+
+      case 1:
         return (
           <View>
-             {" "}
-            <Text style={styles.header}>2. Head of Household Information</Text> {" "}
+            <Text style={styles.header}>2. Head of Household Information</Text>
             <TextInput
               style={styles.input}
               placeholder="First Name"
-              onChangeText={(text) => handleChange("firstName", text)}
+              value={values.firstName}
+              onChangeText={handleChange("firstName")}
             />
-             {" "}
+            {touched.firstName && errors.firstName && (
+              <Text style={styles.error}>{errors.firstName}</Text>
+            )}
             <TextInput
               style={styles.input}
               placeholder="Last Name"
-              onChangeText={(text) => handleChange("lastName", text)}
+              value={values.lastName}
+              onChangeText={handleChange("lastName")}
             />
-             {" "}
+            {touched.lastName && errors.lastName && (
+              <Text style={styles.error}>{errors.lastName}</Text>
+            )}
             <TextInput
               style={styles.input}
               placeholder="Email"
               keyboardType="email-address"
-              onChangeText={(text) => handleChange("email", text)}
+              value={values.email}
+              onChangeText={handleChange("email")}
             />
-             {" "}
+            {touched.email && errors.email && (
+              <Text style={styles.error}>{errors.email}</Text>
+            )}
             <TextInput
               style={styles.input}
               placeholder="Phone"
               keyboardType="phone-pad"
-              onChangeText={(text) => handleChange("phone", text)}
+              value={values.phone}
+              onChangeText={handleChange("phone")}
             />
-                {" "}
+            {touched.phone && errors.phone && (
+              <Text style={styles.error}>{errors.phone}</Text>
+            )}
           </View>
         );
-      case 3:
+
+      case 2:
         return (
           <View>
-              <Text style={styles.header}>3. Household Composition</Text> {" "}
+            <Text style={styles.header}>3. Household Composition</Text>
             <TextInput
               style={styles.input}
               placeholder="Date of Birth"
+              value={values.dob ? new Date(values.dob).toLocaleDateString() : ""}
               onFocus={() => setShowDatePicker(true)}
-              value={form.dob?.toLocaleDateString() || ""}
             />
-             {" "}
             {showDatePicker && (
               <DateTimePicker
-                value={form.dob || new Date()}
+                value={values.dob ? new Date(values.dob) : new Date()}
                 mode="date"
                 display="default"
-                onChange={(event, selectedDate) => {
+                onChange={(event, date) => {
                   setShowDatePicker(false);
-                  if (selectedDate) handleChange("dob", selectedDate);
+                  if (date) setFieldValue("dob", date);
                 }}
               />
             )}
-             {" "}
+            {touched.dob && errors.dob && (
+              <Text style={styles.error}>{errors.dob}</Text>
+            )}
             <View style={styles.switchContainer}>
-                  <Text>Is Disabled:</Text>
-                 {" "}
+              <Text>Is Disabled:</Text>
               <Switch
-                value={form.disabled || false}
-                onValueChange={(val) => handleChange("disabled", val)}
+                value={values.disabled}
+                onValueChange={(val) => setFieldValue("disabled", val)}
               />
-               {" "}
             </View>
-                {" "}
           </View>
         );
-      case 4:
+
+      case 3:
         return (
           <View>
-              <Text style={styles.header}>4. Additional Information</Text>
+            <Text style={styles.header}>4. Additional Information</Text>
             <TextInput
               style={styles.input}
               placeholder="Annual Income"
               keyboardType="numeric"
-              onChangeText={(text) => handleChange("income", text)}
+              value={values.income}
+              onChangeText={handleChange("income")}
             />
+            {touched.income && errors.income && (
+              <Text style={styles.error}>{errors.income}</Text>
+            )}
             <TextInput
               style={styles.input}
               placeholder="Monthly Rent"
               keyboardType="numeric"
-              onChangeText={(text) => handleChange("rent", text)}
+              value={values.rent}
+              onChangeText={handleChange("rent")}
             />
+            {touched.rent && errors.rent && (
+              <Text style={styles.error}>{errors.rent}</Text>
+            )}
             <View style={styles.switchContainer}>
-                  <Text>Veteran:</Text>
+              <Text>Veteran:</Text>
               <Switch
-                value={form.veteran || false}
-                onValueChange={(val) => handleChange("veteran", val)}
+                value={values.veteran}
+                onValueChange={(val) => setFieldValue("veteran", val)}
               />
             </View>
           </View>
         );
-      case 5:
+
+      case 4:
         return (
           <View>
-              <Text style={styles.header}>5. Signature</Text> {" "}
+            <Text style={styles.header}>5. Signature</Text>
             <TextInput
               style={styles.input}
               placeholder="E-Signature"
-              onChangeText={(text) => handleChange("signature", text)}
+              value={values.signature}
+              onChangeText={handleChange("signature")}
             />
-             {" "}
+            {touched.signature && errors.signature && (
+              <Text style={styles.error}>{errors.signature}</Text>
+            )}
             <TextInput
               style={styles.input}
               placeholder="How did you hear about us?"
-              onChangeText={(text) => handleChange("referral", text)}
+              value={values.referral}
+              onChangeText={handleChange("referral")}
             />
-                {" "}
+            {touched.referral && errors.referral && (
+              <Text style={styles.error}>{errors.referral}</Text>
+            )}
           </View>
         );
+
+      default:
+        return null;
     }
   };
+
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      {" "}
-      <ProgressBar
-        progress={step / totalSteps}
-        color={"#6200ee"}
-        style={styles.progress}
-      />
-      {renderStep()}{" "}
-      <View style={styles.buttonRow}>
-           {step > 1 && <Button title="Back" onPress={prevStep} />}
-        {step < totalSteps ? (
-          <Button title="Next" onPress={nextStep} />
-        ) : (
-          <Button
-            title="Submit"
-            onPress={() => console.log("Form Submitted", form)}
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchemas[step]}
+      onSubmit={async (values) => {
+        try {
+          await submitContactQuery(values); // You should define this
+          alert("Submitted successfully!");
+        } catch (error) {
+          console.error("Error submitting:", error);
+          alert("Submission failed.");
+        }
+      }}
+    >
+      {(formikProps) => (
+        <ScrollView contentContainerStyle={styles.container}>
+          <ProgressBar
+            progress={(step + 1) / totalSteps}
+            color={"#6200ee"}
+            style={styles.progress}
           />
-        )}{" "}
-      </View>
-    </ScrollView>
+          {renderStep(formikProps)}
+          <View style={styles.buttonRow}>
+            {step > 0 && <Button title="Back" onPress={() => setStep(step - 1)} />}
+            {step < totalSteps - 1 ? (
+              <Button
+                title="Next"
+                onPress={() => {
+                  formikProps.validateForm().then((errors) => {
+                    if (Object.keys(errors).length === 0) {
+                      setStep(step + 1);
+                    } else {
+                      formikProps.setTouched(errors);
+                    }
+                  });
+                }}
+              />
+            ) : (
+              <Button title="Submit" onPress={formikProps.handleSubmit} />
+            )}
+          </View>
+        </ScrollView>
+      )}
+    </Formik>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     padding: 20,
     backgroundColor: "white",
-    flex: 1,
+    flexGrow: 1,
   },
   header: {
     fontSize: 20,
@@ -398,8 +284,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#ccc",
     padding: 10,
-    marginBottom: 15,
+    marginBottom: 10,
     borderRadius: 5,
+  },
+  error: {
+    color: "red",
+    fontSize: 12,
+    marginBottom: 8,
   },
   switchContainer: {
     flexDirection: "row",
@@ -417,4 +308,5 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
 });
-export default ContactQueryform;
+
+export default ContactQueryForm;

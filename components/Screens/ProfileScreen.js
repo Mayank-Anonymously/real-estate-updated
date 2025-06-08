@@ -13,7 +13,7 @@ import { Avatar } from "react-native-paper";
 import { AntDesign, Entypo } from "react-native-vector-icons";
 import { getUserEmail, getUserName } from "../../utils/AsyncData/getItem";
 import { useNavigation } from "@react-navigation/native";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { clearUser } from "../../redux/slices/user";
 
 const ProfileScreen = () => {
@@ -23,10 +23,14 @@ const ProfileScreen = () => {
   const [email, setEmail] = useState("");
   const dispatch = useDispatch();
   const navigation = useNavigation();
+  const user = useSelector((state) => state.user.loggedIn);
 
   useEffect(() => {
     getUserName(setValue);
     getUserEmail(setEmail);
+    if  ( user ===  false){
+    
+    }
   }, []);
 
   const profileOptions = [
@@ -74,7 +78,7 @@ const ProfileScreen = () => {
         <Pressable
           style={styles.optionLeft}
           onPress={() => {
-            navigation.navigate("Splash");
+            navigation.navigate("Root");
             dispatch(clearUser(null));
           }}
         >

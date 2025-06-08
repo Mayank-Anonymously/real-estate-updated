@@ -60,6 +60,7 @@ export default function PropertyDetailScreen() {
     latitudeDelta: 0.01,
     longitudeDelta: 0.01,
   };
+
   // var unit = data.unit;
   // var utilities = data.utilities;
   // var parking = data.parkingAndEntry;
@@ -83,19 +84,7 @@ export default function PropertyDetailScreen() {
       }).start();
     };
 
-    const renderButton = (label, index) => {
-      const isActive = active === label;
-
-      return (
-        <Pressable onPress={() => handleTabPress(label, index)}>
-          <View style={[styles.buttonBase, !isActive && styles.inactiveButton]}>
-            <Text style={[styles.buttonText, !isActive && { color: "black" }]}>
-              {label}
-            </Text>
-          </View>
-        </Pressable>
-      );
-    };
+    
 
     const desc = data.description
       .replace(/\u00A0/g, " ")
@@ -142,7 +131,7 @@ export default function PropertyDetailScreen() {
             </View>
 
             <>
-              <ScrollView>
+              <ScrollView showsVerticalScrollIndicator={false} style={{ marginBottom : 100}}>
                 <Image
                   source={require("../../assets/images/cards/image-background.png")}
                   style={styles.image}
@@ -227,7 +216,7 @@ export default function PropertyDetailScreen() {
                   <ScrollView horizontal={true}>
                     {active === 0 && (
                       <View style={{ marginTop: 20, margin: 10 }}>
-                        {Object.entries(data.details.table_10).map(
+                        {Object.entries(data.details.kitchen).map(
                           ([key, value], index) => (
                             <View
                               key={index}
@@ -244,9 +233,12 @@ export default function PropertyDetailScreen() {
                               <CustomText
                                 style={[styles.value, { width: 300 }]}
                               >
-                                {value.trim().split(key)[0].trim() == "No |"
-                                  ? key.split(value)[0]
-                                  : value.split(key)[0]}
+                                {key}:
+                              </CustomText>
+                              <CustomText
+                                style={[styles.value]}
+                              >
+                                {value.split("|")[0]}
                               </CustomText>
                             </View>
                           )
@@ -255,7 +247,7 @@ export default function PropertyDetailScreen() {
                     )}
                     {active === 1 && (
                       <View style={{ marginTop: 20 }}>
-                        {Object.entries(data.details.table_7).map(
+                        {Object.entries(data.details.bathroom).map(
                           ([key, value], index) => (
                             <View
                               key={index}
@@ -269,12 +261,16 @@ export default function PropertyDetailScreen() {
                                 borderRadius: 10,
                               }}
                             >
-                              <Text style={[styles.key, { width: 200 }]}>
-                                {key.split(value)[0]}
-                              </Text>
-                              <Text style={[styles.value, { width: 150 }]}>
-                                {value ? value.split(key)[0] : value}
-                              </Text>
+                              <CustomText
+                                style={[styles.value, { width: 300 }]}
+                              >
+                                {key}:
+                              </CustomText>
+                              <CustomText
+                                style={[styles.value]}
+                              >
+                                {value.split("|")[0]}
+                              </CustomText>
                             </View>
                           )
                         )}
@@ -282,7 +278,7 @@ export default function PropertyDetailScreen() {
                     )}
                     {active === 2 && (
                       <View style={{ marginTop: 20 }}>
-                        {Object.entries(data.details.table_6).map(
+                        {Object.entries(data.details.appliances).map(
                           ([key, value], index) => (
                             <View
                               key={index}
@@ -296,12 +292,16 @@ export default function PropertyDetailScreen() {
                                 borderRadius: 10,
                               }}
                             >
-                              <Text style={[styles.key, { width: 200 }]}>
-                                {key.split(value)[0]}
-                              </Text>
-                              <Text style={[styles.value, { width: 150 }]}>
-                                {value ? value.split(key)[0] : value}
-                              </Text>
+                              <CustomText
+                                style={[styles.value, { width: 250 }]}
+                              >
+                                {key}:
+                              </CustomText>
+                              <CustomText
+                                style={[styles.value]}
+                              >
+                                {value.split("|")[0]}
+                              </CustomText>
                             </View>
                           )
                         )}
@@ -314,9 +314,88 @@ export default function PropertyDetailScreen() {
                       Location
                     </CustomText>
                     <MapView style={styles.map} initialRegion={region} />
+
+
                   </View>
+                  <View>
+                    <CustomTextBold style={{ fontSize: 25 }}>
+                      Laundry
+                    </CustomTextBold>
+                  </View>
+
+                  {Object.entries(data.details.laundry).map(
+                    ([key, value], index) => (
+                      <View
+                        key={index}
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          borderWidth: 1,
+                          padding: 10,
+                          borderColor: "#ddd",
+                          marginTop: 10,
+                          borderRadius: 10,
+                        }}
+                      >
+                        <CustomText
+                          style={[styles.value, { width: 250 }]}
+                        >
+                          {key}:
+                        </CustomText>
+                        <CustomText
+                          style={[styles.value]}
+                        >
+                          {value.split("|")[0]}
+                        </CustomText>
+                      </View>
+                    )
+                  )}
+                  
+                  {data.details.neighborhood_amenities &&
+                  <>
+                  <View>
+                    <CustomTextBold style={{ fontSize: 25 }}>
+                      Amenities
+                    </CustomTextBold>
+                  </View>
+
+                  {Object.entries(data.details.neighborhood_amenities || {}).map(
+                    ([key, value], index) => (
+                      <View
+                        key={index}
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          borderWidth: 1,
+                          padding: 10,
+                          borderColor: "#ddd",
+                          marginTop: 10,
+                          borderRadius: 10,
+                        }}
+                      >
+                        <CustomText
+                          style={[styles.value, { width: 250 }]}
+                        >
+                          {key}:
+                        </CustomText>
+                        <CustomText
+                          style={[styles.value]}
+                        >
+                          {value.split("|")[0]}
+                        </CustomText>
+                      </View>
+                    )
+                  )}
+
+                  </>
+ 
+}
+
                 </View>
+
               </ScrollView>
+
+
 
               <View style={styles.footerFixed}>
                 <TouchableOpacity
@@ -352,14 +431,14 @@ const styles = StyleSheet.create({
   image: { width: "100%", height: 300 },
   videoButton: {
     borderWidth: 1,
-    borderColor: "#5B4FE0",
+    borderColor: "#051138",
     margin: 16,
     padding: 12,
     borderRadius: 24,
     alignItems: "center",
   },
   videoButtonText: {
-    color: "#5B4FE0",
+    color: "#051138",
     fontWeight: "500",
   },
   content: { paddingHorizontal: 16, marginBottom: 50 },
@@ -395,7 +474,7 @@ const styles = StyleSheet.create({
   advanceButton: {
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor: "#5B4FE0",
+    backgroundColor: "#051138",
     borderRadius: 10,
     padding: 16,
     alignItems: "center",
@@ -417,10 +496,13 @@ const styles = StyleSheet.create({
   footerPrice: { fontSize: 18, fontWeight: "bold", color: "#1F1D5B" },
   footerEstimation: { fontSize: 12, color: "#888" },
   contactButton: {
-    backgroundColor: "#5B4FE0",
+    backgroundColor: "#051138",
     paddingHorizontal: 24,
     paddingVertical: 12,
     borderRadius: 24,
+    width: 350,
+    justifyContent: "center",
+    alignItems: "center"
   },
   contactText: { color: "#fff", fontWeight: "600" },
   footerFixed: {
@@ -509,7 +591,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: 320 / 3,
     height: 44,
-    backgroundColor: "#6366F1", // Replace with gradient if needed
+    backgroundColor: "#051138", // Replace with gradient if needed
     borderRadius: 999,
     zIndex: 0,
   },
@@ -558,7 +640,7 @@ const ToggleScreen = ({ active, setActive }) => {
             },
           ]}
         />
-        {["First Detail", "Second Detail", "Third Detail"].map(
+        {["Kitchen", "Bathroom", "Appliances"].map(
           (label, index) => (
             <Pressable
               key={index}
@@ -577,3 +659,5 @@ const ToggleScreen = ({ active, setActive }) => {
     </View>
   );
 };
+
+

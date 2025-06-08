@@ -27,9 +27,19 @@ const Splashone = () => {
   }, []);
 
   return (
-    <>
+    <ImageBackground style={[styles.container, {
+      flex: 1,
+      justifyContent: "space-between",
+      backgroundColor: "white"
+    }]} source={require("../../../assets/images/background/splash.png")} >
+
+
+
       <SafeAreaView style={styles.container}>
+
+        {/* <Image   style ={{   resizeMode : "contain" ,position:"absolute" }} /> */}
         <StatusBar barStyle="dark-content" backgroundColor="white" />
+
         <View style={{ marginHorizontal: 50 }}>
           <CustomLogo
             image={require("../../../assets/images/logo_comp/nj_house_map.png")}
@@ -95,7 +105,7 @@ const Splashone = () => {
       </SafeAreaView>
       <View
         style={{
-          backgroundColor: "white",
+          // backgroundColor: "white",
         }}
       >
         <Botttombar
@@ -103,7 +113,7 @@ const Splashone = () => {
           navigation={() => navigation.navigate("Splashtwo")}
         />
       </View>
-    </>
+    </ImageBackground>
   );
 };
 
@@ -114,9 +124,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "white",
+    // backgroundColor: "white",
   },
   content: {
+
     justifyContent: "center",
     width: "100%",
     height: 600,

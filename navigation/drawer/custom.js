@@ -12,7 +12,7 @@ import {
 const drawerItems = [
   {
     id: "home",
-    icon: <AntDesign name="home" size={18} color="#051138" />,
+    icon: <AntDesign name="home" size={18} color="#951627" />,
     label: "Home",
     screen: "HomeScreen",
   },
@@ -22,7 +22,7 @@ const drawerItems = [
       <MaterialCommunityIcons
         name="application-outline"
         size={18}
-        color="#051138"
+        color="#951627"
       />
     ),
 
@@ -31,26 +31,26 @@ const drawerItems = [
   },
   {
     id: "videos",
-    icon: <Entypo name="video" size={18} color="#051138" />,
+    icon: <Entypo name="video" size={18} color="#951627" />,
     label: "Diane’s Videos",
     screen: "VideosScreen",
   },
   {
     id: "vault",
-    icon: <Ionicons name="document-lock-sharp" size={18} color="#051138" />,
+    icon: <Ionicons name="document-lock-sharp" size={18} color="#951627" />,
     label: "Document Vault",
     screen: "VaultScreen",
   },
   {
     id: "notifications",
-    icon: <Entypo name="notification" size={18} color="#051138" />,
+    icon: <Entypo name="notification" size={18} color="#951627" />,
 
     label: "Notifications Center",
     screen: "NotificationsScreen",
   },
   {
     id: "help",
-    icon: <Entypo name="help-with-circle" size={18} color="#051138" />,
+    icon: <Entypo name="help-with-circle" size={18} color="#951627" />,
     label: "Help & FAQs",
     screen: "HelpScreen",
   },
@@ -58,7 +58,7 @@ const drawerItems = [
   {
     id: "upgrade",
     label: "Upgrade to Premium",
-    icon: <MaterialIcons name="workspace-premium" size={18} color="#051138" />,
+    icon: <MaterialIcons name="workspace-premium" size={18} color="#951627" />,
 
     screen: "UpgradeScreen",
     optional: true,
