@@ -44,7 +44,7 @@ const AvailableforRent = () => {
           <CustomText style={{ color: "grey" }}>Properties in Dover</CustomText>
           <Button
             style={{ width: 50, height: 40 }}
-            labelStyle={{ fontSize: 12 }}
+            labelStyle={{ fontSize: 12, color: "#9d011f" }}
             mode="text"
             onPress={() => navigation.navigate("Explore")}
           >
@@ -58,6 +58,7 @@ const AvailableforRent = () => {
                 item.price = item.price === undefined ? "N/A" : item.price;
                 return (
                   <PropertyCard
+                    widthlist={true}
                     onPress={() =>
                       navigation.navigate("PropertyDetail", {
                         id: item._id,
@@ -89,7 +90,7 @@ const AvailableforRent = () => {
             <CustomTextBold style={{ fontSize: 20 }}>Top Rated</CustomTextBold>
             <Button
               style={{ width: 50, height: 40 }}
-              labelStyle={{ fontSize: 12 }}
+              labelStyle={{ fontSize: 12, color: "#9d011f" }}
               mode="text"
             >
               See all
@@ -109,6 +110,7 @@ const AvailableforRent = () => {
                 otherCity.map((item, index) => {
                   return (
                     <PropertyCard
+                      widthlist={true}
                       onPress={() =>
                         navigation.navigate("PropertyDetail", {
                           id: item._id,

@@ -1,398 +1,709 @@
-// import React, { useState } from "react";
-// import {
-//   View,
-//   Text,
-//   TextInput,
-//   TouchableOpacity,
-//   StyleSheet,
-//   ScrollView,
-// } from "react-native";
-// import { useNavigation, useRoute } from "@react-navigation/native";
-// import CustomText from "./common/Text";
-// import { submitContactQuery } from "../utils/apicalls/submitQuery";
-
-// const ContactQueryForm = () => {
-//   const route = useRoute();
-//   const navigation = useNavigation();
-//   const { title, address } = route.params;
-//   const [loading, setLoading] = useState(false);
-//   // State to hold form data
-//   const [formData, setFormData] = useState({
-//     title: title || "",
-//     address: address || "",
-//     name: "",
-//     contactNo: "",
-//     email: "",
-//     query: "",
-//   });
-
-//   // State for form validation
-//   const [errors, setErrors] = useState({
-//     title: false,
-//     address: false,
-//     name: false,
-//     contactNo: false,
-//     email: false,
-//     query: false,
-//   });
-
-//   // Function to handle input changes
-//   const handleInputChange = (field, value) => {
-//     setFormData({
-//       ...formData,
-//       [field]: value,
-//     });
-//   };
-
-//   // Form validation function
-//   const validateForm = () => {
-//     const newErrors = {
-//       title: !formData.title,
-//       address: !formData.address,
-//       name: !formData.name,
-//       contactNo: !formData.contactNo,
-//       email: !formData.email,
-//       query: !formData.query,
-//     };
-
-//     setErrors(newErrors);
-
-//     return Object.values(newErrors).every((error) => !error);
-//   };
-
-//   // Handle form submission
-//   const handleSubmit = async () => {
-//     if (validateForm()) {
-//       await submitContactQuery(formData, navigation, setLoading);
-//       alert(
-//         "Your query has been received successfully. We will contact you shortly."
-//       );
-//     } else {
-//       alert("Please fill in all the fields.");
-//     }
-//   };
-
-//   return (
-//     <ScrollView contentContainerStyle={styles.container}>
-//       {/* Form Inputs */}
-//       <CustomText style={styles.title}>Interested In Property</CustomText>
-//       <CustomText style={styles.subtitle}>Send us your query for</CustomText>
-
-//       <View style={styles.input}>
-//         <TextInput
-//           placeholder="Property title"
-//           value={formData.title}
-//           onChangeText={(text) => handleInputChange("title", text)}
-//           disabled={true}
-//         />
-//         {errors.title && (
-//           <Text style={styles.errorText}>This field is required</Text>
-//         )}
-//       </View>
-
-//       <View style={styles.input}>
-//         <TextInput
-//           placeholder="Address and location"
-//           value={formData.address}
-//           onChangeText={(text) => handleInputChange("address", text)}
-//         />
-//         {errors.address && (
-//           <Text style={styles.errorText}>This field is required</Text>
-//         )}
-//       </View>
-
-//       <View style={styles.input}>
-//         <TextInput
-//           placeholder="Your name"
-//           value={formData.name}
-//           disabled={true}
-//           onChangeText={(text) => handleInputChange("name", text)}
-//         />
-//         {errors.name && (
-//           <Text style={styles.errorText}>This field is required</Text>
-//         )}
-//       </View>
-
-//       <View style={styles.row}>
-//         <View style={[styles.input, { flex: 1, marginRight: 8 }]}>
-//           <TextInput
-//             placeholder="Contact No"
-//             value={formData.contactNo}
-//             onChangeText={(text) => handleInputChange("contactNo", text)}
-//           />
-//           {errors.contactNo && (
-//             <Text style={styles.errorText}>This field is required</Text>
-//           )}
-//         </View>
-//         <View style={[styles.input, { flex: 1, marginLeft: 8 }]}>
-//           <TextInput
-//             placeholder="Email"
-//             value={formData.email}
-//             onChangeText={(text) => handleInputChange("email", text)}
-//           />
-//           {errors.email && (
-//             <Text style={styles.errorText}>This field is required</Text>
-//           )}
-//         </View>
-//       </View>
-
-//       <View style={[styles.input, { height: 100 }]}>
-//         <TextInput
-//           placeholder="Query"
-//           multiline
-//           style={{ flex: 1, textAlignVertical: "top" }}
-//           value={formData.query}
-//           onChangeText={(text) => handleInputChange("query", text)}
-//         />
-//         {errors.query && (
-//           <Text style={styles.errorText}>This field is required</Text>
-//         )}
-//       </View>
-
-//       {/* Submit Button */}
-//       <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
-//         <CustomText style={styles.submitButtonText}>SUBMIT</CustomText>
-//       </TouchableOpacity>
-//     </ScrollView>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     padding: 16,
-//     backgroundColor: "white",
-//     flexGrow: 1,
-//   },
-//   title: {
-//     fontSize: 28,
-//     fontWeight: "bold",
-//     marginTop: 16,
-//   },
-//   subtitle: {
-//     fontSize: 14,
-//     color: "gray",
-//     marginBottom: 24,
-//   },
-//   input: {
-//     backgroundColor: "#f2f2f2",
-//     borderRadius: 8,
-//     paddingHorizontal: 12,
-//     paddingVertical: 16,
-//     marginBottom: 12,
-//   },
-//   row: {
-//     flexDirection: "row",
-//     marginBottom: 12,
-//   },
-//   submitButton: {
-//     backgroundColor: "#3E5BF5",
-//     paddingVertical: 16,
-//     borderRadius: 8,
-//     alignItems: "center",
-//     marginBottom: 24,
-//   },
-//   submitButtonText: {
-//     color: "white",
-//     fontWeight: "bold",
-//   },
-//   errorText: {
-//     color: "red",
-//     fontSize: 12,
-//     marginTop: 4,
-//   },
-// });
-
-// export default ContactQueryForm;
-
 import React, { useState } from "react";
 import {
   View,
-  Text,
   TextInput,
+  Text,
   TouchableOpacity,
   ScrollView,
   Switch,
   StyleSheet,
-  Button,
 } from "react-native";
-import { ProgressBar } from "react-native-paper";
+import { Checkbox } from "react-native-paper";
+import * as Yup from "yup";
+import { Formik } from "formik";
 import DateTimePicker from "@react-native-community/datetimepicker";
-const ContactQueryform = () => {
-  const totalSteps = 5;
+
+const validationSchemas = [
+  Yup.object().shape({
+    property: Yup.string().required("Property Location is required"),
+  }),
+  Yup.object().shape({
+    salutation: Yup.string().required("Salutation is required"),
+    firstName: Yup.string().required("First Name is required"),
+    middleName: Yup.string(),
+    lastName: Yup.string().required("Last Name is required"),
+    suffix: Yup.string(),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    phone: Yup.string()
+      .matches(/^\d+$/, "Phone must be digits only")
+      .min(10, "Phone must be at least 10 digits")
+      .required("Phone is required"),
+    extension: Yup.string(),
+    address1: Yup.string().required("Address Line 1 is required"),
+    address2: Yup.string(),
+    city2: Yup.string().required("City is required"),
+    state2: Yup.string().required("State is required"),
+  }),
+  Yup.object().shape({
+    headName: Yup.string().required("Head of Household Name is required"),
+    dob: Yup.date()
+      .max(new Date(), "Date of Birth cannot be in the future")
+      .required("Date of Birth is required"),
+    gender: Yup.string()
+      .oneOf(["Male", "Female", "Transgender", "Other"], "Invalid Gender")
+      .required("Gender is required"),
+    disabled: Yup.boolean(),
+    secondPerson: Yup.string()
+      .oneOf(["Yes", "No"], "Select Yes or No")
+      .required("Second person field is required"),
+    njResident: Yup.string()
+      .oneOf(["Yes", "No"], "Select Yes or No")
+      .required("NJ Resident field is required"),
+    grossIncome: Yup.number()
+      .typeError("Combined gross annual income must be a number")
+      .required("Combined gross annual income is required")
+      .min(0, "Income cannot be negative"),
+    monthlyRent: Yup.number()
+      .typeError("Monthly rent payments must be a number")
+      .required("Monthly rent payments are required")
+      .min(0, "Rent cannot be negative"),
+    veteran: Yup.string()
+      .oneOf(["Yes", "No"], "Select Yes or No")
+      .required("Veteran field is required"),
+    section8: Yup.string()
+      .oneOf(["Yes", "No"], "Select Yes or No")
+      .required("Section 8 voucher field is required"),
+    rentalAssistance: Yup.string()
+      .oneOf(["Yes", "No"], "Select Yes or No")
+      .required("Rental assistance field is required"),
+  }),
+  Yup.object().shape({
+    income: Yup.number()
+      .typeError("Annual Income must be a number")
+      .required("Annual Income is required")
+      .min(0, "Income cannot be negative"),
+    rent: Yup.number()
+      .typeError("Monthly Rent must be a number")
+      .required("Monthly Rent is required")
+      .min(0, "Rent cannot be negative"),
+    householdSize: Yup.string()
+      .oneOf(["1", "2", "3", "4", "5+"], "Invalid Household Size")
+      .required("Total Household Size is required"),
+    adaAccessible: Yup.boolean(),
+    substandardHousing: Yup.boolean(),
+    veteran: Yup.boolean(),
+    studioContact: Yup.boolean(),
+  }),
+  Yup.object().shape({
+    eSignature: Yup.string().required("Signature is required"),
+    signatureDate: Yup.date()
+      .max(new Date(), "Signature date cannot be in the future")
+      .required("Signature date is required"),
+    hearAbout: Yup.string()
+      .oneOf(
+        ["Social Media", "Friend", "Website", "Email", "Other"],
+        "Select an option"
+      )
+      .required("Please select how you heard about COAH PRO"),
+  }),
+];
+
+function ContactQueryform() {
   const [step, setStep] = useState(1);
-  const [form, setForm] = useState({});
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const handleChange = (name, value) => {
-    setForm({ ...form, [name]: value });
+
+  const initialValues = {
+    property: "",
+    salutation: "",
+    firstName: "",
+    middleName: "",
+    lastName: "",
+    suffix: "",
+    email: "",
+    phone: "",
+    extension: "",
+    address1: "",
+    address2: "",
+    city2: "",
+    state2: "",
+    headName: "",
+    dob: null,
+    gender: "",
+    disabled: false,
+    secondPerson: "",
+    njResident: "",
+    grossIncome: "",
+    monthlyRent: "",
+    veteran: "",
+    section8: "",
+    rentalAssistance: "",
+    income: "",
+    rent: "",
+    householdSize: "",
+    adaAccessible: false,
+    substandardHousing: false,
+    studioContact: false,
+    eSignature: "",
+    signatureDate: null,
+    hearAbout: "",
   };
-  const nextStep = () => {
-    if (step < totalSteps) setStep(step + 1);
-  };
-  const prevStep = () => {
-    if (step > 1) setStep(step - 1);
-  };
-  const renderStep = () => {
+
+  const renderStep = ({
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    setFieldValue,
+  }) => {
     switch (step) {
       case 1:
         return (
           <View>
-              <Text style={styles.header}>1. Select Property</Text> {" "}
-            <Text>Select the location you wish to apply for:</Text> {" "}
+            <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+              Pre-Application
+            </Text>
+            <Text>
+              Before you begin, please ensure you have all your household and
+              income details ready...
+            </Text>
             <TextInput
               style={styles.input}
               placeholder="Property Location"
-              value={form.property || ""}
-              onChangeText={(text) => handleChange("property", text)}
+              value={values.property}
+              onChangeText={handleChange("property")}
+              onBlur={handleBlur("property")}
             />
-                {" "}
+            {touched.property && errors.property && (
+              <Text style={{ color: "red" }}>{errors.property}</Text>
+            )}
           </View>
         );
       case 2:
         return (
           <View>
-             {" "}
-            <Text style={styles.header}>2. Head of Household Information</Text> {" "}
-            <TextInput
-              style={styles.input}
-              placeholder="First Name"
-              onChangeText={(text) => handleChange("firstName", text)}
-            />
-             {" "}
-            <TextInput
-              style={styles.input}
-              placeholder="Last Name"
-              onChangeText={(text) => handleChange("lastName", text)}
-            />
-             {" "}
-            <TextInput
-              style={styles.input}
-              placeholder="Email"
-              keyboardType="email-address"
-              onChangeText={(text) => handleChange("email", text)}
-            />
-             {" "}
-            <TextInput
-              style={styles.input}
-              placeholder="Phone"
-              keyboardType="phone-pad"
-              onChangeText={(text) => handleChange("phone", text)}
-            />
-                {" "}
+            <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+              1. Head of Household Information
+            </Text>
+            {[
+              { name: "salutation", placeholder: "Salutation (Mr./Ms./Dr.)" },
+              { name: "firstName", placeholder: "First Name" },
+              { name: "middleName", placeholder: "Middle Name (optional)" },
+              { name: "lastName", placeholder: "Last Name" },
+              {
+                name: "suffix",
+                placeholder: "Suffix (e.g., Jr., Sr.) (optional)",
+              },
+              {
+                name: "email",
+                placeholder: "Email",
+                keyboardType: "email-address",
+              },
+              {
+                name: "phone",
+                placeholder: "Phone",
+                keyboardType: "phone-pad",
+              },
+              { name: "extension", placeholder: "Extension (optional)" },
+              { name: "address1", placeholder: "Address Line 1" },
+              { name: "address2", placeholder: "Address Line 2 (optional)" },
+              { name: "city2", placeholder: "City" },
+              { name: "state2", placeholder: "State" },
+            ].map(({ name, placeholder, keyboardType }) => (
+              <View key={name}>
+                <TextInput
+                  style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+                  placeholder={placeholder}
+                  value={values[name]}
+                  onChangeText={handleChange(name)}
+                  onBlur={handleBlur(name)}
+                  keyboardType={keyboardType || "default"}
+                />
+                {touched[name] && errors[name] && (
+                  <Text style={{ color: "red" }}>{errors[name]}</Text>
+                )}
+              </View>
+            ))}
           </View>
         );
       case 3:
         return (
-          <View>
-              <Text style={styles.header}>3. Household Composition</Text> {" "}
+          <ScrollView>
+            <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+              3. Household Composition
+            </Text>
+
             <TextInput
-              style={styles.input}
-              placeholder="Date of Birth"
-              onFocus={() => setShowDatePicker(true)}
-              value={form.dob?.toLocaleDateString() || ""}
+              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+              placeholder="Head of Household Name (First and Last Name)"
+              value={values.headName}
+              onChangeText={handleChange("headName")}
+              onBlur={handleBlur("headName")}
             />
-             {" "}
+            {touched.headName && errors.headName && (
+              <Text style={{ color: "red" }}>{errors.headName}</Text>
+            )}
+
+            <TextInput
+              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+              placeholder="Date of Birth"
+              value={values.dob ? values.dob.toLocaleDateString() : ""}
+              onFocus={() => setShowDatePicker(true)}
+            />
+            {touched.dob && errors.dob && (
+              <Text style={{ color: "red" }}>{errors.dob}</Text>
+            )}
             {showDatePicker && (
               <DateTimePicker
-                value={form.dob || new Date()}
+                value={values.dob || new Date()}
                 mode="date"
                 display="default"
                 onChange={(event, selectedDate) => {
                   setShowDatePicker(false);
-                  if (selectedDate) handleChange("dob", selectedDate);
+                  if (selectedDate) setFieldValue("dob", selectedDate);
                 }}
               />
             )}
-             {" "}
-            <View style={styles.switchContainer}>
-                  <Text>Is Disabled:</Text>
-                 {" "}
+
+            <Text style={{ marginTop: 10, fontWeight: "bold" }}>Gender</Text>
+            <ScrollView horizontal={true} style={{ flexDirection: "row" }}>
+              {["Male", "Female", "Transgender", "Other"].map((option) => (
+                <Checkbox.Item
+                  key={option}
+                  label={option}
+                  status={values.gender === option ? "checked" : "unchecked"}
+                  onPress={() => setFieldValue("gender", option)}
+                  style={{
+                    borderWidth: 1,
+                    margin: 5,
+                    borderRadius: 10,
+                    borderColor: "gray",
+                    alignItems: "center",
+                  }}
+                />
+              ))}
+            </ScrollView>
+            {touched.gender && errors.gender && (
+              <Text style={{ color: "red" }}>{errors.gender}</Text>
+            )}
+
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                marginVertical: 10,
+              }}
+            >
+              <Text>Is this household member permanently disabled?</Text>
               <Switch
-                value={form.disabled || false}
-                onValueChange={(val) => handleChange("disabled", val)}
+                value={values.disabled || false}
+                onValueChange={(val) => setFieldValue("disabled", val)}
+                style={{ marginLeft: 10 }}
               />
-               {" "}
             </View>
-                {" "}
-          </View>
+
+            <Text style={{ fontWeight: "bold" }}>
+              Will a 2nd person be living in your home?
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              {["Yes", "No"].map((option) => (
+                <Checkbox.Item
+                  key={option}
+                  label={option}
+                  status={
+                    values.secondPerson === option ? "checked" : "unchecked"
+                  }
+                  onPress={() => setFieldValue("secondPerson", option)}
+                  style={{
+                    borderWidth: 1,
+                    margin: 5,
+                    borderRadius: 10,
+                    borderColor: "gray",
+                    alignItems: "center",
+                  }}
+                />
+              ))}
+            </View>
+            {touched.secondPerson && errors.secondPerson && (
+              <Text style={{ color: "red" }}>{errors.secondPerson}</Text>
+            )}
+
+            <Text style={{ fontWeight: "bold" }}>
+              Does your household live or work in New Jersey?
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              {["Yes", "No"].map((option) => (
+                <Checkbox.Item
+                  key={option}
+                  label={option}
+                  status={
+                    values.njResident === option ? "checked" : "unchecked"
+                  }
+                  onPress={() => setFieldValue("njResident", option)}
+                  style={{
+                    borderWidth: 1,
+                    margin: 5,
+                    borderRadius: 10,
+                    borderColor: "gray",
+                    alignItems: "center",
+                  }}
+                />
+              ))}
+            </View>
+            {touched.njResident && errors.njResident && (
+              <Text style={{ color: "red" }}>{errors.njResident}</Text>
+            )}
+
+            <TextInput
+              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+              placeholder="Combined gross annual income (USD)"
+              value={values.grossIncome}
+              onChangeText={handleChange("grossIncome")}
+              onBlur={handleBlur("grossIncome")}
+              keyboardType="numeric"
+            />
+            {touched.grossIncome && errors.grossIncome && (
+              <Text style={{ color: "red" }}>{errors.grossIncome}</Text>
+            )}
+
+            <TextInput
+              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+              placeholder="Monthly rent payments (USD)"
+              value={values.monthlyRent}
+              onChangeText={handleChange("monthlyRent")}
+              onBlur={handleBlur("monthlyRent")}
+              keyboardType="numeric"
+            />
+            {touched.monthlyRent && errors.monthlyRent && (
+              <Text style={{ color: "red" }}>{errors.monthlyRent}</Text>
+            )}
+
+            <Text style={{ fontWeight: "bold" }}>Are you a veteran?</Text>
+            <View style={{ flexDirection: "row" }}>
+              {["Yes", "No"].map((option) => (
+                <Checkbox.Item
+                  key={option}
+                  label={option}
+                  status={values.veteran === option ? "checked" : "unchecked"}
+                  onPress={() => setFieldValue("veteran", option)}
+                  style={{
+                    borderWidth: 1,
+                    margin: 5,
+                    borderRadius: 10,
+                    borderColor: "gray",
+                    alignItems: "center",
+                  }}
+                />
+              ))}
+            </View>
+            {touched.veteran && errors.veteran && (
+              <Text style={{ color: "red" }}>{errors.veteran}</Text>
+            )}
+
+            <Text style={{ fontWeight: "bold" }}>
+              Do you currently have a Section 8 housing choice voucher?
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              {["Yes", "No"].map((option) => (
+                <Checkbox.Item
+                  key={option}
+                  label={option}
+                  status={values.section8 === option ? "checked" : "unchecked"}
+                  onPress={() => setFieldValue("section8", option)}
+                  style={{
+                    borderWidth: 1,
+                    margin: 5,
+                    borderRadius: 10,
+                    borderColor: "gray",
+                    alignItems: "center",
+                  }}
+                />
+              ))}
+            </View>
+            {touched.section8 && errors.section8 && (
+              <Text style={{ color: "red" }}>{errors.section8}</Text>
+            )}
+
+            <Text style={{ fontWeight: "bold" }}>
+              Will you receive rental assistance from other sources?
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              {["Yes", "No"].map((option) => (
+                <Checkbox.Item
+                  key={option}
+                  label={option}
+                  status={
+                    values.rentalAssistance === option ? "checked" : "unchecked"
+                  }
+                  onPress={() => setFieldValue("rentalAssistance", option)}
+                  style={{
+                    borderWidth: 1,
+                    margin: 5,
+                    borderRadius: 10,
+                    borderColor: "gray",
+                    alignItems: "center",
+                  }}
+                />
+              ))}
+            </View>
+            {touched.rentalAssistance && errors.rentalAssistance && (
+              <Text style={{ color: "red" }}>{errors.rentalAssistance}</Text>
+            )}
+          </ScrollView>
         );
+
       case 4:
         return (
           <View>
-              <Text style={styles.header}>4. Additional Information</Text>
+            <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+              4. Additional Information
+            </Text>
+
             <TextInput
-              style={styles.input}
+              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
               placeholder="Annual Income"
               keyboardType="numeric"
-              onChangeText={(text) => handleChange("income", text)}
+              value={values.income}
+              onChangeText={handleChange("income")}
+              onBlur={handleBlur("income")}
             />
+            {touched.income && errors.income && (
+              <Text style={{ color: "red" }}>{errors.income}</Text>
+            )}
+
             <TextInput
-              style={styles.input}
+              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
               placeholder="Monthly Rent"
               keyboardType="numeric"
-              onChangeText={(text) => handleChange("rent", text)}
+              value={values.rent}
+              onChangeText={handleChange("rent")}
+              onBlur={handleBlur("rent")}
             />
-            <View style={styles.switchContainer}>
-                  <Text>Veteran:</Text>
+            {touched.rent && errors.rent && (
+              <Text style={{ color: "red" }}>{errors.rent}</Text>
+            )}
+
+            <Text style={{ fontWeight: "bold" }}>Total Household Size:</Text>
+            <View style={{ flexDirection: "row" }}>
+              {["1", "2", "3", "4", "5+"].map((size) => (
+                <TouchableOpacity
+                  key={size}
+                  style={{
+                    padding: 10,
+                    borderWidth: 1,
+                    margin: 5,
+                    borderRadius: 5,
+                    backgroundColor:
+                      values.householdSize === size ? "#007AFF" : "white",
+                  }}
+                  onPress={() => setFieldValue("householdSize", size)}
+                >
+                  <Text
+                    style={{
+                      color: values.householdSize === size ? "white" : "black",
+                    }}
+                  >
+                    {size}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+            {touched.householdSize && errors.householdSize && (
+              <Text style={{ color: "red" }}>{errors.householdSize}</Text>
+            )}
+
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Text>Barrier Free / ADA Accessible Home:</Text>
               <Switch
-                value={form.veteran || false}
-                onValueChange={(val) => handleChange("veteran", val)}
+                value={values.adaAccessible || false}
+                onValueChange={(val) => setFieldValue("adaAccessible", val)}
+                style={{ marginLeft: 10 }}
+              />
+            </View>
+
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Text>Currently living in substandard/overcrowded housing:</Text>
+              <Switch
+                value={values.substandardHousing || false}
+                onValueChange={(val) => setFieldValue("substandard")}
+                style={{ marginLeft: 10 }}
+              />
+            </View>
+
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Text>Veteran:</Text>
+              <Switch
+                value={values.veteran || false}
+                onValueChange={(val) => setFieldValue("veteran", val)}
+                style={{ marginLeft: 10 }}
+              />
+            </View>
+
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Text>Studio Contact:</Text>
+              <Switch
+                value={values.studioContact || false}
+                onValueChange={(val) => setFieldValue("studioContact", val)}
+                style={{ marginLeft: 10 }}
               />
             </View>
           </View>
         );
+
       case 5:
         return (
           <View>
-              <Text style={styles.header}>5. Signature</Text> {" "}
+            <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+              5. Signature
+            </Text>
+
             <TextInput
-              style={styles.input}
-              placeholder="E-Signature"
-              onChangeText={(text) => handleChange("signature", text)}
+              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+              placeholder="Electronic Signature"
+              value={values.eSignature}
+              onChangeText={handleChange("eSignature")}
+              onBlur={handleBlur("eSignature")}
             />
-             {" "}
+            {touched.eSignature && errors.eSignature && (
+              <Text style={{ color: "red" }}>{errors.eSignature}</Text>
+            )}
+
             <TextInput
-              style={styles.input}
-              placeholder="How did you hear about us?"
-              onChangeText={(text) => handleChange("referral", text)}
+              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+              placeholder="Signature Date"
+              value={
+                values.signatureDate
+                  ? values.signatureDate.toLocaleDateString()
+                  : ""
+              }
+              onFocus={() => setShowDatePicker(true)}
             />
-                {" "}
+            {touched.signatureDate && errors.signatureDate && (
+              <Text style={{ color: "red" }}>{errors.signatureDate}</Text>
+            )}
+            {showDatePicker && (
+              <DateTimePicker
+                value={values.signatureDate || new Date()}
+                mode="date"
+                display="default"
+                onChange={(event, selectedDate) => {
+                  setShowDatePicker(false);
+                  if (selectedDate)
+                    setFieldValue("signatureDate", selectedDate);
+                }}
+              />
+            )}
+
+            <Text style={{ marginTop: 10, fontWeight: "bold" }}>
+              How did you hear about COAH PRO?
+            </Text>
+            {["Social Media", "Friend", "Website", "Email", "Other"].map(
+              (option) => (
+                <Checkbox.Item
+                  key={option}
+                  label={option}
+                  status={values.hearAbout === option ? "checked" : "unchecked"}
+                  onPress={() => setFieldValue("hearAbout", option)}
+                  style={{
+                    borderWidth: 1,
+                    margin: 5,
+                    borderRadius: 10,
+                    borderColor: "gray",
+                    alignItems: "center",
+                  }}
+                />
+              )
+            )}
+            {touched.hearAbout && errors.hearAbout && (
+              <Text style={{ color: "red" }}>{errors.hearAbout}</Text>
+            )}
           </View>
         );
+
+      default:
+        return null;
     }
   };
+
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      {" "}
-      <ProgressBar
-        progress={step / totalSteps}
-        color={"#6200ee"}
-        style={styles.progress}
-      />
-      {renderStep()}{" "}
-      <View style={styles.buttonRow}>
-           {step > 1 && <Button title="Back" onPress={prevStep} />}
-        {step < totalSteps ? (
-          <Button title="Next" onPress={nextStep} />
-        ) : (
-          <Button
-            title="Submit"
-            onPress={() => console.log("Form Submitted", form)}
-          />
-        )}{" "}
-      </View>
-    </ScrollView>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchemas[step - 1]}
+      onSubmit={(values) => {
+        if (step === validationSchemas.length) {
+          alert("Form submitted successfully!");
+          console.log(values);
+        } else {
+          setStep(step + 1);
+        }
+      }}
+    >
+      {({
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        setFieldValue,
+      }) => (
+        <ScrollView style={{ padding: 20, backgroundColor: "white", flex: 1 }}>
+          {renderStep({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            setFieldValue,
+          })}
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 20,
+            }}
+          >
+            {step > 1 && (
+              <TouchableOpacity
+                onPress={() => setStep(step - 1)}
+                style={{
+                  padding: 10,
+                  backgroundColor: "#ccc",
+                  borderRadius: 5,
+                  minWidth: 100,
+                  alignItems: "center",
+                }}
+              >
+                <Text>Back</Text>
+              </TouchableOpacity>
+            )}
+            <TouchableOpacity
+              onPress={handleSubmit}
+              style={{
+                padding: 10,
+                backgroundColor: "#007AFF",
+                borderRadius: 5,
+                minWidth: 100,
+                alignItems: "center",
+              }}
+            >
+              <Text style={{ color: "white" }}>
+                {step === validationSchemas.length ? "Submit" : "Next"}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+      )}
+    </Formik>
   );
-};
+}
+
 const styles = StyleSheet.create({
   container: {
     padding: 20,
     backgroundColor: "white",
-    flex: 1,
+    flexGrow: 1,
   },
   header: {
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 10,
+  },
+  notice: {
+    marginBottom: 15,
+    fontStyle: "italic",
+    color: "#333",
   },
   input: {
     borderWidth: 1,
@@ -415,6 +726,47 @@ const styles = StyleSheet.create({
   buttonRow: {
     flexDirection: "row",
     justifyContent: "space-between",
+    marginTop: 20,
+  },
+  header: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginVertical: 15,
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: "600",
+    marginTop: 20,
+    marginBottom: 10,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 6,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    marginBottom: 15,
+  },
+  radioGroup: {
+    flexDirection: "row",
+    marginBottom: 15,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  checkboxItem: {
+    backgroundColor: "#f9f9f9",
+    marginVertical: 4,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: "#ddd",
+    paddingLeft: 8,
+  },
+  switchContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginVertical: 15,
   },
 });
+
 export default ContactQueryform;

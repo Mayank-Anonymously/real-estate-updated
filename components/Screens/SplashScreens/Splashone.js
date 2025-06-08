@@ -73,23 +73,6 @@ const Splashone = () => {
               Find homes, check your eligibility, and get expert guidance - all
               in one app
             </Text>
-            {/* 
-            <Button
-              mode="contained"
-              outlineColor="#6246ea"
-              onPress={() => navigation.navigate("Splashtwo")}
-              buttonColor="#051138"
-              style={{
-                width: 300,
-                borderColor: "#6246ea",
-
-                marginHorizontal: 20,
-                marginTop: 20,
-                marginRight: 20,
-              }}
-            >
-              GET STARTED
-            </Button> */}
           </View>
         </View>
       </SafeAreaView>
