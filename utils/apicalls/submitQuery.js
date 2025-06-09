@@ -13,7 +13,7 @@ export const submitContactQuery = async (formData, navigation, setLoading) => {
 
     setLoading(false);
     Alert.alert("Success", response.data.message);
-    navigation.goBack();
+
   } catch (error) {
     setLoading(false);
     if (error.response) {

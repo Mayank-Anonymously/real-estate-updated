@@ -54,7 +54,11 @@ const RootStackNavigator = () => {
         options={{ headerShown: false, headerTitle: "" }}
         component={LoginScreen}
       ></RootStack.Screen>
-
+<RootStack.Screen
+        name="Splash"
+        options={{ headerShown: false, headerTitle: "" }}
+        component={SplashScreen}
+      ></RootStack.Screen>
       <RootStack.Screen
         name="Signup"
         options={{ headerShown: false, headerTitle: "" }}

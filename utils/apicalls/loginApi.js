@@ -29,12 +29,7 @@ export const loginApi = async (
         setLoading(false);
         router.navigate("Root");
         dispatch(setUser(response.data));
-        await AsyncStorage.setItem("isAuthenticated", "true");
-        await AsyncStorage.setItem("userEmail", email);
-        await AsyncStorage.setItem(
-          "user_name",
-          response.data.firstName + " " + response.data.lastName
-        );
+       
       })
 
       .catch((error) => {

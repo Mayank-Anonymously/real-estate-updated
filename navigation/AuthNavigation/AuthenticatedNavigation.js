@@ -15,6 +15,7 @@ import VerifyOTPScreen from "../../components/Screens/Authentication/VerifyOTP";
 import DrawerNavigator from "../drawer/navigtor";
 import SeacrResults from "../../components/Screens/SearchResults";
 import StripeCheckoutButton from "../../components/Payment/paymenrButton";
+import Splashone from "../../components/Screens/SplashScreens/Splashone";
 
 const RootStack = createStackNavigator();
 
@@ -49,6 +50,9 @@ const AuthRootStackNavigator = () => {
         options={{ headerShown: false, headerTitle: "" }}
         component={VerifyOTPScreen}
       ></RootStack.Screen>
+
+
+      
       <RootStack.Screen
         name="LiveChat"
         options={({ route }) => ({
@@ -72,6 +76,11 @@ const AuthRootStackNavigator = () => {
           ),
         })}
         component={LiveChat}
+      ></RootStack.Screen>
+         <RootStack.Screen
+        name="Splashone"
+        options={{ headerShown: false, headerTitle: "" }}
+        component={Splashone}
       ></RootStack.Screen>
       <RootStack.Screen
         name="TenantFinder"

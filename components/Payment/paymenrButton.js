@@ -2,11 +2,15 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { View, Alert, ActivityIndicator, Button } from "react-native";
 import { WebView } from "react-native-webview";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { updateSubscription } from "../../utils/apicalls/SubscriptionUpdate";
+import { HOST } from "../../utils/static";
 
 const StripeCheckoutButton = () => {
   const route = useRoute();
-  const { name, amount } = route.params;
+  const {user} = useSelector((state) => state.user);
+
+  // const { name, amount } = route.params;
   const [checkoutUrl, setCheckoutUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
@@ -15,7 +19,7 @@ const StripeCheckoutButton = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        "http://192.168.1.8:9292/payment-gateway/create-checkout-session",
+        `${HOST}payment-gateway/create-checkout-session`,
         {
           method: "POST",
           headers: {
@@ -53,6 +57,8 @@ const StripeCheckoutButton = () => {
     []
   );
 
+  console.log(user)
+
   if (checkoutUrl) {
     return (
       <WebView
@@ -61,7 +67,11 @@ const StripeCheckoutButton = () => {
         javaScriptEnabled
         domStorageEnabled
         onNavigationStateChange={(navState) => {
+          console.log(navState)
           if (navState.url === "https://simfys.com/success") {
+            const request = {plan :"Monthly"}
+            console.log("Success")
+            updateSubscription(request , user._id, navigation)
           }
         }}
       />

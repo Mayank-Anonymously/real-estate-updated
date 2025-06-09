@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { SignupAPI } from "../../../utils/apicalls/SignupApi";
+import CustomLogo from "../../CustomLogo";
 
 export default function SignupScreen() {
   const [firstName, setFirstName] = useState("");
@@ -69,11 +70,11 @@ export default function SignupScreen() {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={{ justifyContent: "center", alignItems: "center" }}>
-          <Image
-            style={styles.image}
-            source={require("../../../assets/images/background/login.png")}
-            resizeMode="cover"
-          />
+         
+          <CustomLogo
+          image={require("../../../assets/images/background/login.png")}
+           />
+          
         </View>
         <Text style={styles.title}>Sign up</Text>
         <Text style={styles.subtitle}>we need something more</Text>
@@ -198,7 +199,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   submitButton: {
-    backgroundColor: "#3E5BF5",
+    backgroundColor: "#1F1D5B",
     paddingVertical: 16,
     borderRadius: 8,
     alignItems: "center",

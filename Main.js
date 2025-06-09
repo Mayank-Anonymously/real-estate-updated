@@ -10,11 +10,6 @@ import { useSelector } from "react-redux";
 
 const Main = () => {
   const user = useSelector((state) => state.user.loggedIn);
-  const checking = async () => {
-    const isAuthenticated = AsyncStorage.getItem("isAuthenticated");
-    return true;
-  };
-  console.log(user);
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />

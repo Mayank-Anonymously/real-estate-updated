@@ -28,9 +28,7 @@ const ProfileScreen = () => {
   useEffect(() => {
     getUserName(setValue);
     getUserEmail(setEmail);
-    if  ( user ===  false){
-    
-    }
+
   }, []);
 
   const profileOptions = [
@@ -74,20 +72,24 @@ const ProfileScreen = () => {
       </View>
 
       {/* Bottom Switch */}
-      <View style={styles.bottomSwitch}>
         <Pressable
           style={styles.optionLeft}
           onPress={() => {
-            navigation.navigate("Root");
+            // navigation.navigate("Root");
+            navigation.reset({
+              index: 0,
+              routes: [{ name: "Splashone" }],
+            });
             dispatch(clearUser(null));
           }}
         >
+      <View style={styles.bottomSwitch}>
           <View style={styles.iconBox}>
             <AntDesign name="swap" size={20} color={"black"} />
           </View>
           <Text style={styles.optionLabel}>Logout</Text>
-        </Pressable>
       </View>
+        </Pressable>
     </SafeAreaView>
   );
 };

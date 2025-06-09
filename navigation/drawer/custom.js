@@ -8,6 +8,7 @@ import {
   Ionicons,
   MaterialIcons,
 } from "react-native-vector-icons";
+import { useSelector } from "react-redux";
 
 const drawerItems = [
   {
@@ -64,8 +65,59 @@ const drawerItems = [
     optional: true,
   },
 ];
+const drawerItemsPre = [
+  {
+    id: "home",
+    icon: <AntDesign name="home" size={18} color="#951627" />,
+    label: "Home",
+    screen: "HomeScreen",
+  },
+  {
+    id: "applications",
+    icon: (
+      <MaterialCommunityIcons
+        name="application-outline"
+        size={18}
+        color="#951627"
+      />
+    ),
+
+    label: "My Applications",
+    screen: "ApplicationsScreen",
+  },
+  {
+    id: "videos",
+    icon: <Entypo name="video" size={18} color="#951627" />,
+    label: "Diane’s Videos",
+    screen: "VideosScreen",
+  },
+  {
+    id: "vault",
+    icon: <Ionicons name="document-lock-sharp" size={18} color="#951627" />,
+    label: "Document Vault",
+    screen: "VaultScreen",
+  },
+  {
+    id: "notifications",
+    icon: <Entypo name="notification" size={18} color="#951627" />,
+
+    label: "Notifications Center",
+    screen: "NotificationsScreen",
+  },
+  {
+    id: "help",
+    icon: <Entypo name="help-with-circle" size={18} color="#951627" />,
+    label: "Help & FAQs",
+    screen: "HelpScreen",
+  },
+  // Optional - conditionally render this for free users only
+  
+];
 
 const CustomDrawer = (props) => {
+  const  user =  useSelector((state) => state.user)
+  
+  const drawer =  user.user.premiumEnabled ===  true ?  drawerItemsPre : drawerItems
   return (
     <DrawerContentScrollView
       {...props}
@@ -78,7 +130,7 @@ const CustomDrawer = (props) => {
           />
         </View>
         <View>
-          {drawerItems.map((item) => (
+          {drawer.map((item) => (
             <View>
               <DrawerItem
                 label={item.label}
