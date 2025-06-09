@@ -27,14 +27,16 @@ const Splashone = () => {
   }, []);
 
   return (
-    <ImageBackground style={[styles.container, {
-      flex: 1,
-      justifyContent: "space-between",
-      backgroundColor: "white"
-    }]} source={require("../../../assets/images/background/splash.png")} >
-
-
-
+    <ImageBackground
+      style={[
+        styles.container,
+        {
+          justifyContent: "space-between",
+          backgroundColor: "white",
+        },
+      ]}
+      source={require("../../../assets/images/background/back.png")}
+    >
       <SafeAreaView style={styles.container}>
 
         {/* <Image   style ={{   resizeMode : "contain" ,position:"absolute" }} /> */}
@@ -42,6 +44,7 @@ const Splashone = () => {
 
         <View style={{ marginHorizontal: 50 }}>
           <CustomLogo
+            color={"white"}
             image={require("../../../assets/images/logo_comp/nj_house_map.png")}
           />
           <View style={{ justifyContent: "center", alignItems: "center" }}>
@@ -73,7 +76,8 @@ const Splashone = () => {
                 styles.text,
                 {
                   fontSize: 15,
-                  color: "gray",
+                  color: "white",
+
                   marginTop: 30,
                   fontWeight: "200",
                   textAlign: "center",
@@ -87,9 +91,11 @@ const Splashone = () => {
         </View>
       </SafeAreaView>
       <View
-        style={{
-          // backgroundColor: "white",
-        }}
+        style={
+          {
+            // backgroundColor: "white",
+          }
+        }
       >
         <Botttombar
           title="Get Started"
@@ -105,21 +111,20 @@ export default Splashone;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
-    // backgroundColor: "white",
+    paddingTop: 100,
   },
   content: {
 
     justifyContent: "center",
     width: "100%",
-    height: 600,
-    // alignItems: "center",
+    top: 130,
+
     position: "absolute",
   },
   text: {
     fontSize: 12,
     fontWeight: "500",
-    color: "black",
+    color: "white",
   },
 });

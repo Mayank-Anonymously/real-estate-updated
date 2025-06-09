@@ -30,62 +30,67 @@ const SplashScreen = () => {
     loadFonts();
   }, []);
   return (
-    <ImageBackground style={[styles.container, {
-      flex: 1,
-      justifyContent: "space-between",
-      backgroundColor: "white"
-    }]} source={require("../../assets/images/background/splash.png")}  >
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="white" />
+    <ImageBackground
+      style={[
+        styles.container,
+        {
+          justifyContent: "space-between",
+          height: 1200,
+        },
+      ]}
+      source={require("../../assets/images/background/back.png")}
+    >
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="dark-content" backgroundColor="white" />
 
-      <View style={{ marginHorizontal: 50 }}>
-        <CustomLogo
-          image={require("../../assets/images/logo_comp/nj_house_map.png")}
-        />
-        <View style={{ justifyContent: "center", alignItems: "center" }}>
-          <CustomText
-            style={[
-              styles.text,
-              {
-                fontSize: 30,
-                marginTop: 20,
-                fontWeight: "200",
-              },
-            ]}
-          >
-            Affordable Housing,
-          </CustomText>
-          <CustomText
-            style={[
-              styles.text,
-              {
-                fontSize: 30,
-                fontWeight: "200",
-              },
-            ]}
-          >
-            Made Simple.
-          </CustomText>
-          <Text
-            style={[
-              styles.text,
-              {
-                fontSize: 15,
-                color: "gray",
-                marginTop: 30,
-                fontWeight: "200",
-                textAlign: "center",
-              },
-            ]}
-          >
-            Find homes, check your eligibility, and get expert guidance - all in
-            one app
-          </Text>
+        <View style={{ marginHorizontal: 50 }}>
+          <CustomLogo
+            color={"white"}
+            image={require("../../assets/images/logo_comp/nj_house_map.png")}
+          />
+          <View style={{ justifyContent: "center", alignItems: "center" }}>
+            <CustomText
+              style={[
+                styles.text,
+                {
+                  fontSize: 30,
+                  marginTop: 20,
+                  fontWeight: "200",
+                },
+              ]}
+            >
+              Affordable Housing,
+            </CustomText>
+            <CustomText
+              style={[
+                styles.text,
+                {
+                  fontSize: 30,
+                  fontWeight: "200",
+                },
+              ]}
+            >
+              Made Simple.
+            </CustomText>
+            <Text
+              style={[
+                styles.text,
+                {
+                  fontSize: 15,
+                  color: "gray",
+                  marginTop: 30,
+                  fontWeight: "200",
+                  textAlign: "center",
+                },
+              ]}
+            >
+              Find homes, check your eligibility, and get expert guidance - all
+              in one app
+            </Text>
+          </View>
         </View>
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
     </ImageBackground>
-
   );
 };
 
