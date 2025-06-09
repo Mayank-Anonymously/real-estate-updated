@@ -38,11 +38,16 @@ const Splashone = () => {
       source={require("../../../assets/images/background/back.png")}
     >
       <SafeAreaView style={styles.container}>
-
-        {/* <Image   style ={{   resizeMode : "contain" ,position:"absolute" }} /> */}
         <StatusBar barStyle="dark-content" backgroundColor="white" />
 
-        <View style={{ marginHorizontal: 50 }}>
+        <View
+          style={{
+            marginHorizontal: 50,
+            backgroundColor: "#051138",
+            padding: 30,
+            borderRadius: 10,
+          }}
+        >
           <CustomLogo
             color={"white"}
             image={require("../../../assets/images/logo_comp/nj_house_map.png")}
@@ -115,7 +120,6 @@ const styles = StyleSheet.create({
     paddingTop: 180,
   },
   content: {
-
     justifyContent: "center",
     width: "100%",
     top: 130,
