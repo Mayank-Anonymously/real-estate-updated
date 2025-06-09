@@ -24,6 +24,7 @@ const screenHeight = Dimensions.get("window").height;
 const RenderList = ({ item, navigation }) => (
   <View style={{ justifyContent: "center", alignItems: "center" }}>
     <PropertyCard
+      widthlist={false}
       onPress={() =>
         navigation.navigate("PropertyDetail", {
           id: item._id,
@@ -98,7 +99,6 @@ const Propertlistings = () => {
     });
 
     propertyType.forEach((element) => {
-      console.log(element);
       var propertyType = data.filter((item) => element == item.type);
 
       setFilteredData(propertyType);
@@ -114,6 +114,7 @@ const Propertlistings = () => {
     applyFilters(newFilters);
     closeFilter();
   };
+
   return (
     <>
       <View style={{ backgroundColor: "white", alignItems: "center" }}>
@@ -134,7 +135,7 @@ const Propertlistings = () => {
             />
           </Pressable>
           <Text style={{ fontWeight: "bold", color: "#1A1E25", fontSize: 19 }}>
-            Showing Results
+            Explore Properties
           </Text>
           <Text>
             <Ionicons

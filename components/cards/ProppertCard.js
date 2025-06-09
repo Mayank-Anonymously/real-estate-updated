@@ -28,6 +28,7 @@ const PropertyCard = ({
   description,
   image,
   type = "Villa",
+  widthlist,
 }) => {
   const desc = description
     .replace(/\u00A0/g, " ")
@@ -51,9 +52,7 @@ const PropertyCard = ({
             source={require("../../assets/images/cards/image-background.png")}
             style={styles.image}
           />
-          {/* <TouchableOpacity style={styles.heartIcon}>
-            <AntDesign name="hearto" size={16} color="#6246EA" />
-          </TouchableOpacity> */}
+
           <View style={styles.typeBadge}>
             <Text style={styles.typeText}>{cleanedStrig[2]}</Text>
           </View>
@@ -79,19 +78,19 @@ const PropertyCard = ({
               <MaterialCommunityIcons
                 name="bed-outline"
                 size={16}
-                color="#888"
+                color="#9d011f"
               />
               <Text style={styles.specText}>{cleanedStrig[0]}</Text>
             </View>
             <View style={styles.specItem}>
-              <MaterialCommunityIcons name="shower" size={16} color="#888" />
+              <MaterialCommunityIcons name="shower" size={16} color="#9d011f" />
               <Text style={styles.specText}>{cleanedStrig[1]}</Text>
             </View>
             <View style={styles.specItem}>
               <MaterialCommunityIcons
                 name="ruler-square"
                 size={16}
-                color="#888"
+                color="#9d011f"
               />
               <Text style={styles.specText}>{cleanedStrig[2]}</Text>
             </View>
@@ -112,7 +111,7 @@ const styles = StyleSheet.create({
     width: width * 0.8,
     marginHorizontal: 10,
     marginVertical: 10,
-
+    borderRadius: 10,
     // Android shadow
     elevation: 5,
 
@@ -132,6 +131,7 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 140,
+    borderRadius: 10,
   },
   heartIcon: {
     position: "absolute",
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 10,
     left: 10,
-    backgroundColor: "#777D92",
+    backgroundColor: "#9d011f",
     paddingHorizontal: 10,
     paddingVertical: 4,
     borderRadius: 10,
