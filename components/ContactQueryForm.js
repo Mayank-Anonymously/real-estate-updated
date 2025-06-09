@@ -12,6 +12,8 @@ import { Checkbox } from "react-native-paper";
 import * as Yup from "yup";
 import { Formik } from "formik";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import { submitContactQuery } from "../utils/apicalls/submitPremiumRequest";
+import { useNavigation } from "@react-navigation/native";
 
 const validationSchemas = [
   Yup.object().shape({
@@ -96,12 +98,25 @@ const validationSchemas = [
       )
       .required("Please select how you heard about COAH PRO"),
   }),
+
+  Yup.object()
+    .shape({
+      monthly: Yup.boolean(),
+      yearly: Yup.boolean(),
+      monthlyAmount: Yup.number().min(0),
+      yearlyAmount: Yup.number().min(0),
+    })
+    .test(
+      "select-plan",
+      "Please select either Monthly or Yearly plan",
+      (values) => values.monthly || values.yearly
+    ),
 ];
 
 function ContactQueryform() {
   const [step, setStep] = useState(1);
   const [showDatePicker, setShowDatePicker] = useState(false);
-
+  const navigation = useNavigation();
   const initialValues = {
     property: "",
     salutation: "",
@@ -136,6 +151,10 @@ function ContactQueryform() {
     eSignature: "",
     signatureDate: null,
     hearAbout: "",
+    monthly: false,
+    monthlyAmount: 0,
+    yearly: false,
+    yearlyAmount: 0,
   };
 
   const renderStep = ({
@@ -218,7 +237,7 @@ function ContactQueryform() {
         );
       case 3:
         return (
-          <ScrollView>
+          <ScrollView contentContainerStyle={{ marginBottom: 200 }}>
             <Text style={{ fontWeight: "bold", fontSize: 18 }}>
               3. Household Composition
             </Text>
@@ -234,23 +253,40 @@ function ContactQueryform() {
               <Text style={{ color: "red" }}>{errors.headName}</Text>
             )}
 
-            <TextInput
-              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
-              placeholder="Date of Birth"
-              value={values.dob ? values.dob.toLocaleDateString() : ""}
-              onFocus={() => setShowDatePicker(true)}
-            />
+            <TouchableOpacity onPress={() => setShowDatePicker(true)}>
+              <TextInput
+                style={{
+                  borderWidth: 1,
+                  marginVertical: 5,
+                  padding: 10,
+                  borderColor: touched.dob && errors.dob ? "red" : "#ccc",
+                }}
+                placeholder="Date of Birth"
+                value={
+                  values.dob ? new Date(values.dob).toLocaleDateString() : ""
+                }
+                editable={false}
+                pointerEvents="none" // ensures TextInput doesn’t take over tap
+              />
+            </TouchableOpacity>
+
             {touched.dob && errors.dob && (
-              <Text style={{ color: "red" }}>{errors.dob}</Text>
+              <Text style={{ color: "red", fontSize: 12 }}>{errors.dob}</Text>
             )}
+
             {showDatePicker && (
               <DateTimePicker
-                value={values.dob || new Date()}
+                value={
+                  values.dob ? new Date(values.dob) : new Date("2000-01-01")
+                }
                 mode="date"
                 display="default"
+                maximumDate={new Date()}
                 onChange={(event, selectedDate) => {
                   setShowDatePicker(false);
-                  if (selectedDate) setFieldValue("dob", selectedDate);
+                  if (selectedDate) {
+                    setFieldValue("dob", selectedDate);
+                  }
                 }}
               />
             )}
@@ -558,28 +594,39 @@ function ContactQueryform() {
               <Text style={{ color: "red" }}>{errors.eSignature}</Text>
             )}
 
-            <TextInput
-              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
-              placeholder="Signature Date"
-              value={
-                values.signatureDate
-                  ? values.signatureDate.toLocaleDateString()
-                  : ""
-              }
-              onFocus={() => setShowDatePicker(true)}
-            />
+            <TouchableOpacity onPress={() => setShowDatePicker(true)}>
+              <TextInput
+                style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+                placeholder="Signature Date"
+                value={
+                  values.signatureDate
+                    ? new Date(values.signatureDate).toLocaleDateString()
+                    : ""
+                }
+                editable={false}
+                pointerEvents="none" // optional but useful
+              />
+            </TouchableOpacity>
+
             {touched.signatureDate && errors.signatureDate && (
               <Text style={{ color: "red" }}>{errors.signatureDate}</Text>
             )}
+
             {showDatePicker && (
               <DateTimePicker
-                value={values.signatureDate || new Date()}
+                value={
+                  values.signatureDate
+                    ? new Date(values.signatureDate)
+                    : new Date()
+                }
                 mode="date"
                 display="default"
+                maximumDate={new Date()}
                 onChange={(event, selectedDate) => {
                   setShowDatePicker(false);
-                  if (selectedDate)
+                  if (selectedDate) {
                     setFieldValue("signatureDate", selectedDate);
+                  }
                 }}
               />
             )}
@@ -610,6 +657,71 @@ function ContactQueryform() {
           </View>
         );
 
+      case 6:
+        return (
+          <View style={{ padding: 20 }}>
+            <Text
+              style={{ fontSize: 18, fontWeight: "bold", marginBottom: 10 }}
+            >
+              Choose Your Plan
+            </Text>
+
+            <TouchableOpacity
+              style={{
+                borderWidth: 1,
+                borderColor: values.monthly ? "#4CAF50" : "#ccc",
+                backgroundColor: values.monthly ? "#e8f5e9" : "#fff",
+                padding: 15,
+                borderRadius: 8,
+                marginBottom: 10,
+              }}
+              onPress={() => {
+                setFieldValue("monthly", true);
+                setFieldValue("monthlyAmount", 29);
+                setFieldValue("yearly", false);
+                setFieldValue("yearlyAmount", 0);
+                submitContactQuery(values);
+                navigation.navigate("Payment", {
+                  name: "Premium Monthly",
+                  amount: 2900,
+                });
+              }}
+            >
+              <Text style={{ fontSize: 16 }}>$29 / Month</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={{
+                borderWidth: 1,
+                borderColor: values.yearly ? "#4CAF50" : "#ccc",
+                backgroundColor: values.yearly ? "#e8f5e9" : "#fff",
+                padding: 15,
+                borderRadius: 8,
+              }}
+              onPress={() => {
+                setFieldValue("monthly", false);
+                setFieldValue("monthlyAmount", 0);
+                setFieldValue("yearly", true);
+                setFieldValue("yearlyAmount", 299);
+                submitContactQuery(values);
+                navigation.navigate("Payment", {
+                  name: "Premium Yearly",
+                  amount: 29900,
+                });
+              }}
+            >
+              <Text style={{ fontSize: 16 }}>$299 / Year</Text>
+            </TouchableOpacity>
+
+            {touched.monthly === false &&
+              touched.yearly === false &&
+              errors.monthly && (
+                <Text style={{ color: "red", marginTop: 10 }}>
+                  {errors.monthly}
+                </Text>
+              )}
+          </View>
+        );
       default:
         return null;
     }
@@ -621,8 +733,7 @@ function ContactQueryform() {
       validationSchema={validationSchemas[step - 1]}
       onSubmit={(values) => {
         if (step === validationSchemas.length) {
-          alert("Form submitted successfully!");
-          console.log(values);
+          submitContactQuery(values);
         } else {
           setStep(step + 1);
         }
@@ -637,7 +748,7 @@ function ContactQueryform() {
         handleSubmit,
         setFieldValue,
       }) => (
-        <ScrollView style={{ padding: 20, backgroundColor: "white", flex: 1 }}>
+        <ScrollView style={{ padding: 20, backgroundColor: "white" }}>
           {renderStep({
             values,
             errors,
@@ -668,20 +779,54 @@ function ContactQueryform() {
                 <Text>Back</Text>
               </TouchableOpacity>
             )}
-            <TouchableOpacity
-              onPress={handleSubmit}
-              style={{
-                padding: 10,
-                backgroundColor: "#007AFF",
-                borderRadius: 5,
-                minWidth: 100,
-                alignItems: "center",
-              }}
-            >
-              <Text style={{ color: "white" }}>
-                {step === validationSchemas.length ? "Submit" : "Next"}
-              </Text>
-            </TouchableOpacity>
+            {step === 3 ? (
+              <>
+                {step > 1 && (
+                  <TouchableOpacity
+                    onPress={() => setStep(step - 1)}
+                    style={{
+                      padding: 10,
+                      backgroundColor: "#ccc",
+                      borderRadius: 5,
+                      minWidth: 100,
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text>Back</Text>
+                  </TouchableOpacity>
+                )}
+                <TouchableOpacity
+                  onPress={handleSubmit}
+                  style={{
+                    padding: 10,
+                    backgroundColor: "#007AFF",
+                    borderRadius: 5,
+                    minWidth: 100,
+                    alignItems: "center",
+                    marginBottom: 100,
+                  }}
+                >
+                  <Text style={{ color: "white" }}>
+                    {step === validationSchemas.length ? "Submit" : "Next"}
+                  </Text>
+                </TouchableOpacity>
+              </>
+            ) : (
+              <TouchableOpacity
+                onPress={handleSubmit}
+                style={{
+                  padding: 10,
+                  backgroundColor: "#007AFF",
+                  borderRadius: 5,
+                  minWidth: 100,
+                  alignItems: "center",
+                }}
+              >
+                <Text style={{ color: "white" }}>
+                  {step === validationSchemas.length ? "Submit" : "Next"}
+                </Text>
+              </TouchableOpacity>
+            )}
           </View>
         </ScrollView>
       )}
@@ -709,15 +854,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#ccc",
     padding: 10,
-    marginBottom: 15,
     borderRadius: 5,
+    marginTop: 20,
   },
-  switchContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: 15,
-  },
+
   progress: {
     height: 10,
     marginBottom: 20,
@@ -762,7 +902,6 @@ const styles = StyleSheet.create({
     paddingLeft: 8,
   },
   switchContainer: {
-    flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     marginVertical: 15,

@@ -14,6 +14,7 @@ import ContactQueryForm from "../../components/ContactQueryForm";
 import VerifyOTPScreen from "../../components/Screens/Authentication/VerifyOTP";
 import DrawerNavigator from "../drawer/navigtor";
 import SeacrResults from "../../components/Screens/SearchResults";
+import StripeCheckoutButton from "../../components/Payment/paymenrButton";
 
 const RootStack = createStackNavigator();
 
@@ -141,6 +142,11 @@ const AuthRootStackNavigator = () => {
         name="Search_Results"
         options={{ headerShown: true, headerTitle: "" }}
         component={SeacrResults}
+      ></RootStack.Screen>
+      <RootStack.Screen
+        name="Payment"
+        options={{ headerShown: true, headerTitle: "" }}
+        component={StripeCheckoutButton}
       ></RootStack.Screen>
     </RootStack.Navigator>
   );
