@@ -3,7 +3,7 @@ import React from "react";
 import CustomTextBold from "./common/BoldCustomtext";
 import CustomText from "./common/Text";
 
-const CustomLogo = ({ image }) => {
+const CustomLogo = ({ image, color }) => {
   return (
     <View
       style={{
@@ -13,16 +13,20 @@ const CustomLogo = ({ image }) => {
       }}
     >
       <View style={{ justifyContent: "center", alignItems: "center" }}>
-        <CustomTextBold style={{ fontSize: 27, color: "#051138" }}>
+        <CustomTextBold
+          style={{ fontSize: 27, color: color ? color : "#051138" }}
+        >
           AFFORDABLE{" "}
         </CustomTextBold>
-        <CustomTextBold style={{ fontSize: 26, color: "#051138" }}>
+        <CustomTextBold
+          style={{ fontSize: 26, color: color ? color : "#051138" }}
+        >
           NJ <CustomText>HOUSING</CustomText>{" "}
         </CustomTextBold>
       </View>
       <Image
         source={image}
-        style={{ width: 70, height: 70, resizeMode: "contain" }}
+        style={{ width: 100, height: 100, resizeMode: "contain" }}
       />
     </View>
   );
