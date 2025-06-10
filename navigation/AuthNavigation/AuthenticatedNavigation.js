@@ -21,7 +21,17 @@ const RootStack = createStackNavigator();
 
 const AuthRootStackNavigator = () => {
   return (
-    <RootStack.Navigator>
+    <RootStack.Navigator
+      screenOptions={{
+        transition: {
+          config: (transitionProps) => ({
+            transition: "slide",
+            duration: 500,
+            easing: Easing.linear,
+          }),
+        },
+      }}
+    >
       <RootStack.Screen
         name="Splash"
         options={{ headerShown: false, headerTitle: "" }}
@@ -51,8 +61,6 @@ const AuthRootStackNavigator = () => {
         component={VerifyOTPScreen}
       ></RootStack.Screen>
 
-
-      
       <RootStack.Screen
         name="LiveChat"
         options={({ route }) => ({
@@ -77,7 +85,7 @@ const AuthRootStackNavigator = () => {
         })}
         component={LiveChat}
       ></RootStack.Screen>
-         <RootStack.Screen
+      <RootStack.Screen
         name="Splashone"
         options={{ headerShown: false, headerTitle: "" }}
         component={Splashone}

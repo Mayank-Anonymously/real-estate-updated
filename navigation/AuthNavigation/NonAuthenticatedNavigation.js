@@ -54,7 +54,7 @@ const RootStackNavigator = () => {
         options={{ headerShown: false, headerTitle: "" }}
         component={LoginScreen}
       ></RootStack.Screen>
-<RootStack.Screen
+      <RootStack.Screen
         name="Splash"
         options={{ headerShown: false, headerTitle: "" }}
         component={SplashScreen}
