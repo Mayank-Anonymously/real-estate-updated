@@ -10,7 +10,7 @@ const StripeCheckoutButton = () => {
   const route = useRoute();
   const {user} = useSelector((state) => state.user);
 
-  // const { name, amount } = route.params;
+  const { name, amount } = route.params;
   const [checkoutUrl, setCheckoutUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
@@ -26,11 +26,10 @@ const StripeCheckoutButton = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: "Premium",
-            amount: 1000, // in cents for $10
+            name: name,
+            amount: amount, // in cents for $10
             currency: "USD",
             successUrl: "https://simfys.com/success",
-            failedUrl: "https://simfys.com/cancel",
           }),
         }
       );
@@ -67,10 +66,8 @@ const StripeCheckoutButton = () => {
         javaScriptEnabled
         domStorageEnabled
         onNavigationStateChange={(navState) => {
-          console.log(navState)
           if (navState.url === "https://simfys.com/success") {
-            const request = {plan :"Monthly"}
-            console.log("Success")
+            const request = {plan :name}
             updateSubscription(request , user._id, navigation)
           }
         }}

@@ -77,7 +77,7 @@ const SplashScreen = () => {
                 styles.text,
                 {
                   fontSize: 15,
-                  color: "gray",
+                  color: "white",
                   marginTop: 30,
                   fontWeight: "200",
                   textAlign: "center",
@@ -112,6 +112,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 12,
     fontWeight: "500",
-    color: "black",
+    color: "white",
   },
 });
