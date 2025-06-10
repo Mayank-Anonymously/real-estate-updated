@@ -111,13 +111,13 @@ const drawerItemsPre = [
     screen: "HelpScreen",
   },
   // Optional - conditionally render this for free users only
-  
 ];
 
 const CustomDrawer = (props) => {
-  const  user =  useSelector((state) => state.user)
-  
-  const drawer =  user.user.premiumEnabled ===  true ?  drawerItemsPre : drawerItems
+  const user = useSelector((state) => state.user);
+
+  const drawer =
+    user.user.premiumEnabled === true ? drawerItemsPre : drawerItems;
   return (
     <DrawerContentScrollView
       {...props}

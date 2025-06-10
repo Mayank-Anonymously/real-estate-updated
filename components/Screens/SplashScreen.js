@@ -35,7 +35,6 @@ const SplashScreen = () => {
         styles.container,
         {
           justifyContent: "space-between",
-          height: 1200,
         },
       ]}
       source={require("../../assets/images/background/back.png")}
@@ -60,7 +59,7 @@ const SplashScreen = () => {
               style={[
                 styles.text,
                 {
-                  fontSize: 30,
+                  fontSize: 20,
                   marginTop: 20,
                   fontWeight: "200",
                 },
@@ -119,6 +118,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 12,
     fontWeight: "500",
-    color: "black",
+    color: "white",
   },
 });

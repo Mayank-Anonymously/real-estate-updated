@@ -14,6 +14,7 @@ import { Formik } from "formik";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { submitContactQuery } from "../utils/apicalls/submitQuery";
 import { useNavigation } from "@react-navigation/native";
+import ProgressBar from "./common/Progressbar";
 
 const validationSchemas = [
   Yup.object().shape({
@@ -166,30 +167,32 @@ function ContactQueryform() {
     setFieldValue,
   }) => {
     switch (step) {
-      case 0:
+      case 1:
         return (
           <View>
-            <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+            <Text style={{ fontWeight: "bold", fontSize: 18, marginTop: 10 }}>
               Pre-Application
             </Text>
-            <Text>
+            <Text style={{ marginTop: 10 }}>
               Before you begin, please ensure you have all your household and
               income details ready...
             </Text>
             <TextInput
-              style={styles.input}
+              style={[styles.input]}
               placeholder="Property Location"
               value={values.property}
               onChangeText={handleChange("property")}
               onBlur={handleBlur("property")}
             />
             {touched.property && errors.property && (
-              <Text style={{ color: "red" }}>{errors.property}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.property}
+              </Text>
             )}
           </View>
         );
 
-      case 1:
+      case 2:
         return (
           <View>
             <Text style={{ fontWeight: "bold", fontSize: 18 }}>
@@ -222,7 +225,16 @@ function ContactQueryform() {
             ].map(({ name, placeholder, keyboardType }) => (
               <View key={name}>
                 <TextInput
-                  style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+                  style={{
+                    borderWidth: 1,
+                    borderColor: "#ccc",
+                    borderRadius: 10,
+                    paddingVertical: 12,
+                    paddingHorizontal: 16,
+                    fontSize: 16,
+                    backgroundColor: "#f9f9f9",
+                    marginTop: 20,
+                  }}
                   placeholder={placeholder}
                   value={values[name]}
                   onChangeText={handleChange(name)}
@@ -230,14 +242,16 @@ function ContactQueryform() {
                   keyboardType={keyboardType || "default"}
                 />
                 {touched[name] && errors[name] && (
-                  <Text style={{ color: "red" }}>{errors[name]}</Text>
+                  <Text style={{ color: "red", marginTop: 10 }}>
+                    {errors[name]}
+                  </Text>
                 )}
               </View>
             ))}
           </View>
         );
 
-      case 2:
+      case 3:
         return (
           <ScrollView contentContainerStyle={{ marginBottom: 200 }}>
             <Text style={{ fontWeight: "bold", fontSize: 18 }}>
@@ -245,24 +259,21 @@ function ContactQueryform() {
             </Text>
 
             <TextInput
-              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+              style={styles.input}
               placeholder="Head of Household Name (First and Last Name)"
               value={values.headName}
               onChangeText={handleChange("headName")}
               onBlur={handleBlur("headName")}
             />
             {touched.headName && errors.headName && (
-              <Text style={{ color: "red" }}>{errors.headName}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.headName}
+              </Text>
             )}
 
             <TouchableOpacity onPress={() => setShowDatePicker(true)}>
               <TextInput
-                style={{
-                  borderWidth: 1,
-                  marginVertical: 5,
-                  padding: 10,
-                  borderColor: touched.dob && errors.dob ? "red" : "#ccc",
-                }}
+                style={styles.input}
                 placeholder="Date of Birth"
                 value={
                   values.dob ? new Date(values.dob).toLocaleDateString() : ""
@@ -273,7 +284,9 @@ function ContactQueryform() {
             </TouchableOpacity>
 
             {touched.dob && errors.dob && (
-              <Text style={{ color: "red", fontSize: 12 }}>{errors.dob}</Text>
+              <Text style={{ color: "red", marginTop: 10, fontSize: 12 }}>
+                {errors.dob}
+              </Text>
             )}
 
             {showDatePicker && (
@@ -312,7 +325,9 @@ function ContactQueryform() {
               ))}
             </ScrollView>
             {touched.gender && errors.gender && (
-              <Text style={{ color: "red" }}>{errors.gender}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.gender}
+              </Text>
             )}
 
             <View
@@ -353,7 +368,9 @@ function ContactQueryform() {
               ))}
             </View>
             {touched.secondPerson && errors.secondPerson && (
-              <Text style={{ color: "red" }}>{errors.secondPerson}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.secondPerson}
+              </Text>
             )}
 
             <Text style={{ fontWeight: "bold" }}>
@@ -379,11 +396,13 @@ function ContactQueryform() {
               ))}
             </View>
             {touched.njResident && errors.njResident && (
-              <Text style={{ color: "red" }}>{errors.njResident}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.njResident}
+              </Text>
             )}
 
             <TextInput
-              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+              style={styles.input}
               placeholder="Combined gross annual income (USD)"
               value={values.grossIncome}
               onChangeText={handleChange("grossIncome")}
@@ -391,11 +410,13 @@ function ContactQueryform() {
               keyboardType="numeric"
             />
             {touched.grossIncome && errors.grossIncome && (
-              <Text style={{ color: "red" }}>{errors.grossIncome}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.grossIncome}
+              </Text>
             )}
 
             <TextInput
-              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+              style={styles.input}
               placeholder="Monthly rent payments (USD)"
               value={values.monthlyRent}
               onChangeText={handleChange("monthlyRent")}
@@ -403,7 +424,9 @@ function ContactQueryform() {
               keyboardType="numeric"
             />
             {touched.monthlyRent && errors.monthlyRent && (
-              <Text style={{ color: "red" }}>{errors.monthlyRent}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.monthlyRent}
+              </Text>
             )}
 
             <Text style={{ fontWeight: "bold" }}>Are you a veteran?</Text>
@@ -425,7 +448,9 @@ function ContactQueryform() {
               ))}
             </View>
             {touched.veteran && errors.veteran && (
-              <Text style={{ color: "red" }}>{errors.veteran}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.veteran}
+              </Text>
             )}
 
             <Text style={{ fontWeight: "bold" }}>
@@ -449,7 +474,9 @@ function ContactQueryform() {
               ))}
             </View>
             {touched.section8 && errors.section8 && (
-              <Text style={{ color: "red" }}>{errors.section8}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.section8}
+              </Text>
             )}
 
             <Text style={{ fontWeight: "bold" }}>
@@ -475,7 +502,9 @@ function ContactQueryform() {
               ))}
             </View>
             {touched.rentalAssistance && errors.rentalAssistance && (
-              <Text style={{ color: "red" }}>{errors.rentalAssistance}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.rentalAssistance}
+              </Text>
             )}
           </ScrollView>
         );
@@ -488,7 +517,7 @@ function ContactQueryform() {
             </Text>
 
             <TextInput
-              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+              style={styles.input}
               placeholder="Annual Income"
               keyboardType="numeric"
               value={values.income}
@@ -496,11 +525,13 @@ function ContactQueryform() {
               onBlur={handleBlur("income")}
             />
             {touched.income && errors.income && (
-              <Text style={{ color: "red" }}>{errors.income}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.income}
+              </Text>
             )}
 
             <TextInput
-              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+              style={styles.input}
               placeholder="Monthly Rent"
               keyboardType="numeric"
               value={values.rent}
@@ -508,7 +539,7 @@ function ContactQueryform() {
               onBlur={handleBlur("rent")}
             />
             {touched.rent && errors.rent && (
-              <Text style={{ color: "red" }}>{errors.rent}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>{errors.rent}</Text>
             )}
 
             <Text style={{ fontWeight: "bold" }}>Total Household Size:</Text>
@@ -537,7 +568,9 @@ function ContactQueryform() {
               ))}
             </View>
             {touched.householdSize && errors.householdSize && (
-              <Text style={{ color: "red" }}>{errors.householdSize}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.householdSize}
+              </Text>
             )}
 
             <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -586,19 +619,21 @@ function ContactQueryform() {
             </Text>
 
             <TextInput
-              style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+              style={styles.input}
               placeholder="Electronic Signature"
               value={values.eSignature}
               onChangeText={handleChange("eSignature")}
               onBlur={handleBlur("eSignature")}
             />
             {touched.eSignature && errors.eSignature && (
-              <Text style={{ color: "red" }}>{errors.eSignature}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.eSignature}
+              </Text>
             )}
 
             <TouchableOpacity onPress={() => setShowDatePicker(true)}>
               <TextInput
-                style={{ borderWidth: 1, marginVertical: 5, padding: 10 }}
+                style={styles.input}
                 placeholder="Signature Date"
                 value={
                   values.signatureDate
@@ -611,7 +646,9 @@ function ContactQueryform() {
             </TouchableOpacity>
 
             {touched.signatureDate && errors.signatureDate && (
-              <Text style={{ color: "red" }}>{errors.signatureDate}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.signatureDate}
+              </Text>
             )}
 
             {showDatePicker && (
@@ -654,7 +691,9 @@ function ContactQueryform() {
               )
             )}
             {touched.hearAbout && errors.hearAbout && (
-              <Text style={{ color: "red" }}>{errors.hearAbout}</Text>
+              <Text style={{ color: "red", marginTop: 10 }}>
+                {errors.hearAbout}
+              </Text>
             )}
           </View>
         );
@@ -718,7 +757,7 @@ function ContactQueryform() {
             {touched.monthly === false &&
               touched.yearly === false &&
               errors.monthly && (
-                <Text style={{ color: "red", marginTop: 10 }}>
+                <Text style={{ color: "red", marginTop: 10, marginTop: 10 }}>
                   {errors.monthly}
                 </Text>
               )}
@@ -729,6 +768,7 @@ function ContactQueryform() {
     }
   };
 
+  const totalSteps = 6;
   return (
     <Formik
       initialValues={initialValues}
@@ -751,6 +791,7 @@ function ContactQueryform() {
         setFieldValue,
       }) => (
         <ScrollView style={{ padding: 20, backgroundColor: "white" }}>
+          <ProgressBar currentStep={step} totalSteps={totalSteps} />
           {renderStep({
             values,
             errors,
@@ -764,7 +805,7 @@ function ContactQueryform() {
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
-              marginTop: 20,
+              margin: 10,
             }}
           >
             {step > 1 && (
@@ -781,54 +822,21 @@ function ContactQueryform() {
                 <Text>Back</Text>
               </TouchableOpacity>
             )}
-            {step === 3 ? (
-              <>
-                {step > 1 && (
-                  <TouchableOpacity
-                    onPress={() => setStep(step - 1)}
-                    style={{
-                      padding: 10,
-                      backgroundColor: "#ccc",
-                      borderRadius: 5,
-                      minWidth: 100,
-                      alignItems: "center",
-                    }}
-                  >
-                    <Text>Back</Text>
-                  </TouchableOpacity>
-                )}
-                <TouchableOpacity
-                  onPress={handleSubmit}
-                  style={{
-                    padding: 10,
-                    backgroundColor: "#007AFF",
-                    borderRadius: 5,
-                    minWidth: 100,
-                    alignItems: "center",
-                    marginBottom: 100,
-                  }}
-                >
-                  <Text style={{ color: "white" }}>
-                    {step === validationSchemas.length ? "Submit" : "Next"}
-                  </Text>
-                </TouchableOpacity>
-              </>
-            ) : (
-              <TouchableOpacity
-                onPress={handleSubmit}
-                style={{
-                  padding: 10,
-                  backgroundColor: "#007AFF",
-                  borderRadius: 5,
-                  minWidth: 100,
-                  alignItems: "center",
-                }}
-              >
-                <Text style={{ color: "white" }}>
-                  {step === validationSchemas.length ? "Submit" : "Next"}
-                </Text>
-              </TouchableOpacity>
-            )}
+
+            <TouchableOpacity
+              onPress={handleSubmit}
+              style={{
+                padding: 10,
+                backgroundColor: "#007AFF",
+                borderRadius: 5,
+                minWidth: 100,
+                alignItems: "center",
+              }}
+            >
+              <Text style={{ color: "white" }}>
+                {step === validationSchemas.length ? "Submit" : "Next"}
+              </Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       )}
@@ -883,10 +891,12 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     borderColor: "#ccc",
-    borderRadius: 6,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    marginBottom: 15,
+    borderRadius: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    fontSize: 16,
+    backgroundColor: "#f9f9f9",
+    marginTop: 20,
   },
   radioGroup: {
     flexDirection: "row",
@@ -906,6 +916,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginVertical: 15,
+  },
+  progressBar: {
+    height: 10,
+    backgroundColor: "#4CAF50",
+    borderRadius: 5,
+    width: "0%", // Default width
+  },
+  stepText: {
+    marginTop: 5,
+    fontSize: 16,
   },
 });
 
