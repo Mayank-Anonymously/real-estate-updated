@@ -15,7 +15,7 @@ import ExploreActive from "../../assets/tabbaricon/explore-fill.png";
 import Subscription from "../../assets/tabbaricon/subscription.png";
 import SubscriptionActive from "../../assets/tabbaricon/subscription-fill.png";
 import LotteryActive from "../../assets/tabbaricon/lottery-fill.png";
-import Lottery from "../../assets/tabbaricon/lottery-fill.png";
+import Lottery from "../../assets/tabbaricon/lottery.png";
 
 import Profile from "../../assets/tabbaricon/profile.png";
 import ProfileActive from "../../assets/tabbaricon/profile-fill.png";
@@ -45,7 +45,7 @@ const getTabBarIcon = (focused, activeIcon, inactiveIcon, label) => (
 export default function MyTabs() {
 
   const  user  = useSelector((state) =>  state.user.loggedIn)
-  console.log("user:", user)
+  
   return (
     <Tab.Navigator
       screenOptions={{

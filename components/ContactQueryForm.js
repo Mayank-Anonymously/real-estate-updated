@@ -15,6 +15,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import { submitContactQuery } from "../utils/apicalls/submitQuery";
 import { useNavigation } from "@react-navigation/native";
 import ProgressBar from "./common/Progressbar";
+import CustomText from "./common/Text";
 
 const validationSchemas = [
   Yup.object().shape({
@@ -170,13 +171,13 @@ function ContactQueryform() {
       case 1:
         return (
           <View>
-            <Text style={{ fontWeight: "bold", fontSize: 18, marginTop: 10 }}>
+            <CustomText style={{ fontWeight: "bold", fontSize: 18, marginTop: 10 }}>
               Pre-Application
-            </Text>
-            <Text style={{ marginTop: 10 }}>
+            </CustomText>
+            <CustomText style={{ marginTop: 10 }}>
               Before you begin, please ensure you have all your household and
               income details ready...
-            </Text>
+            </CustomText>
             <TextInput
               style={[styles.input]}
               placeholder="Property Location"
@@ -185,9 +186,9 @@ function ContactQueryform() {
               onBlur={handleBlur("property")}
             />
             {touched.property && errors.property && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.property}
-              </Text>
+              </CustomText>
             )}
           </View>
         );
@@ -195,9 +196,9 @@ function ContactQueryform() {
       case 2:
         return (
           <View>
-            <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+            <CustomText style={{ fontWeight: "bold", fontSize: 18 }}>
               1. Head of Household Information
-            </Text>
+            </CustomText>
             {[
               { name: "salutation", placeholder: "Salutation (Mr./Ms./Dr.)" },
               { name: "firstName", placeholder: "First Name" },
@@ -242,9 +243,9 @@ function ContactQueryform() {
                   keyboardType={keyboardType || "default"}
                 />
                 {touched[name] && errors[name] && (
-                  <Text style={{ color: "red", marginTop: 10 }}>
+                  <CustomText style={{ color: "red", marginTop: 10 }}>
                     {errors[name]}
-                  </Text>
+                  </CustomText>
                 )}
               </View>
             ))}
@@ -254,9 +255,9 @@ function ContactQueryform() {
       case 3:
         return (
           <ScrollView contentContainerStyle={{ marginBottom: 200 }}>
-            <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+            <CustomText style={{ fontWeight: "bold", fontSize: 18 }}>
               3. Household Composition
-            </Text>
+            </CustomText>
 
             <TextInput
               style={styles.input}
@@ -266,9 +267,9 @@ function ContactQueryform() {
               onBlur={handleBlur("headName")}
             />
             {touched.headName && errors.headName && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.headName}
-              </Text>
+              </CustomText>
             )}
 
             <TouchableOpacity onPress={() => setShowDatePicker(true)}>
@@ -284,9 +285,9 @@ function ContactQueryform() {
             </TouchableOpacity>
 
             {touched.dob && errors.dob && (
-              <Text style={{ color: "red", marginTop: 10, fontSize: 12 }}>
+              <CustomText style={{ color: "red", marginTop: 10, fontSize: 12 }}>
                 {errors.dob}
-              </Text>
+              </CustomText>
             )}
 
             {showDatePicker && (
@@ -306,7 +307,7 @@ function ContactQueryform() {
               />
             )}
 
-            <Text style={{ marginTop: 10, fontWeight: "bold" }}>Gender</Text>
+            <CustomText style={{ marginTop: 10, fontWeight: "bold" }}>Gender</CustomText>
             <ScrollView horizontal={true} style={{ flexDirection: "row" }}>
               {["Male", "Female", "Transgender", "Other"].map((option) => (
                 <Checkbox.Item
@@ -325,9 +326,9 @@ function ContactQueryform() {
               ))}
             </ScrollView>
             {touched.gender && errors.gender && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.gender}
-              </Text>
+              </CustomText>
             )}
 
             <View
@@ -345,9 +346,9 @@ function ContactQueryform() {
               />
             </View>
 
-            <Text style={{ fontWeight: "bold" }}>
+            <CustomText style={{ fontWeight: "bold" }}>
               Will a 2nd person be living in your home?
-            </Text>
+            </CustomText>
             <View style={{ flexDirection: "row" }}>
               {["Yes", "No"].map((option) => (
                 <Checkbox.Item
@@ -368,14 +369,14 @@ function ContactQueryform() {
               ))}
             </View>
             {touched.secondPerson && errors.secondPerson && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.secondPerson}
-              </Text>
+              </CustomText>
             )}
 
-            <Text style={{ fontWeight: "bold" }}>
+            <CustomText style={{ fontWeight: "bold" }}>
               Does your household live or work in New Jersey?
-            </Text>
+            </CustomText>
             <View style={{ flexDirection: "row" }}>
               {["Yes", "No"].map((option) => (
                 <Checkbox.Item
@@ -396,23 +397,26 @@ function ContactQueryform() {
               ))}
             </View>
             {touched.njResident && errors.njResident && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.njResident}
-              </Text>
+              </CustomText>
             )}
+
 
             <TextInput
               style={styles.input}
-              placeholder="Combined gross annual income (USD)"
+              placeholder="What is the combined gross annual income for all Household Members?"
               value={values.grossIncome}
               onChangeText={handleChange("grossIncome")}
               onBlur={handleBlur("grossIncome")}
               keyboardType="numeric"
             />
+             <CustomText style={{ fontWeight: "bold" }}>Please include the gross BEFORE tax income of all household members. Income includes gross wages, salaries, tips, commissions, overtime, alimony, child support, pensions, social security, unemployment, and disability benefits.
+            </CustomText>
             {touched.grossIncome && errors.grossIncome && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.grossIncome}
-              </Text>
+              </CustomText>
             )}
 
             <TextInput
@@ -424,12 +428,12 @@ function ContactQueryform() {
               keyboardType="numeric"
             />
             {touched.monthlyRent && errors.monthlyRent && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.monthlyRent}
-              </Text>
+              </CustomText>
             )}
 
-            <Text style={{ fontWeight: "bold" }}>Are you a veteran?</Text>
+            <CustomText style={{ fontWeight: "bold" }}>Are you a veteran?</CustomText>
             <View style={{ flexDirection: "row" }}>
               {["Yes", "No"].map((option) => (
                 <Checkbox.Item
@@ -448,14 +452,14 @@ function ContactQueryform() {
               ))}
             </View>
             {touched.veteran && errors.veteran && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.veteran}
-              </Text>
+              </CustomText>
             )}
 
-            <Text style={{ fontWeight: "bold" }}>
+            <CustomText style={{ fontWeight: "bold" }}>
               Do you currently have a Section 8 housing choice voucher?
-            </Text>
+            </CustomText>
             <View style={{ flexDirection: "row" }}>
               {["Yes", "No"].map((option) => (
                 <Checkbox.Item
@@ -474,14 +478,14 @@ function ContactQueryform() {
               ))}
             </View>
             {touched.section8 && errors.section8 && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.section8}
-              </Text>
+              </CustomText>
             )}
 
-            <Text style={{ fontWeight: "bold" }}>
-              Will you receive rental assistance from other sources?
-            </Text>
+            <CustomText style={{ fontWeight: "bold" }}>
+             Will you receive rental assistance from other sources including family members outside of the household? *
+            </CustomText>
             <View style={{ flexDirection: "row" }}>
               {["Yes", "No"].map((option) => (
                 <Checkbox.Item
@@ -502,9 +506,9 @@ function ContactQueryform() {
               ))}
             </View>
             {touched.rentalAssistance && errors.rentalAssistance && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.rentalAssistance}
-              </Text>
+              </CustomText>
             )}
           </ScrollView>
         );
@@ -512,9 +516,9 @@ function ContactQueryform() {
       case 4:
         return (
           <View>
-            <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+            <CustomText style={{ fontWeight: "bold", fontSize: 18 }}>
               4. Additional Information
-            </Text>
+            </CustomText>
 
             <TextInput
               style={styles.input}
@@ -525,9 +529,9 @@ function ContactQueryform() {
               onBlur={handleBlur("income")}
             />
             {touched.income && errors.income && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.income}
-              </Text>
+              </CustomText>
             )}
 
             <TextInput
@@ -539,10 +543,10 @@ function ContactQueryform() {
               onBlur={handleBlur("rent")}
             />
             {touched.rent && errors.rent && (
-              <Text style={{ color: "red", marginTop: 10 }}>{errors.rent}</Text>
+              <CustomText style={{ color: "red", marginTop: 10 }}>{errors.rent}</CustomText>
             )}
 
-            <Text style={{ fontWeight: "bold" }}>Total Household Size:</Text>
+            <CustomText style={{ fontWeight: "bold" }}>Total Household Size:</CustomText>
             <View style={{ flexDirection: "row" }}>
               {["1", "2", "3", "4", "5+"].map((size) => (
                 <TouchableOpacity
@@ -568,9 +572,9 @@ function ContactQueryform() {
               ))}
             </View>
             {touched.householdSize && errors.householdSize && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.householdSize}
-              </Text>
+              </CustomText>
             )}
 
             <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -591,22 +595,26 @@ function ContactQueryform() {
               />
             </View>
 
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text>Veteran:</Text>
+            <View style={{  alignItems: "center" }}>
+              <Text>Are any household members Veterans? :</Text>
               <Switch
                 value={values.veteran || false}
                 onValueChange={(val) => setFieldValue("veteran", val)}
                 style={{ marginLeft: 10 }}
               />
+              <Text>There are currently no units in our portfolio that provide a veterans preference. We are collecting this information in the event that a preference becomes available in the future.</Text>
+
             </View>
 
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text>Studio Contact:</Text>
+            <View style={{ alignItems: "center" }}>
+              <Text>Would you like to be contacted for studio apartments? *</Text>
               <Switch
                 value={values.studioContact || false}
                 onValueChange={(val) => setFieldValue("studioContact", val)}
                 style={{ marginLeft: 10 }}
               />
+              <Text>All applicants will be considered for the one bedroom apartments. If you answer no, you will ONLY be contacted about one bedroom apartments.
+</Text>
             </View>
           </View>
         );
@@ -614,9 +622,9 @@ function ContactQueryform() {
       case 5:
         return (
           <View>
-            <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+            <CustomText style={{ fontWeight: "bold", fontSize: 18 }}>
               5. Signature
-            </Text>
+            </CustomText>
 
             <TextInput
               style={styles.input}
@@ -625,10 +633,13 @@ function ContactQueryform() {
               onChangeText={handleChange("eSignature")}
               onBlur={handleBlur("eSignature")}
             />
+            <CustomText style={{ fontWeight: "bold", fontSize: 18 }}>
+I certify that the information provided herein is true and complete and that any misrepresentation of income or household size reported herein shall be cause for program disqualification. I also understand that this information is to be used only for determining my preliminary eligibility for referral to an affordable housing unit and does not obligate me in any way.            </CustomText>
+            
             {touched.eSignature && errors.eSignature && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.eSignature}
-              </Text>
+              </CustomText>
             )}
 
             <TouchableOpacity onPress={() => setShowDatePicker(true)}>
@@ -645,10 +656,12 @@ function ContactQueryform() {
               />
             </TouchableOpacity>
 
+ <CustomText style={{ fontWeight: "bold", fontSize: 18 }}>
+Once we come to your name on the waiting list, you will be asked to verify your household composition and income, among other factors. All information will be verified.        </CustomText>
             {touched.signatureDate && errors.signatureDate && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.signatureDate}
-              </Text>
+              </CustomText>
             )}
 
             {showDatePicker && (
@@ -670,9 +683,9 @@ function ContactQueryform() {
               />
             )}
 
-            <Text style={{ marginTop: 10, fontWeight: "bold" }}>
-              How did you hear about COAH PRO?
-            </Text>
+            <CustomText style={{ marginTop: 10, fontWeight: "bold" }}>
+              How did you hear about US?
+            </CustomText>
             {["Social Media", "Friend", "Website", "Email", "Other"].map(
               (option) => (
                 <Checkbox.Item
@@ -691,9 +704,9 @@ function ContactQueryform() {
               )
             )}
             {touched.hearAbout && errors.hearAbout && (
-              <Text style={{ color: "red", marginTop: 10 }}>
+              <CustomText style={{ color: "red", marginTop: 10 }}>
                 {errors.hearAbout}
-              </Text>
+              </CustomText>
             )}
           </View>
         );
@@ -728,7 +741,7 @@ function ContactQueryform() {
                 });
               }}
             >
-              <Text style={{ fontSize: 16 }}>$29 / Month</Text>
+              <CustomText style={{ fontSize: 16 }}>$29 / Month</CustomText>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -751,15 +764,15 @@ function ContactQueryform() {
                 });
               }}
             >
-              <Text style={{ fontSize: 16 }}>$299 / Year</Text>
+              <CustomText style={{ fontSize: 16 }}>$299 / Year</CustomText>
             </TouchableOpacity>
 
             {touched.monthly === false &&
               touched.yearly === false &&
               errors.monthly && (
-                <Text style={{ color: "red", marginTop: 10, marginTop: 10 }}>
+                <CustomText style={{ color: "red", marginTop: 10, marginTop: 10 }}>
                   {errors.monthly}
-                </Text>
+                </CustomText>
               )}
           </View>
         );
@@ -833,9 +846,9 @@ function ContactQueryform() {
                 alignItems: "center",
               }}
             >
-              <Text style={{ color: "white" }}>
+              <CustomText style={{ color: "white" }}>
                 {step === validationSchemas.length ? "Submit" : "Next"}
-              </Text>
+              </CustomText>
             </TouchableOpacity>
           </View>
         </ScrollView>
