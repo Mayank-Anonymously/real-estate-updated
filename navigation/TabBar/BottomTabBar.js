@@ -1,4 +1,3 @@
-import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image, Platform, Text, View } from "react-native";
 
@@ -15,8 +14,13 @@ import Explore from "../../assets/tabbaricon/explore.png";
 import ExploreActive from "../../assets/tabbaricon/explore-fill.png";
 import Subscription from "../../assets/tabbaricon/subscription.png";
 import SubscriptionActive from "../../assets/tabbaricon/subscription-fill.png";
+import LotteryActive from "../../assets/tabbaricon/lottery-fill.png";
+import Lottery from "../../assets/tabbaricon/lottery-fill.png";
+
 import Profile from "../../assets/tabbaricon/profile.png";
 import ProfileActive from "../../assets/tabbaricon/profile-fill.png";
+import { useSelector } from "react-redux";
+import LotteryScreen from "../../components/Screens/lottery/LotteryScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -39,6 +43,9 @@ const getTabBarIcon = (focused, activeIcon, inactiveIcon, label) => (
 );
 
 export default function MyTabs() {
+
+  const  user  = useSelector((state) =>  state.user.loggedIn)
+  console.log("user:", user)
   return (
     <Tab.Navigator
       screenOptions={{
@@ -66,21 +73,39 @@ export default function MyTabs() {
             getTabBarIcon(focused, ExploreActive, Explore, "Explore"),
         }}
       />
-      <Tab.Screen
-        name="Subscription"
-        component={SubscriptionScreen}
-        options={{
-          tabBarIcon: ({ focused }) =>
-            getTabBarIcon(
-              focused,
-              SubscriptionActive,
-              Subscription,
-              "Subscription"
-            ),
+
+      {user ===  true ? 
+     <Tab.Screen
+      name="Lottery"
+      component={LotteryScreen}
+      options={{
+        tabBarIcon: ({ focused }) =>
+          getTabBarIcon(
+            focused,
+            LotteryActive,
+            Lottery,
+            "Lottery"
+          ),
         }}
       />
+    
+    :
       <Tab.Screen
-        name="Profile"
+      name="Subscription"
+      component={SubscriptionScreen}
+      options={{
+        tabBarIcon: ({ focused }) =>
+          getTabBarIcon(
+            focused,
+            SubscriptionActive,
+            Subscription,
+            "Subscription"
+          ),
+        }}
+      />
+    }
+      <Tab.Screen
+      name="Profile"
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ focused }) =>
