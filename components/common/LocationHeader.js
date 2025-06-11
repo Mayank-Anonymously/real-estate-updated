@@ -13,7 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 import CustomText from "./Text";
 import CustomTextBold from "./BoldCustomtext";
 
-const LocationHeader = () => {
+const LocationHeader = ({ image }) => {
   const navigation = useNavigation();
   return (
     <SafeAreaView>
@@ -57,9 +57,44 @@ const LocationHeader = () => {
             />
           </View>
         </View>
-        <Pressable onPress={() => navigation.openDrawer()}>
-          <EvilIcons name="user" size={50} color={"white"} />
-        </Pressable>
+
+        {image ? (
+          <Pressable
+            onPress={() => navigation.openDrawer()}
+            style={{ flexDirection: "row", alignItems: "center" }}
+          >
+            <View>
+              <CustomTextBold style={{ color: "#d6a534" }}>
+                Premium
+              </CustomTextBold>
+            </View>
+            <Image
+              source={require("../../assets/images/background/premium.png")}
+              style={{
+                width: 40,
+                height: 40,
+                resizeMode: "contain",
+                marginLeft: 10,
+              }}
+            />
+          </Pressable>
+        ) : (
+          <Pressable
+            onPress={() => navigation.openDrawer()}
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <View>
+              <CustomTextBold style={{ color: "white" }}>
+                Premium
+              </CustomTextBold>
+              <CustomTextBold style={{ color: "white" }}>Member</CustomTextBold>
+            </View>
+            <EvilIcons name="user" size={50} color={"white"} />
+          </Pressable>
+        )}
       </View>
     </SafeAreaView>
   );
@@ -69,7 +104,7 @@ export default LocationHeader;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
+    marginTop: 10,
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "space-between",

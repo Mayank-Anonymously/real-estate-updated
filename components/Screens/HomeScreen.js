@@ -17,10 +17,14 @@ import { LinearGradient } from "expo-linear-gradient";
 import AvailableforRent from "./HomeScreenComp/AvailableforRent";
 
 import CustomText from "../common/Text";
+import { useSelector } from "react-redux";
+import Premium from "../../assets/images/background/premium.png";
 
 const { width } = Dimensions.get("window");
 
 const HomeScreen = () => {
+  const user = useSelector((state) => state.user);
+
   const [active, setActive] = useState("I need to rent");
   const translateX = useRef(new Animated.Value(0)).current;
   const indicatorX = useRef(new Animated.Value(0)).current;
@@ -61,6 +65,8 @@ const HomeScreen = () => {
   //   return true;
   // };
 
+  console.log(user.user.premiumEnabled);
+
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
@@ -91,7 +97,8 @@ const HomeScreen = () => {
               borderBottomRightRadius: 20,
             }}
           >
-            <LocationHeader />
+            <LocationHeader image={user.user.premiumEnabled} />
+
             <SearchBar />
             <CustomText
               style={{
