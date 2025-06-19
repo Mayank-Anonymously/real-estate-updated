@@ -6,7 +6,7 @@ import CustomTextBold from "../common/BoldCustomtext";
 const InternationalMigrations = () => {
   return (
     <View style={styles.container}>
-      <CustomText style={styles.title}>International Migrations</CustomText>
+      <CustomText style={styles.title}>Search by County</CustomText>
       <View style={styles.cardContainer}>
         <Card
           imageSource={{
